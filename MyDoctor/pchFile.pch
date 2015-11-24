@@ -1,0 +1,21 @@
+//
+//  pchFile.pch
+//  MyDoctor
+//
+//  Created by 巫筠 on 15/11/24.
+//  Copyright © 2015年 com.mingxing. All rights reserved.
+//
+
+#ifndef pchFile_pch
+#define pchFile_pch
+
+//状态栏与导航栏总高度
+#define TOPHEIGHT ([[UIApplication sharedApplication] statusBarFrame].size.height+self.navigationController.navigationBar.frame.size.height)
+//屏幕宽度
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* pchFile_pch */
