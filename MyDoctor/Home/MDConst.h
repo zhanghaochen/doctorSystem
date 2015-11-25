@@ -9,6 +9,13 @@
 #ifndef MyDoctor_Header_h
 #define MyDoctor_Header_h
 
+
+
+//状态栏与导航栏总高度
+#define TOPHEIGHT ([[UIApplication sharedApplication] statusBarFrame].size.height+self.navigationController.navigationBar.frame.size.height)
+//屏幕宽度
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+
 //iphone设备
 #define isIphone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
 
