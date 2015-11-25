@@ -7,7 +7,9 @@
 //
 
 #import "MDBaseViewController.h"
+#import "WBToolBar.h"
 
-@interface MDServiceViewController : MDBaseViewController
+
+@interface MDServiceViewController : MDBaseViewController<ToolBarDelegate>
 
 @end

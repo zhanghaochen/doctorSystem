@@ -22,6 +22,11 @@
 		153C1E851C03FB8C00F87014 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E781C03FB8C00F87014 /* NSArray+MASAdditions.m */; };
 		153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E7B1C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		153C1E871C03FB8C00F87014 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E7D1C03FB8C00F87014 /* View+MASAdditions.m */; };
+		153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E8A1C0405FE00F87014 /* WBToolBar.m */; };
+		153C1E8F1C040A5500F87014 /* MDAllServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E8E1C040A5500F87014 /* MDAllServiceViewController.m */; };
+		153C1E921C040A9900F87014 /* MDPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E911C040A9900F87014 /* MDPaymentViewController.m */; };
+		153C1E951C040ABC00F87014 /* MDOngoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E941C040ABC00F87014 /* MDOngoingViewController.m */; };
+		153C1E981C040AF800F87014 /* MDEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E971C040AF800F87014 /* MDEvaluationViewController.m */; };
 		15AE536F1C02F0680013FF1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE536E1C02F0680013FF1B /* main.m */; };
 		15AE53721C02F0680013FF1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53711C02F0680013FF1B /* AppDelegate.m */; };
 		15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53741C02F0680013FF1B /* MDBaseViewController.m */; };
@@ -74,6 +79,17 @@
 		153C1E7C1C03FB8C00F87014 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		153C1E7D1C03FB8C00F87014 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		153C1E7E1C03FB8C00F87014 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		153C1E891C0405FE00F87014 /* WBToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBToolBar.h; sourceTree = "<group>"; };
+		153C1E8A1C0405FE00F87014 /* WBToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBToolBar.m; sourceTree = "<group>"; };
+		153C1E8C1C0406C200F87014 /* MDConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MDConst.h; path = Home/MDConst.h; sourceTree = "<group>"; };
+		153C1E8D1C040A5500F87014 /* MDAllServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDAllServiceViewController.h; path = Service/MDAllServiceViewController.h; sourceTree = "<group>"; };
+		153C1E8E1C040A5500F87014 /* MDAllServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAllServiceViewController.m; path = Service/MDAllServiceViewController.m; sourceTree = "<group>"; };
+		153C1E901C040A9900F87014 /* MDPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPaymentViewController.h; path = Service/MDPaymentViewController.h; sourceTree = "<group>"; };
+		153C1E911C040A9900F87014 /* MDPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPaymentViewController.m; path = Service/MDPaymentViewController.m; sourceTree = "<group>"; };
+		153C1E931C040ABC00F87014 /* MDOngoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDOngoingViewController.h; sourceTree = "<group>"; };
+		153C1E941C040ABC00F87014 /* MDOngoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDOngoingViewController.m; sourceTree = "<group>"; };
+		153C1E961C040AF800F87014 /* MDEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDEvaluationViewController.h; path = Service/MDEvaluationViewController.h; sourceTree = "<group>"; };
+		153C1E971C040AF800F87014 /* MDEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDEvaluationViewController.m; path = Service/MDEvaluationViewController.m; sourceTree = "<group>"; };
 		15AE53691C02F0680013FF1B /* MyDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AE536D1C02F0680013FF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AE536E1C02F0680013FF1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +136,7 @@
 		153C1E661C03FB8C00F87014 /* fundation */ = {
 			isa = PBXGroup;
 			children = (
+				153C1E881C0405FE00F87014 /* ToolBar */,
 				153C1E671C03FB8C00F87014 /* Masonry */,
 			);
 			path = fundation;
@@ -153,6 +170,15 @@
 				153C1E7E1C03FB8C00F87014 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		153C1E881C0405FE00F87014 /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				153C1E891C0405FE00F87014 /* WBToolBar.h */,
+				153C1E8A1C0405FE00F87014 /* WBToolBar.m */,
+			);
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		15AE53601C02F0680013FF1B = {
@@ -224,6 +250,7 @@
 			children = (
 				153C1E521C03F16200F87014 /* MDHomeViewController.h */,
 				153C1E531C03F16200F87014 /* MDHomeViewController.m */,
+				153C1E8C1C0406C200F87014 /* MDConst.h */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -233,6 +260,14 @@
 			children = (
 				153C1E551C03F20200F87014 /* MDServiceViewController.h */,
 				153C1E561C03F20200F87014 /* MDServiceViewController.m */,
+				153C1E8D1C040A5500F87014 /* MDAllServiceViewController.h */,
+				153C1E8E1C040A5500F87014 /* MDAllServiceViewController.m */,
+				153C1E901C040A9900F87014 /* MDPaymentViewController.h */,
+				153C1E911C040A9900F87014 /* MDPaymentViewController.m */,
+				153C1E931C040ABC00F87014 /* MDOngoingViewController.h */,
+				153C1E941C040ABC00F87014 /* MDOngoingViewController.m */,
+				153C1E961C040AF800F87014 /* MDEvaluationViewController.h */,
+				153C1E971C040AF800F87014 /* MDEvaluationViewController.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -351,13 +386,18 @@
 			files = (
 				153C1E7F1C03FB8C00F87014 /* MX_MASCompositeConstraint.m in Sources */,
 				15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */,
+				153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */,
 				153C1E851C03FB8C00F87014 /* NSArray+MASAdditions.m in Sources */,
+				153C1E921C040A9900F87014 /* MDPaymentViewController.m in Sources */,
+				153C1E8F1C040A5500F87014 /* MDAllServiceViewController.m in Sources */,
 				15AE53721C02F0680013FF1B /* AppDelegate.m in Sources */,
+				153C1E981C040AF800F87014 /* MDEvaluationViewController.m in Sources */,
 				153C1E541C03F16200F87014 /* MDHomeViewController.m in Sources */,
 				153C1E5A1C03F22D00F87014 /* MDMyViewController.m in Sources */,
 				153C1E821C03FB8C00F87014 /* MX_MASLayoutConstraint.m in Sources */,
 				153C1E571C03F20200F87014 /* MDServiceViewController.m in Sources */,
 				153C1E871C03FB8C00F87014 /* View+MASAdditions.m in Sources */,
+				153C1E951C040ABC00F87014 /* MDOngoingViewController.m in Sources */,
 				153C1E831C03FB8C00F87014 /* MX_MASViewAttribute.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,

@@ -1,33 +1,21 @@
 //
-//  MDHomeViewController.m
+//  MDPaymentViewController.m
 //  MyDoctor
 //
 //  Created by 张昊辰 on 15/11/24.
 //  Copyright (c) 2015年 com.mingxing. All rights reserved.
 //
 
-#import "MDHomeViewController.h"
-#import "MX_MASConstraintMaker.h"
-#import "View+MASAdditions.h"
+#import "MDPaymentViewController.h"
 
-@interface MDHomeViewController ()
+@interface MDPaymentViewController ()
 
 @end
 
-@implementation MDHomeViewController
+@implementation MDPaymentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title=@"寻医问药";
-    
-    UIView *view=[[UIView alloc] init];
-    view.backgroundColor=[UIColor redColor];
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(67);
-        make.left.equalTo(self.view.mas_left).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(80, 40));
-    }];
     // Do any additional setup after loading the view.
 }
 

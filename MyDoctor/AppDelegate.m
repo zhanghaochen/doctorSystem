@@ -53,7 +53,7 @@
 
     
     service=[[MDServiceViewController alloc] init];
-    serviceNav=[[UINavigationController alloc] initWithRootViewController:serviceNav];
+    serviceNav=[[UINavigationController alloc] initWithRootViewController:service];
     normalImage = [UIImage imageNamed:@"service"];
     serviceNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"服务记录" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
