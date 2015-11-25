@@ -11,7 +11,6 @@
 #import "MDAllServiceViewController.h"
 #import "MDPaymentViewController.h"
 #import "MDOngoingViewController.h"
-#import "MDEvaluationViewController.h"
 
 @interface MDServiceViewController ()
 
@@ -23,7 +22,6 @@
     MDAllServiceViewController * asvc;
     MDPaymentViewController * pvc;
     MDOngoingViewController *ovc;
-    MDEvaluationViewController * evc;
     int firstShow;
 }
 - (void)viewDidLoad {
@@ -32,10 +30,10 @@
     firstShow=1;
     self.navigationItem.title=@"服务记录";
     if (!bar) {
-        bar = [[WBToolBar alloc] initWithFrame:CGRectMake(0, 64, appWidth, 30)];
-        bar.dataSource = [[NSArray alloc] initWithObjects:@"全部",@"待付款",@"进行中",@"待评价", nil];
+        bar = [[WBToolBar alloc] initWithFrame:CGRectMake(0, 64, appWidth, 40)];
+        bar.dataSource = [[NSArray alloc] initWithObjects:@"全部",@"待付款",@"进行中", nil];
         bar.delegate = self;
-        [bar drawFristRect:CGRectMake(0, 64, appWidth, 30)];
+        [bar drawFristRect:CGRectMake(0, 64, appWidth, 40)];
         [self.view addSubview:bar];
     }
     [self draw];
@@ -51,7 +49,6 @@
     asvc.view.hidden=NO;
     pvc.view.hidden=YES;
     ovc.view.hidden=YES;
-    evc.view.hidden=YES;
     if(firstShow==1){
         [self.view bringSubviewToFront:asvc.view];
         [self.view bringSubviewToFront:bar];
@@ -72,7 +69,6 @@
         asvc.view.hidden=NO;
         pvc.view.hidden=YES;
         ovc.view.hidden=YES;
-        evc.view.hidden=YES;
         [self.view bringSubviewToFront:asvc.view];
         [self.view bringSubviewToFront:bar];
     }else if (index==1){
@@ -83,7 +79,6 @@
         asvc.view.hidden=YES;
         pvc.view.hidden=NO;
         ovc.view.hidden=YES;
-        evc.view.hidden=YES;
         [self.view bringSubviewToFront:pvc.view];
         [self.view bringSubviewToFront:bar];
         
@@ -95,22 +90,9 @@
         asvc.view.hidden=YES;
         pvc.view.hidden=YES;
         ovc.view.hidden=NO;
-        evc.view.hidden=YES;
         [self.view bringSubviewToFront:ovc.view];
         [self.view bringSubviewToFront:bar];
-    }else if (index==3){
-        if (!evc) {
-            evc=[[MDEvaluationViewController alloc] init];
-            [self.view addSubview:evc.view];
-        }
-        asvc.view.hidden=YES;
-        pvc.view.hidden=YES;
-        ovc.view.hidden=YES;
-        evc.view.hidden=NO;
-        [self.view bringSubviewToFront:evc.view];
-        [self.view bringSubviewToFront:bar];
     }
-    
 }
 
 

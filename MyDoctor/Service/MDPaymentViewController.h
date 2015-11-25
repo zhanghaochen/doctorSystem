@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MDPaymentViewController : UIViewController
+#import "MDConst.h"
+@interface MDPaymentViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong)     UITableView * tableView;
 
 @end
