@@ -1,19 +1,21 @@
 //
-//  MDPaymentViewController.m
+//  MDOngoingViewController.m
 //  MyDoctor
 //
 //  Created by 张昊辰 on 15/11/24.
 //  Copyright (c) 2015年 com.mingxing. All rights reserved.
 //
 
-#import "MDPaymentViewController.h"
+#import "MDOngoingViewController.h"
 #import "MDServiceFolerVO.h"
 #import "MDServiceTableViewCell.h"
-@interface MDPaymentViewController ()
+#import "MDOrderDetailsViewController.h"
+
+@interface MDOngoingViewController ()
 
 @end
 
-@implementation MDPaymentViewController
+@implementation MDOngoingViewController
 {
     NSMutableArray * dataArray;
     
@@ -42,17 +44,8 @@
     sfv.paymentOrRemind=@"提醒发货";
     
     
-    
-    MDServiceFolerVO * sfv2=[[MDServiceFolerVO alloc] init];
-    sfv2.serviceType=@"照护";
-    sfv2.serviceName=@"服务名";
-    sfv2.money=@"15元";
-    sfv2.nowCondition=@"等待买家付款";
-    sfv2.deleteOrCancel=@"取消订单";
-    sfv2.paymentOrRemind=@"付款";
-    
     [dataArray addObject:sfv];
-    [dataArray addObject:sfv2];
+    
 }
 
 -(void)TableView
@@ -96,6 +89,9 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    MDOrderDetailsViewController * odvc=[[MDOrderDetailsViewController alloc] init];
+    [self.navigationController pushViewController:odvc animated:YES];
+
     
 }
 

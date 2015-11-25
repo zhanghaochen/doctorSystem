@@ -44,7 +44,7 @@
 //        [button setBackgroundImage:GetImageByName(@"mx_headerbutton_bg") forState:UIControlStateNormal];
         [button addTarget:self action:@selector(tagSelected:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithRed:20/255.0 green:204/255.0 blue:164/255.0 alpha:1] forState:UIControlStateSelected];
+        [button setTitleColor:[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1] forState:UIControlStateSelected];
 
         if (i == 0) {
             lastSelectedElement = button;
@@ -66,7 +66,7 @@
     [self addSubview:blackLineVIew];
     
     blueLineVIew=[[UIView alloc]initWithFrame:CGRectMake(0, kTollBarHeight-4, appWidth/3, 4)];
-    blueLineVIew.backgroundColor=ColorWithRGB(26, 133, 255, 1);
+    blueLineVIew.backgroundColor=ColorWithRGB(228, 71, 78, 1);
     [self addSubview:blueLineVIew];
 }
 

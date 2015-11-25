@@ -1,5 +1,5 @@
 //
-//  MDPaymentViewController.h
+//  MDOngoingViewController.h
 //  MyDoctor
 //
 //  Created by 张昊辰 on 15/11/24.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MDConst.h"
-@interface MDPaymentViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@interface MDOngoingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)     UITableView * tableView;
 
 @end

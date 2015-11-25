@@ -24,6 +24,11 @@
 		153C1E8F1C040A5500F87014 /* MDAllServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E8E1C040A5500F87014 /* MDAllServiceViewController.m */; };
 		153C1E921C040A9900F87014 /* MDPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E911C040A9900F87014 /* MDPaymentViewController.m */; };
 		153C1E981C040AF800F87014 /* MDEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E971C040AF800F87014 /* MDEvaluationViewController.m */; };
+		153C1E951C040ABC00F87014 /* MDOngoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E941C040ABC00F87014 /* MDOngoingViewController.m */; };
+		153C1EA61C054D5100F87014 /* MDServiceFolerVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1EA51C054D5100F87014 /* MDServiceFolerVO.m */; };
+		153C1EA91C05546800F87014 /* MDServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1EA81C05546800F87014 /* MDServiceTableViewCell.m */; };
+		153C1EAB1C05571300F87014 /* servicekuang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153C1EAA1C05571300F87014 /* servicekuang@2x.png */; };
+		153C1EAF1C05729700F87014 /* MDOrderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1EAE1C05729700F87014 /* MDOrderDetailsViewController.m */; };
 		15AE536F1C02F0680013FF1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE536E1C02F0680013FF1B /* main.m */; };
 		15AE53721C02F0680013FF1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53711C02F0680013FF1B /* AppDelegate.m */; };
 		15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53741C02F0680013FF1B /* MDBaseViewController.m */; };
@@ -100,6 +105,16 @@
 		153C1E911C040A9900F87014 /* MDPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPaymentViewController.m; path = Service/MDPaymentViewController.m; sourceTree = "<group>"; };
 		153C1E961C040AF800F87014 /* MDEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDEvaluationViewController.h; path = Service/MDEvaluationViewController.h; sourceTree = "<group>"; };
 		153C1E971C040AF800F87014 /* MDEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDEvaluationViewController.m; path = Service/MDEvaluationViewController.m; sourceTree = "<group>"; };
+		153C1E931C040ABC00F87014 /* MDOngoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDOngoingViewController.h; sourceTree = "<group>"; };
+		153C1E941C040ABC00F87014 /* MDOngoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDOngoingViewController.m; sourceTree = "<group>"; };
+		153C1EA41C054D5100F87014 /* MDServiceFolerVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDServiceFolerVO.h; path = Service/MDServiceModel/MDServiceFolerVO.h; sourceTree = "<group>"; };
+		153C1EA51C054D5100F87014 /* MDServiceFolerVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDServiceFolerVO.m; path = Service/MDServiceModel/MDServiceFolerVO.m; sourceTree = "<group>"; };
+		153C1EA71C05546800F87014 /* MDServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDServiceTableViewCell.h; path = Service/MDServiceTableViewCell.h; sourceTree = "<group>"; };
+		153C1EA81C05546800F87014 /* MDServiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDServiceTableViewCell.m; path = Service/MDServiceTableViewCell.m; sourceTree = "<group>"; };
+		153C1EAA1C05571300F87014 /* servicekuang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "servicekuang@2x.png"; sourceTree = "<group>"; };
+		153C1EAD1C05729700F87014 /* MDOrderDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDOrderDetailsViewController.h; path = "Service/The Order Derails/MDOrderDetailsViewController.h"; sourceTree = "<group>"; };
+		153C1EAE1C05729700F87014 /* MDOrderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDOrderDetailsViewController.m; path = "Service/The Order Derails/MDOrderDetailsViewController.m"; sourceTree = "<group>"; };
+>>>>>>> 2c2a6d9487200fe82b1a274548e8868c4c0f9b38
 		15AE53691C02F0680013FF1B /* MyDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AE536D1C02F0680013FF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AE536E1C02F0680013FF1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +179,7 @@
 		153C1E5F1C03F4ED00F87014 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				153C1EAA1C05571300F87014 /* servicekuang@2x.png */,
 				6A3EF7BB1C054E4000923D03 /* mydoctor@2x.png */,
 				6A3EF7C11C05561500923D03 /* topImg@2x.png */,
 				6A3EF7BF1C054E9D00923D03 /* background@2x.png */,
@@ -227,6 +243,24 @@
 				153C1E8A1C0405FE00F87014 /* WBToolBar.m */,
 			);
 			path = ToolBar;
+			sourceTree = "<group>";
+		};
+		153C1EA31C054CDF00F87014 /* MDServiceModel */ = {
+			isa = PBXGroup;
+			children = (
+				153C1EA41C054D5100F87014 /* MDServiceFolerVO.h */,
+				153C1EA51C054D5100F87014 /* MDServiceFolerVO.m */,
+			);
+			name = MDServiceModel;
+			sourceTree = "<group>";
+		};
+		153C1EAC1C05722600F87014 /* The Order Details */ = {
+			isa = PBXGroup;
+			children = (
+				153C1EAD1C05729700F87014 /* MDOrderDetailsViewController.h */,
+				153C1EAE1C05729700F87014 /* MDOrderDetailsViewController.m */,
+			);
+			name = "The Order Details";
 			sourceTree = "<group>";
 		};
 		15AE53601C02F0680013FF1B = {
@@ -308,16 +342,22 @@
 		15AE53961C03EEE20013FF1B /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				153C1EA31C054CDF00F87014 /* MDServiceModel */,
+				153C1EAC1C05722600F87014 /* The Order Details */,
 				153C1E551C03F20200F87014 /* MDServiceViewController.h */,
 				153C1E561C03F20200F87014 /* MDServiceViewController.m */,
 				153C1E8D1C040A5500F87014 /* MDAllServiceViewController.h */,
 				153C1E8E1C040A5500F87014 /* MDAllServiceViewController.m */,
+				153C1EA71C05546800F87014 /* MDServiceTableViewCell.h */,
+				153C1EA81C05546800F87014 /* MDServiceTableViewCell.m */,
 				153C1E901C040A9900F87014 /* MDPaymentViewController.h */,
 				153C1E911C040A9900F87014 /* MDPaymentViewController.m */,
 				153C1E961C040AF800F87014 /* MDEvaluationViewController.h */,
 				153C1E971C040AF800F87014 /* MDEvaluationViewController.m */,
 				6A3EF7FD1C059C9800923D03 /* MDOngoingViewController.h */,
 				6A3EF7FE1C059C9800923D03 /* MDOngoingViewController.m */,
+				153C1E931C040ABC00F87014 /* MDOngoingViewController.h */,
+				153C1E941C040ABC00F87014 /* MDOngoingViewController.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -513,6 +553,7 @@
 				153C1E651C03F4ED00F87014 /* service@2x.png in Resources */,
 				15AE53781C02F0680013FF1B /* Main.storyboard in Resources */,
 				153C1E631C03F4ED00F87014 /* home@2x.png in Resources */,
+				153C1EAB1C05571300F87014 /* servicekuang@2x.png in Resources */,
 				15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */,
 				6A3EF7B61C054E2C00923D03 /* greenlogo@2x.png in Resources */,
 				6A3EF7B21C054E1E00923D03 /* bluelogo@2x.png in Resources */,
@@ -554,6 +595,13 @@
 				153C1E8F1C040A5500F87014 /* MDAllServiceViewController.m in Sources */,
 				15AE53721C02F0680013FF1B /* AppDelegate.m in Sources */,
 				153C1E981C040AF800F87014 /* MDEvaluationViewController.m in Sources */,
+				153C1EA61C054D5100F87014 /* MDServiceFolerVO.m in Sources */,
+				153C1E921C040A9900F87014 /* MDPaymentViewController.m in Sources */,
+				153C1E8F1C040A5500F87014 /* MDAllServiceViewController.m in Sources */,
+				15AE53721C02F0680013FF1B /* AppDelegate.m in Sources */,
+				153C1EA91C05546800F87014 /* MDServiceTableViewCell.m in Sources */,
+				153C1E541C03F16200F87014 /* MDHomeViewController.m in Sources */,
+				153C1E5A1C03F22D00F87014 /* MDMyViewController.m in Sources */,
 				153C1E821C03FB8C00F87014 /* MX_MASLayoutConstraint.m in Sources */,
 				153C1E571C03F20200F87014 /* MDServiceViewController.m in Sources */,
 				6A3EF8051C059C9800923D03 /* MDOngoingViewController.m in Sources */,
@@ -565,8 +613,12 @@
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
 				6A3EF8031C059C9800923D03 /* MDnoticeCenterController.m in Sources */,
 				153C1E801C03FB8C00F87014 /* MX_MASConstraint.m in Sources */,
+<<<<<<< HEAD
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF7FF1C059C9800923D03 /* MDActivityViewController.m in Sources */,
+=======
+				153C1EAF1C05729700F87014 /* MDOrderDetailsViewController.m in Sources */,
+>>>>>>> 2c2a6d9487200fe82b1a274548e8868c4c0f9b38
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
 			);
