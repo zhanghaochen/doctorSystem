@@ -10,10 +10,12 @@
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
 
-@interface MDHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MDHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 {
     UITableView * _tableView;
     NSMutableArray * _listArray;
+    UIScrollView * _headerView;
+    int currentPage;
 }
 
 @end
@@ -22,80 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    currentPage = 0;
     self.navigationItem.title=@"寻医问药";
-    self.view.backgroundColor = [UIColor whiteColor];
     
     [self createView];
     
-//    UIView *view=[[UIView alloc] init];
-//    view.backgroundColor=[UIColor redColor];
-//    [self.view addSubview:view];
-//    [view mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-//        make.top.equalTo(self.view.mas_top).with.offset(67);
-//        make.left.equalTo(self.view.mas_left).with.offset(15);
-//        make.size.mas_equalTo(CGSizeMake(80, 40));
-//    }];
-    
-    /*
-    UIView * scrollView = [[UIView alloc] init];
-    scrollView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:scrollView];
-    
-    [scrollView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(TOPHEIGHT+18);
-        make.left.equalTo(self.view.mas_left).with.offset(21);
-        make.right.equalTo(self.view.mas_right).with.offset(-21);
-        make.size.mas_equalTo(CGSizeMake(0, (SCREENWIDTH - 42)/(665.0/291.0)));
-    }];
-    
-    
-    UIButton * button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button1 setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:button1];
-    UIButton * button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button2 setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:button2];
-    UIButton * button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button3 setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview: button3];
-    UIButton * button4 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button4 setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:button4];
-    
-    [button1 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(scrollView.mas_bottom).with.offset(20);
-        make.left.equalTo(self.view.mas_left).with.offset(21);
-        make.right.equalTo(self.view.mas_right).with.offset(-21);
-        make.height.equalTo(button2);
-    }];
-    
->>>>>>> 51f835e6b6ca0dda1c143658244d184057699722
-    
-    [button2 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(button1.mas_bottom).with.offset(14);
-        make.left.equalTo(self.view.mas_left).with.offset(21);
-        make.right.equalTo(self.view.mas_right).with.offset(-21);
-        make.height.equalTo(button1);
-    }];
-    
-    [button3 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(button2.mas_bottom).with.offset(14);
-        make.left.equalTo(self.view.mas_left).with.offset(21);
-        make.right.equalTo(self.view.mas_right).with.offset(-21);
-        make.height.equalTo(button1);
-    }];
-    
-    [button4 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(button3.mas_bottom).with.offset(14);
-        make.left.equalTo(self.view.mas_left).with.offset(21);
-        make.right.equalTo(self.view.mas_right).with.offset(-21);
-        make.bottom.equalTo(self.view.mas_bottom).with.offset(-14-self.navigationController.navigationBar.frame.size.height);
-        make.height.equalTo(button1);
-    }];
-    */
-    
-    
-
+    [self setHeaderView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,19 +56,94 @@
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.bounces = YES;
+    _tableView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_tableView];
-    
-    UIView * headerView = [[UIView alloc] init];
-//    (SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)
-    [headerView setFrame:CGRectMake(0, 0, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
-    headerView.backgroundColor = [UIColor grayColor];
-    _tableView.tableHeaderView = headerView;
-    
-
 }
 
+-(void)setHeaderView
+{
+    _headerView = [[UIScrollView alloc] initWithFrame:CGRectMake(21, 18, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
+//    _headerView.backgroundColor = [UIColor redColor];
+    
+    CGFloat width = SCREENWIDTH - 42;
+    _headerView.contentSize = CGSizeMake(width*3, width*0.42);
+    _headerView.bounces = NO;
+    _headerView.pagingEnabled = YES;
+    _headerView.showsVerticalScrollIndicator = NO;
+    _headerView.delegate = self;
+    [self.view addSubview:_headerView];
+    
+    NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"background",@"topImg",@"greenlogo", nil];
+    
+    for (int i = 0; i < imageArr.count; i ++) {
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(width * i, 0, width, width*0.42)];
+        imageView.image = [UIImage imageNamed:imageArr[i]];
+        [_headerView addSubview:imageView];
+    }
+    
+    //UIpageController设置
+    UIPageControl * pageController = [[UIPageControl alloc] initWithFrame:CGRectMake(_headerView.frame.size.width - 60, _headerView.frame.size.height - 15, 40, 10)];
+    pageController.backgroundColor = [UIColor clearColor];
+    pageController.numberOfPages = imageArr.count;
+    pageController.currentPage = 0;
+    pageController.pageIndicatorTintColor = [UIColor whiteColor];
+    pageController.currentPageIndicatorTintColor = [UIColor colorWithRed:65.0/255.0 green:65.0/255.0 blue:65.0/255.0 alpha:1.0];
+    pageController.center = CGPointMake(_headerView.frame.size.width - 40,  _headerView.frame.size.height - 10);
+    [pageController addTarget:self action:@selector(pageController:) forControlEvents:UIControlEventValueChanged];
+    pageController.tag = 100;
+    [_tableView addSubview:pageController];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(timeChange:) userInfo:nil repeats:YES];
+}
+
+//自动滚动
+-(void)timeChange:(NSTimer *)timer
+{
+    UIPageControl *pageControl = (UIPageControl *)[self.view viewWithTag:100];
+
+    [UIView animateWithDuration:0.5 animations:^{
+        _headerView.contentOffset = CGPointMake((SCREENWIDTH - 42)*currentPage, 0);
+
+    }];
+    if (_headerView.contentOffset.x > (SCREENWIDTH - 42)*2) {
+            _headerView.contentOffset = CGPointMake(0, 0);
+            currentPage = 0;
+    }
+    pageControl.currentPage = currentPage;
+    currentPage ++;
+}
+
+#pragma mark - pageControl的方法
+- (void)pageController:(UIPageControl *)pageControl
+{
+    currentPage = (int)pageControl.currentPage;
+    [UIView animateWithDuration:0.5 animations:^{
+        _headerView.contentOffset = CGPointMake((SCREENWIDTH - 42)*currentPage, 0);
+    }];
+    
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //由tag值找到pageControl
+    UIPageControl *pageControl = (UIPageControl *)[self.view viewWithTag:100];
+    //找到当前scrollView的偏移量
+    CGPoint point = scrollView.contentOffset;
+    //找到目前是第几页
+    currentPage = point.x / (SCREENWIDTH - 42);
+    //将页数赋给UIPageControl
+    pageControl.currentPage = currentPage;
+}
 
 #pragma mark 协议方法
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    _tableView.tableHeaderView = _headerView;
+    [_tableView sendSubviewToBack:_headerView];
+    
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -156,7 +165,7 @@
     
     cell.imageView.image = [UIImage imageNamed:_listArray[indexPath.section][0]];
     cell.textLabel.text = _listArray[indexPath.section][1];
-    cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:0.95];
+    cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.7];
     
     return cell;
 }
