@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MDPaymentViewController : MDBaseViewController
+@interface MDPaymentViewController : UIViewController
 
 @end
