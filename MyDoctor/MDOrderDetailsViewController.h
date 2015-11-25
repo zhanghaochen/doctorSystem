@@ -9,5 +9,6 @@
 #import "MDBaseViewController.h"
 
 @interface MDOrderDetailsViewController : MDBaseViewController
+@property (nonatomic, strong) NSString * serviceName;
 
 @end
