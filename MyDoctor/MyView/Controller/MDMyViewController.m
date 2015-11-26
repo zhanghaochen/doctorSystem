@@ -137,6 +137,7 @@
         return cell;
 }
 
+//填充每个cell间距的view，使之透明
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView * view = [[UIView alloc] init];

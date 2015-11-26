@@ -54,6 +54,7 @@
 		6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */; };
 		6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */; };
 		6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */; };
+		6A3EF8591C06D24600923D03 /* MDNurseRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDConsultDrupViewController.m; sourceTree = "<group>"; };
 		6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDActivityViewController.h; sourceTree = "<group>"; };
 		6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDActivityViewController.m; sourceTree = "<group>"; };
+		6A3EF8571C06D24600923D03 /* MDNurseRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNurseRootViewController.h; sourceTree = "<group>"; };
+		6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNurseRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +421,8 @@
 				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
 				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
 				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
+				6A3EF8571C06D24600923D03 /* MDNurseRootViewController.h */,
+				6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */,
 			);
 			name = Controller;
 			path = Home/Controller;
@@ -592,6 +597,7 @@
 				153C1E871C03FB8C00F87014 /* View+MASAdditions.m in Sources */,
 				6A3EF8081C05A20400923D03 /* MDNurseViewController.m in Sources */,
 				153C1E831C03FB8C00F87014 /* MX_MASViewAttribute.m in Sources */,
+				6A3EF8591C06D24600923D03 /* MDNurseRootViewController.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
