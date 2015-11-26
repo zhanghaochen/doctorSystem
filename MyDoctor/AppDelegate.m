@@ -10,6 +10,7 @@
 #import "MDMyViewController.h"
 #import "MDServiceViewController.h"
 #import "MDHomeViewController.h"
+#import "BRSlogInViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,8 +31,27 @@
     NSString *homeDirectory = NSHomeDirectory();
     NSLog(@"path:%@", homeDirectory);
     
-    [self showMainView];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showBRSMainView"  object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMainView) name:@"showBRSMainView" object:nil];
+    
+//    UIImage*draw = [UIImage imageNamed:@"topImg"];
+//    UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
+//    [drawView setFrame:appFrame];
+//    [self.window addSubview:drawView];
+    
+    
+    [self logIn];
+    
     return YES;
+}
+
+-(void)logIn
+{
+    BRSlogInViewController * liv=[[BRSlogInViewController alloc] init];
+    UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:liv];
+    self.window.rootViewController=nvc;
+    [self.window makeKeyAndVisible];
+
 }
 
 #pragma mark - mainView
@@ -48,19 +68,22 @@
 
     home=[[MDHomeViewController alloc] init];
     homeNav=[[UINavigationController alloc] initWithRootViewController:home];
-    UIImage * normalImage = [UIImage imageNamed:@"home"];
-    homeNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"首页" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UIImage * normalImage = [UIImage imageNamed:@"homeback"];
+    UIImage *selectImage = [UIImage imageNamed:@"home"];
+    homeNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"首页" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
     
     service=[[MDServiceViewController alloc] init];
     serviceNav=[[UINavigationController alloc] initWithRootViewController:service];
-    normalImage = [UIImage imageNamed:@"service"];
-    serviceNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"服务记录" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    normalImage = [UIImage imageNamed:@"serviceback"];
+    selectImage = [UIImage imageNamed:@"service"];
+    serviceNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"服务记录" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     my=[[MDMyViewController alloc] init];
     myNav = [[UINavigationController alloc] initWithRootViewController:my];
-    normalImage = [UIImage imageNamed:@"my"];
-    myNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"我的" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    normalImage = [UIImage imageNamed:@"myback"];
+    selectImage = [UIImage imageNamed:@"my"];
+    myNav.tabBarItem=[[UITabBarItem alloc] initWithTitle:@"我的" image:[normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     _tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav,serviceNav,myNav, nil];
 
     [self.window setRootViewController:_tabBarController];
