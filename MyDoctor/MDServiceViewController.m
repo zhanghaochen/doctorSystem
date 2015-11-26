@@ -11,6 +11,7 @@
 #import "MDAllServiceViewController.h"
 #import "MDPaymentViewController.h"
 #import "MDOngoingViewController.h"
+#import "MDOrderDetailsViewController.h"
 
 @interface MDServiceViewController ()
 
@@ -26,9 +27,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor whiteColor];
     firstShow=1;
     self.navigationItem.title=@"服务记录";
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushViewInParent:) name:@"pushViewInParent" object:nil];
+    
+    
     if (!bar) {
         bar = [[WBToolBar alloc] initWithFrame:CGRectMake(0, 64, appWidth, 40)];
         bar.dataSource = [[NSArray alloc] initWithObjects:@"全部",@"待付款",@"进行中", nil];
@@ -37,9 +41,13 @@
         [self.view addSubview:bar];
     }
     [self draw];
-
+    
 }
-
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"pushViewInParent" object:nil];
+    
+    
+}
 -(void)draw
 {
     if(!asvc){
@@ -94,12 +102,21 @@
         [self.view bringSubviewToFront:bar];
     }
 }
+-(void)pushViewInParent:(id)sender
+{
+    
+    [[sender userInfo] objectForKey:@"text"];
+    MDOrderDetailsViewController * odvc=[[MDOrderDetailsViewController alloc] init];
+    odvc.hidesBottomBarWhenPushed=YES;
+    
+    [self.navigationController pushViewController:odvc animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
-
+    
+    
 }
 
 

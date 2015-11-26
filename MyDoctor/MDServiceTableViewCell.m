@@ -17,13 +17,20 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
 }
 
 -(void)drawCell
 {
     UIView * view=[[UIView alloc] initWithFrame:CGRectMake(5, 5, appWidth-10, 150-10)];
-    view.backgroundColor=[UIColor yellowColor];
+    view.backgroundColor=[UIColor clearColor];
+    
+    //背景图层
+    UIView * background=[[UIView alloc] initWithFrame:CGRectMake(0, 0, appWidth-10, 150-10)];
+    background.backgroundColor=[UIColor whiteColor];
+    background.alpha=0.6;
+    [view addSubview:background];
+    
     [self addSubview:view];
     
     UILabel * type=[[UILabel alloc] initWithFrame:CGRectMake(10, 8, 100, 20)];
@@ -77,7 +84,7 @@
     }];
     
     UIButton * deleteOrCancel=[[UIButton alloc] init];
-    [deleteOrCancel addTarget:self action:@selector(deleteOrCancel) forControlEvents:UIControlEventTouchUpInside];
+    [deleteOrCancel addTarget:self action:@selector(deleteOrCancel:) forControlEvents:UIControlEventTouchUpInside];
     deleteOrCancel.titleLabel.font=[UIFont systemFontOfSize:15];
     [deleteOrCancel setTitle:_deleteOrCancel forState:UIControlStateNormal];
     [deleteOrCancel setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -90,7 +97,7 @@
     
     
     UIButton * paymentOrRemind=[[UIButton alloc] init];
-    [paymentOrRemind addTarget:self action:@selector(paymentOrRemind) forControlEvents:UIControlEventTouchUpInside];
+    [paymentOrRemind addTarget:self action:@selector(paymentOrRemind:) forControlEvents:UIControlEventTouchUpInside];
     paymentOrRemind.titleLabel.font=[UIFont systemFontOfSize:15];
     [paymentOrRemind setTitle:_paymentOrRemind forState:UIControlStateNormal];
     [paymentOrRemind setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -113,3 +120,4 @@
 }
 
 @end
+

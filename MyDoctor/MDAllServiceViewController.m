@@ -22,12 +22,12 @@
 @synthesize tableView = _tableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     [self dataArray];
     [self TableView];
-   
-   
-
+    
+    
+    
 }
 
 -(void)dataArray
@@ -65,8 +65,10 @@
 
 -(void)TableView
 {
+    
     _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,104, appWidth, appHeight-64) style:UITableViewStylePlain];
     _tableView.separatorColor = [UIColor colorWithRed:223.0f/255.0f green:223.0f/255.0f blue:223.0f/255.0f alpha:1];
+    _tableView.backgroundColor=[UIColor clearColor];
     _tableView.dataSource=self;
     _tableView.delegate=self;
     _tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
@@ -83,6 +85,7 @@
     {
         cell=[[MDServiceTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell];
     }
+    cell.backgroundColor=[UIColor clearColor];
     for (UIView *item in cell.contentView.subviews) {
         [item removeFromSuperview];
     }

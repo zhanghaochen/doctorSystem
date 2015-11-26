@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MDOngoingViewController : UIViewController
+@interface MDOngoingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong)     UITableView * tableView;
 
 @end
