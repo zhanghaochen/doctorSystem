@@ -22,6 +22,26 @@
 		153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1E8A1C0405FE00F87014 /* WBToolBar.m */; };
 		153C1EA61C054D5100F87014 /* MDServiceFolerVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 153C1EA51C054D5100F87014 /* MDServiceFolerVO.m */; };
 		153C1EAB1C05571300F87014 /* servicekuang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153C1EAA1C05571300F87014 /* servicekuang@2x.png */; };
+		159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049671C069FA600EE51FB /* BRSlogInViewController.m */; };
+		159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049691C069FA600EE51FB /* BRSNewPageViewController.m */; };
+		159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */; };
+		159049751C069FA600EE51FB /* BRSSignIn2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496D1C069FA600EE51FB /* BRSSignIn2ViewController.m */; };
+		159049761C069FA600EE51FB /* BRSSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496F1C069FA600EE51FB /* BRSSignInViewController.m */; };
+		159049771C069FA600EE51FB /* BRSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049711C069FA600EE51FB /* BRSTextField.m */; };
+		1590497D1C06A71000EE51FB /* BRSEndSignlnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590497C1C06A71000EE51FB /* BRSEndSignlnViewController.m */; };
+		159049881C06CD6100EE51FB /* 按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1590497E1C06CD6100EE51FB /* 按钮@2x.png */; };
+		159049891C06CD6100EE51FB /* 按钮页@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1590497F1C06CD6100EE51FB /* 按钮页@2x.png */; };
+		1590498A1C06CD6100EE51FB /* 登录-框-图标1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049801C06CD6100EE51FB /* 登录-框-图标1@2x.png */; };
+		1590498B1C06CD6100EE51FB /* 登录-框-图标2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049811C06CD6100EE51FB /* 登录-框-图标2@2x.png */; };
+		1590498C1C06CD6100EE51FB /* 登录-注册底@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049821C06CD6100EE51FB /* 登录-注册底@2x.png */; };
+		1590498D1C06CD6100EE51FB /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049831C06CD6100EE51FB /* 返回@2x.png */; };
+		1590498E1C06CD6100EE51FB /* 注册-添加照片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049841C06CD6100EE51FB /* 注册-添加照片@2x.png */; };
+		1590498F1C06CD6100EE51FB /* 注册按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049851C06CD6100EE51FB /* 注册按钮@2x.png */; };
+		159049901C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049861C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png */; };
+		159049911C06CD6100EE51FB /* mx_selected_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049871C06CD6100EE51FB /* mx_selected_phone@2x.png */; };
+		159049951C06CFD900EE51FB /* 红色提醒@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049921C06CFD900EE51FB /* 红色提醒@2x.png */; };
+		159049961C06CFD900EE51FB /* 灰色单选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049931C06CFD900EE51FB /* 灰色单选@2x.png */; };
+		159049971C06CFD900EE51FB /* 绿色单选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049941C06CFD900EE51FB /* 绿色单选@2x.png */; };
 		15AE536F1C02F0680013FF1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE536E1C02F0680013FF1B /* main.m */; };
 		15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53741C02F0680013FF1B /* MDBaseViewController.m */; };
 		15AE53781C02F0680013FF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AE53761C02F0680013FF1B /* Main.storyboard */; };
@@ -99,6 +119,33 @@
 		153C1EA41C054D5100F87014 /* MDServiceFolerVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDServiceFolerVO.h; path = Service/MDServiceModel/MDServiceFolerVO.h; sourceTree = "<group>"; };
 		153C1EA51C054D5100F87014 /* MDServiceFolerVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDServiceFolerVO.m; path = Service/MDServiceModel/MDServiceFolerVO.m; sourceTree = "<group>"; };
 		153C1EAA1C05571300F87014 /* servicekuang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "servicekuang@2x.png"; sourceTree = "<group>"; };
+		159049661C069FA600EE51FB /* BRSlogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSlogInViewController.h; sourceTree = "<group>"; };
+		159049671C069FA600EE51FB /* BRSlogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSlogInViewController.m; sourceTree = "<group>"; };
+		159049681C069FA600EE51FB /* BRSNewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSNewPageViewController.h; sourceTree = "<group>"; };
+		159049691C069FA600EE51FB /* BRSNewPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSNewPageViewController.m; sourceTree = "<group>"; };
+		1590496A1C069FA600EE51FB /* BRSNewPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSNewPasswordViewController.h; sourceTree = "<group>"; };
+		1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSNewPasswordViewController.m; sourceTree = "<group>"; };
+		1590496C1C069FA600EE51FB /* BRSSignIn2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSSignIn2ViewController.h; sourceTree = "<group>"; };
+		1590496D1C069FA600EE51FB /* BRSSignIn2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSSignIn2ViewController.m; sourceTree = "<group>"; };
+		1590496E1C069FA600EE51FB /* BRSSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSSignInViewController.h; sourceTree = "<group>"; };
+		1590496F1C069FA600EE51FB /* BRSSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSSignInViewController.m; sourceTree = "<group>"; };
+		159049701C069FA600EE51FB /* BRSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSTextField.h; sourceTree = "<group>"; };
+		159049711C069FA600EE51FB /* BRSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSTextField.m; sourceTree = "<group>"; };
+		1590497B1C06A71000EE51FB /* BRSEndSignlnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSEndSignlnViewController.h; sourceTree = "<group>"; };
+		1590497C1C06A71000EE51FB /* BRSEndSignlnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSEndSignlnViewController.m; sourceTree = "<group>"; };
+		1590497E1C06CD6100EE51FB /* 按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮@2x.png"; sourceTree = "<group>"; };
+		1590497F1C06CD6100EE51FB /* 按钮页@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮页@2x.png"; sourceTree = "<group>"; };
+		159049801C06CD6100EE51FB /* 登录-框-图标1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录-框-图标1@2x.png"; sourceTree = "<group>"; };
+		159049811C06CD6100EE51FB /* 登录-框-图标2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录-框-图标2@2x.png"; sourceTree = "<group>"; };
+		159049821C06CD6100EE51FB /* 登录-注册底@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录-注册底@2x.png"; sourceTree = "<group>"; };
+		159049831C06CD6100EE51FB /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
+		159049841C06CD6100EE51FB /* 注册-添加照片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "注册-添加照片@2x.png"; sourceTree = "<group>"; };
+		159049851C06CD6100EE51FB /* 注册按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "注册按钮@2x.png"; sourceTree = "<group>"; };
+		159049861C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_defaultSelect_phone@2x.png"; sourceTree = "<group>"; };
+		159049871C06CD6100EE51FB /* mx_selected_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_selected_phone@2x.png"; sourceTree = "<group>"; };
+		159049921C06CFD900EE51FB /* 红色提醒@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色提醒@2x.png"; sourceTree = "<group>"; };
+		159049931C06CFD900EE51FB /* 灰色单选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "灰色单选@2x.png"; sourceTree = "<group>"; };
+		159049941C06CFD900EE51FB /* 绿色单选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "绿色单选@2x.png"; sourceTree = "<group>"; };
 		15AE53691C02F0680013FF1B /* MyDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AE536D1C02F0680013FF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AE536E1C02F0680013FF1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,6 +221,19 @@
 		153C1E5F1C03F4ED00F87014 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				159049921C06CFD900EE51FB /* 红色提醒@2x.png */,
+				159049931C06CFD900EE51FB /* 灰色单选@2x.png */,
+				159049941C06CFD900EE51FB /* 绿色单选@2x.png */,
+				1590497E1C06CD6100EE51FB /* 按钮@2x.png */,
+				1590497F1C06CD6100EE51FB /* 按钮页@2x.png */,
+				159049801C06CD6100EE51FB /* 登录-框-图标1@2x.png */,
+				159049811C06CD6100EE51FB /* 登录-框-图标2@2x.png */,
+				159049821C06CD6100EE51FB /* 登录-注册底@2x.png */,
+				159049831C06CD6100EE51FB /* 返回@2x.png */,
+				159049841C06CD6100EE51FB /* 注册-添加照片@2x.png */,
+				159049851C06CD6100EE51FB /* 注册按钮@2x.png */,
+				159049861C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png */,
+				159049871C06CD6100EE51FB /* mx_selected_phone@2x.png */,
 				6A3EF8491C05FDE000923D03 /* navigationbar_back@2x.png */,
 				153C1EAA1C05571300F87014 /* servicekuang@2x.png */,
 				6A3EF7BB1C054E4000923D03 /* mydoctor@2x.png */,
@@ -259,6 +319,28 @@
 			name = "The Order Details";
 			sourceTree = "<group>";
 		};
+		159049651C069FA600EE51FB /* logIn */ = {
+			isa = PBXGroup;
+			children = (
+				159049661C069FA600EE51FB /* BRSlogInViewController.h */,
+				159049671C069FA600EE51FB /* BRSlogInViewController.m */,
+				159049681C069FA600EE51FB /* BRSNewPageViewController.h */,
+				159049691C069FA600EE51FB /* BRSNewPageViewController.m */,
+				1590496A1C069FA600EE51FB /* BRSNewPasswordViewController.h */,
+				1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */,
+				1590496C1C069FA600EE51FB /* BRSSignIn2ViewController.h */,
+				1590496D1C069FA600EE51FB /* BRSSignIn2ViewController.m */,
+				1590496E1C069FA600EE51FB /* BRSSignInViewController.h */,
+				1590496F1C069FA600EE51FB /* BRSSignInViewController.m */,
+				1590497B1C06A71000EE51FB /* BRSEndSignlnViewController.h */,
+				1590497C1C06A71000EE51FB /* BRSEndSignlnViewController.m */,
+				159049701C069FA600EE51FB /* BRSTextField.h */,
+				159049711C069FA600EE51FB /* BRSTextField.m */,
+			);
+			name = logIn;
+			path = "登录/logIn";
+			sourceTree = "<group>";
+		};
 		15AE53601C02F0680013FF1B = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +362,7 @@
 		15AE536B1C02F0680013FF1B /* MyDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				159049651C069FA600EE51FB /* logIn */,
 				6A3EF7D31C058E6A00923D03 /* MyView */,
 				6A8F12B01C040825001ABE2F /* Other */,
 				15AE53961C03EEE20013FF1B /* Service */,
@@ -542,13 +625,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1590498D1C06CD6100EE51FB /* 返回@2x.png in Resources */,
 				153C1E651C03F4ED00F87014 /* service@2x.png in Resources */,
+				159049951C06CFD900EE51FB /* 红色提醒@2x.png in Resources */,
 				15AE53781C02F0680013FF1B /* Main.storyboard in Resources */,
+				159049911C06CD6100EE51FB /* mx_selected_phone@2x.png in Resources */,
+				159049881C06CD6100EE51FB /* 按钮@2x.png in Resources */,
+				159049961C06CFD900EE51FB /* 灰色单选@2x.png in Resources */,
+				1590498C1C06CD6100EE51FB /* 登录-注册底@2x.png in Resources */,
 				153C1E631C03F4ED00F87014 /* home@2x.png in Resources */,
 				153C1EAB1C05571300F87014 /* servicekuang@2x.png in Resources */,
 				15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */,
 				6A3EF7B61C054E2C00923D03 /* greenlogo@2x.png in Resources */,
+				1590498F1C06CD6100EE51FB /* 注册按钮@2x.png in Resources */,
+				159049891C06CD6100EE51FB /* 按钮页@2x.png in Resources */,
 				6A3EF7B21C054E1E00923D03 /* bluelogo@2x.png in Resources */,
+				1590498E1C06CD6100EE51FB /* 注册-添加照片@2x.png in Resources */,
+				1590498B1C06CD6100EE51FB /* 登录-框-图标2@2x.png in Resources */,
+				1590498A1C06CD6100EE51FB /* 登录-框-图标1@2x.png in Resources */,
+				159049901C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png in Resources */,
 				6A3EF84A1C05FDE000923D03 /* navigationbar_back@2x.png in Resources */,
 				6A3EF7B11C054E1E00923D03 /* arrow@2x.png in Resources */,
 				153C1E641C03F4ED00F87014 /* my@2x.png in Resources */,
@@ -560,6 +655,7 @@
 				6A3EF7BA1C054E3D00923D03 /* navigationbar_rightbtn@2x.png in Resources */,
 				6A3EF7C01C054E9D00923D03 /* background@2x.png in Resources */,
 				6A3EF7AE1C054DA700923D03 /* purplelogo@2x.png in Resources */,
+				159049971C06CFD900EE51FB /* 绿色单选@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,13 +673,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1590497D1C06A71000EE51FB /* BRSEndSignlnViewController.m in Sources */,
 				6A3EF8441C05BAFE00923D03 /* MDServiceTableViewCell.m in Sources */,
 				153C1E7F1C03FB8C00F87014 /* MX_MASCompositeConstraint.m in Sources */,
 				6A3EF8411C05BAFE00923D03 /* MDAllServiceViewController.m in Sources */,
 				6A3EF8451C05BAFE00923D03 /* MDServiceViewController.m in Sources */,
 				15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */,
+				159049771C069FA600EE51FB /* BRSTextField.m in Sources */,
 				153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */,
 				6A3EF8141C05B5B800923D03 /* MDOrderDetailsViewController.m in Sources */,
+				159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */,
 				153C1E851C03FB8C00F87014 /* NSArray+MASAdditions.m in Sources */,
 				6A3EF7E01C058F8600923D03 /* MDMyViewItem.m in Sources */,
 				6A3EF8421C05BAFE00923D03 /* MDOngoingViewController.m in Sources */,
@@ -593,18 +692,22 @@
 				6A3EF8081C05A20400923D03 /* MDNurseViewController.m in Sources */,
 				153C1E831C03FB8C00F87014 /* MX_MASViewAttribute.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				159049761C069FA600EE51FB /* BRSSignInViewController.m in Sources */,
 				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
 				6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */,
 				153C1E801C03FB8C00F87014 /* MX_MASConstraint.m in Sources */,
+				159049751C069FA600EE51FB /* BRSSignIn2ViewController.m in Sources */,
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
 				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,
 				6A3EF80E1C05ADF100923D03 /* MDHomeViewController.m in Sources */,
+				159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */,
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
 				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
+				159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

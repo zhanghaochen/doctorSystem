@@ -10,6 +10,7 @@
 #import "MDMyViewController.h"
 #import "MDServiceViewController.h"
 #import "MDHomeViewController.h"
+#import "BRSlogInViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,8 +31,21 @@
     NSString *homeDirectory = NSHomeDirectory();
     NSLog(@"path:%@", homeDirectory);
     
-    [self showMainView];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showBRSMainView"  object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMainView) name:@"showBRSMainView" object:nil];
+    
+    [self logIn];
+    
     return YES;
+}
+
+-(void)logIn
+{
+    BRSlogInViewController * liv=[[BRSlogInViewController alloc] init];
+    UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:liv];
+    self.window.rootViewController=nvc;
+    [self.window makeKeyAndVisible];
+
 }
 
 #pragma mark - mainView
