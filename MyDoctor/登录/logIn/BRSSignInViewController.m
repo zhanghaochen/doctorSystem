@@ -39,9 +39,9 @@
     self.view.backgroundColor=[UIColor whiteColor];
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actiondo1)];
     [self.view addGestureRecognizer:tapGesture];
-    self.navigationItem.title=@"注册";
     [self textfield];
     
+    [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.title=@"注册";
@@ -257,7 +257,8 @@
     return YES;
 }
 //textfield被改变
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
     if (number.text.length>0 && password.text.length>0) {
         button2.userInteractionEnabled = YES;
         [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

@@ -33,7 +33,7 @@
 
     
     
-    [self setNavigationBarWithrightBtn:nil leftBtn:@"返回"];
+    [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 

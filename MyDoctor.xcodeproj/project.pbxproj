@@ -42,6 +42,9 @@
 		159049951C06CFD900EE51FB /* 红色提醒@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049921C06CFD900EE51FB /* 红色提醒@2x.png */; };
 		159049961C06CFD900EE51FB /* 灰色单选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049931C06CFD900EE51FB /* 灰色单选@2x.png */; };
 		159049971C06CFD900EE51FB /* 绿色单选@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049941C06CFD900EE51FB /* 绿色单选@2x.png */; };
+		1590499B1C0702E600EE51FB /* homeback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049981C0702E600EE51FB /* homeback@2x.png */; };
+		1590499C1C0702E600EE51FB /* myback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159049991C0702E600EE51FB /* myback@2x.png */; };
+		1590499D1C0702E600EE51FB /* serviceback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1590499A1C0702E600EE51FB /* serviceback@2x.png */; };
 		15AE536F1C02F0680013FF1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE536E1C02F0680013FF1B /* main.m */; };
 		15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53741C02F0680013FF1B /* MDBaseViewController.m */; };
 		15AE53781C02F0680013FF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AE53761C02F0680013FF1B /* Main.storyboard */; };
@@ -146,6 +149,9 @@
 		159049921C06CFD900EE51FB /* 红色提醒@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色提醒@2x.png"; sourceTree = "<group>"; };
 		159049931C06CFD900EE51FB /* 灰色单选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "灰色单选@2x.png"; sourceTree = "<group>"; };
 		159049941C06CFD900EE51FB /* 绿色单选@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "绿色单选@2x.png"; sourceTree = "<group>"; };
+		159049981C0702E600EE51FB /* homeback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeback@2x.png"; sourceTree = "<group>"; };
+		159049991C0702E600EE51FB /* myback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myback@2x.png"; sourceTree = "<group>"; };
+		1590499A1C0702E600EE51FB /* serviceback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "serviceback@2x.png"; sourceTree = "<group>"; };
 		15AE53691C02F0680013FF1B /* MyDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AE536D1C02F0680013FF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AE536E1C02F0680013FF1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -221,6 +227,9 @@
 		153C1E5F1C03F4ED00F87014 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				159049981C0702E600EE51FB /* homeback@2x.png */,
+				159049991C0702E600EE51FB /* myback@2x.png */,
+				1590499A1C0702E600EE51FB /* serviceback@2x.png */,
 				159049921C06CFD900EE51FB /* 红色提醒@2x.png */,
 				159049931C06CFD900EE51FB /* 灰色单选@2x.png */,
 				159049941C06CFD900EE51FB /* 绿色单选@2x.png */,
@@ -328,10 +337,10 @@
 				159049691C069FA600EE51FB /* BRSNewPageViewController.m */,
 				1590496A1C069FA600EE51FB /* BRSNewPasswordViewController.h */,
 				1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */,
-				1590496C1C069FA600EE51FB /* BRSSignIn2ViewController.h */,
-				1590496D1C069FA600EE51FB /* BRSSignIn2ViewController.m */,
 				1590496E1C069FA600EE51FB /* BRSSignInViewController.h */,
 				1590496F1C069FA600EE51FB /* BRSSignInViewController.m */,
+				1590496C1C069FA600EE51FB /* BRSSignIn2ViewController.h */,
+				1590496D1C069FA600EE51FB /* BRSSignIn2ViewController.m */,
 				1590497B1C06A71000EE51FB /* BRSEndSignlnViewController.h */,
 				1590497C1C06A71000EE51FB /* BRSEndSignlnViewController.m */,
 				159049701C069FA600EE51FB /* BRSTextField.h */,
@@ -631,8 +640,11 @@
 				15AE53781C02F0680013FF1B /* Main.storyboard in Resources */,
 				159049911C06CD6100EE51FB /* mx_selected_phone@2x.png in Resources */,
 				159049881C06CD6100EE51FB /* 按钮@2x.png in Resources */,
+				1590499B1C0702E600EE51FB /* homeback@2x.png in Resources */,
 				159049961C06CFD900EE51FB /* 灰色单选@2x.png in Resources */,
 				1590498C1C06CD6100EE51FB /* 登录-注册底@2x.png in Resources */,
+				1590499D1C0702E600EE51FB /* serviceback@2x.png in Resources */,
+				1590499C1C0702E600EE51FB /* myback@2x.png in Resources */,
 				153C1E631C03F4ED00F87014 /* home@2x.png in Resources */,
 				153C1EAB1C05571300F87014 /* servicekuang@2x.png in Resources */,
 				15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */,

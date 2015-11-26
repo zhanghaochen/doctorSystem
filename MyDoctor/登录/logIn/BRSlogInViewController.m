@@ -88,18 +88,18 @@
     [button11 setBackgroundColor:[UIColor clearColor]];
     [button11 setTitle:[NSString stringWithFormat:@"忘记密码?"] forState:UIControlStateNormal];
     button11.titleLabel.font=[UIFont systemFontOfSize:13*autoSizeScaleX];
-    [button11 setTitleColor:[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1] forState:UIControlStateNormal];
+    [button11 setTitleColor:[UIColor colorWithRed:50/255.0 green:119/255.0 blue:154/255.0 alpha:1] forState:UIControlStateNormal];
     [button11 addTarget:self action:@selector(forget:) forControlEvents:UIControlEventTouchUpInside];
     
     button=[[UIButton alloc] init];
 //    [button setBackgroundImage:[UIImage imageNamed:@"按钮"] forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor grayColor];
+    button.backgroundColor = [UIColor clearColor];
     button.layer.borderColor = [[UIColor whiteColor] CGColor];
-    button.layer.borderWidth = 1;
+    button.layer.borderWidth = 2;
     button.layer.cornerRadius = 6;
     button.layer.masksToBounds = YES;
     [button setTitle:[NSString stringWithFormat:@"登录"] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:50/255.0 green:119/255.0 blue:154/255.0 alpha:1] forState:UIControlStateNormal];
 
     [button addTarget:self action:@selector(tunch:) forControlEvents:UIControlEventTouchUpInside];
     button.enabled=NO;
@@ -152,7 +152,7 @@
 //    button1.layer.masksToBounds = YES;
 //    button1.layer.borderWidth = 1;
 //    button1.layer.borderColor = [[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
-    [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button1 setTitleColor:[UIColor colorWithRed:50/255.0 green:119/255.0 blue:154/255.0 alpha:1] forState:UIControlStateNormal];
     button1.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"注册按钮"]];
     [button1 addTarget:self action:@selector(tunch1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
