@@ -9,6 +9,11 @@
 #import "MDHomeViewController.h"
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
+#import "MDnoticeCenterController.h"
+#import "MDHospitalViewController.h"
+#import "MDConsultDrupViewController.h"
+#import "MDNurseViewController.h"
+#import "MDActivityViewController.h"
 
 @interface MDHomeViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 {
@@ -30,6 +35,11 @@
     [self createView];
     
     [self setHeaderView];
+    
+    [self setNavigationBarWithrightBtn:@"通知" leftBtn:nil];
+    
+    //通知按钮点击
+    [self.rightBtn addTarget:self action:@selector(noticeClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,11 +47,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//通知按钮点击
+-(void)noticeClick
+{
+    MDnoticeCenterController * notice = [[MDnoticeCenterController alloc] init];
+    [self.navigationController pushViewController:notice animated:YES];
+    self.tabBarController.tabBar.hidden = YES;
+}
 
 -(void)createView
 {
-    NSArray * group0 = @[@"greenlogo",@"询医"];
+    NSArray * group0 = @[@"greenlogo",@"寻医"];
     NSArray * group1 = @[@"purplelogo",@"问药"];
     NSArray * group2 = @[@"bluelogo",@"照护"];
     NSArray * group3 = @[@"greenlogo",@"活动"];
@@ -65,13 +81,11 @@
 -(void)setHeaderView
 {
     _headerView = [[UIScrollView alloc] initWithFrame:CGRectMake(21, 18, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
-//    _headerView.backgroundColor = [UIColor redColor];
-    
     CGFloat width = SCREENWIDTH - 42;
     _headerView.contentSize = CGSizeMake(width*3, width*0.42);
     _headerView.bounces = NO;
     _headerView.pagingEnabled = YES;
-    _headerView.showsVerticalScrollIndicator = NO;
+    _headerView.showsHorizontalScrollIndicator = NO;
     _headerView.delegate = self;
     [self.view addSubview:_headerView];
     
@@ -168,6 +182,7 @@
     cell.imageView.image = [UIImage imageNamed:_listArray[indexPath.section][0]];
     cell.textLabel.text = _listArray[indexPath.section][1];
     cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.7];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
@@ -188,6 +203,19 @@
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MDHospitalViewController * hospitalVC = [[MDHospitalViewController alloc] init];
+    MDConsultDrupViewController * consultDrupVC = [[MDConsultDrupViewController alloc] init];
+    MDNurseViewController * nurseVC = [[MDNurseViewController alloc] init];
+    MDActivityViewController * activityVC = [[MDActivityViewController alloc] init];
+    
+    NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];
+    [self.navigationController pushViewController:controllers[indexPath.section] animated:YES];
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 /*
 #pragma mark - Navigation
 

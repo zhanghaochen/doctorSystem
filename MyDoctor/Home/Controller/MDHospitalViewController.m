@@ -1,28 +1,27 @@
 //
-//  MDNurseViewController.m
+//  MDHospitalViewController.m
 //  MyDoctor
 //
 //  Created by 巫筠 on 15/11/25.
 //  Copyright © 2015年 com.mingxing. All rights reserved.
 //
 
-#import "MDNurseViewController.h"
+#import "MDHospitalViewController.h"
 
-@interface MDNurseViewController ()
+@interface MDHospitalViewController ()
 
 @end
 
-@implementation MDNurseViewController
+@implementation MDHospitalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"照护";
+    self.navigationItem.title = @"社区医院";
     
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
-
     // Do any additional setup after loading the view.
 }
 

@@ -9,6 +9,10 @@
 #import "MDBaseViewController.h"
 
 @interface MDBaseViewController ()
+{
+    UIView * _navBackView;
+
+}
 
 @end
 
@@ -32,6 +36,55 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
+
+-(void)setNavigationBarWithrightBtn:(NSString *)rightBtnTitle leftBtn:(NSString *)leftBtnImg
+{
+    //递归循环遍历navigationbar子视图，设置navigationbar透明度及颜色
+    [self getBackView:self.navigationController.navigationBar];
+    
+    //设置右按钮
+    if (rightBtnTitle != nil) {
+        _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightBtn.frame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navigationbar_rightbtn"]].frame;
+        [_rightBtn setTitle:rightBtnTitle forState:UIControlStateNormal];
+        [_rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _rightBtn.titleLabel.font = [UIFont systemFontOfSize:11];
+        _rightBtn.titleEdgeInsets = UIEdgeInsetsMake(1, 0, 0, 0);
+        _rightBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_rightBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_rightbtn"] forState:0];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightBtn];
+    }
+    
+    //设置左按钮
+    if (leftBtnImg != nil) {
+        _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _leftBtn.frame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:leftBtnImg]].frame;
+        [_leftBtn setBackgroundImage:[UIImage imageNamed:leftBtnImg] forState:UIControlStateNormal];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_leftBtn];
+    }
+    
+}
+
+//递归循环遍历navigationbar子视图，设置navigationbar透明度及颜色
+-(void)getBackView:(UIView *)superView
+{
+    if ([superView isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
+        _navBackView = superView;
+        
+        _navBackView.backgroundColor = [UIColor whiteColor];
+        
+        _navBackView.alpha= 0.5;
+    }
+    else if([superView isKindOfClass:NSClassFromString(@"_UIBackdropView")])
+    {
+        superView.hidden = YES;
+    }
+    
+    for (UIView * view in superView.subviews) {
+        [self getBackView:view];
+    }
+}
+
 
 
 @end

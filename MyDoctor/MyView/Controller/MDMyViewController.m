@@ -14,10 +14,10 @@
 @interface MDMyViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView * _tableView;
+
 }
 
 @property (nonatomic,strong) NSMutableArray * dataList;
-
 
 @end
 
@@ -46,6 +46,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"个人信息";
+    
+    [self setNavigationBarWithrightBtn:@"设置" leftBtn:nil];
     
     [self createView];
     // Do any additional setup after loading the view.

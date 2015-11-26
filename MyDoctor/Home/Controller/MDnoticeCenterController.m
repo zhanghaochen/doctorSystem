@@ -1,28 +1,26 @@
 //
-//  MDNurseViewController.m
+//  MDnoticeCenterController.m
 //  MyDoctor
 //
 //  Created by 巫筠 on 15/11/25.
 //  Copyright © 2015年 com.mingxing. All rights reserved.
 //
 
-#import "MDNurseViewController.h"
+#import "MDnoticeCenterController.h"
 
-@interface MDNurseViewController ()
+@interface MDnoticeCenterController ()
 
 @end
 
-@implementation MDNurseViewController
+@implementation MDnoticeCenterController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"照护";
+    self.navigationItem.title = @"通知公告";
     
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
-
     // Do any additional setup after loading the view.
 }
 

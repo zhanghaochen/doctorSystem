@@ -12,6 +12,10 @@
 #import "View+MASAdditions.h"
 @interface MDBaseViewController : UIViewController
 
+@property (nonatomic,strong) UIButton * leftBtn;
+@property (nonatomic,strong) UIButton * rightBtn;
+
+-(void)setNavigationBarWithrightBtn:(NSString *)rightBtnTitle leftBtn:(NSString *)leftBtnImg;
 
 @end
 

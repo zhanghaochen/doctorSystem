@@ -49,6 +49,11 @@
 		6A3EF8441C05BAFE00923D03 /* MDServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF83E1C05BAFE00923D03 /* MDServiceTableViewCell.m */; };
 		6A3EF8451C05BAFE00923D03 /* MDServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8401C05BAFE00923D03 /* MDServiceViewController.m */; };
 		6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8471C05BB1D00923D03 /* AppDelegate.m */; };
+		6A3EF84A1C05FDE000923D03 /* navigationbar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EF8491C05FDE000923D03 /* navigationbar_back@2x.png */; };
+		6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF84C1C06037100923D03 /* MDnoticeCenterController.m */; };
+		6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */; };
+		6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */; };
+		6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +142,15 @@
 		6A3EF8401C05BAFE00923D03 /* MDServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDServiceViewController.m; sourceTree = "<group>"; };
 		6A3EF8461C05BB1D00923D03 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A3EF8471C05BB1D00923D03 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6A3EF8491C05FDE000923D03 /* navigationbar_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_back@2x.png"; sourceTree = "<group>"; };
+		6A3EF84B1C06037100923D03 /* MDnoticeCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDnoticeCenterController.h; sourceTree = "<group>"; };
+		6A3EF84C1C06037100923D03 /* MDnoticeCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDnoticeCenterController.m; sourceTree = "<group>"; };
+		6A3EF84E1C06038B00923D03 /* MDHospitalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHospitalViewController.h; sourceTree = "<group>"; };
+		6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHospitalViewController.m; sourceTree = "<group>"; };
+		6A3EF8511C06039C00923D03 /* MDConsultDrupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDConsultDrupViewController.h; sourceTree = "<group>"; };
+		6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDConsultDrupViewController.m; sourceTree = "<group>"; };
+		6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDActivityViewController.h; sourceTree = "<group>"; };
+		6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDActivityViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +174,7 @@
 		153C1E5F1C03F4ED00F87014 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				6A3EF8491C05FDE000923D03 /* navigationbar_back@2x.png */,
 				153C1EAA1C05571300F87014 /* servicekuang@2x.png */,
 				6A3EF7BB1C054E4000923D03 /* mydoctor@2x.png */,
 				6A3EF7C11C05561500923D03 /* topImg@2x.png */,
@@ -395,6 +410,14 @@
 				6A3EF80B1C05A62E00923D03 /* MDHomeViewController.m */,
 				6A3EF8061C05A20400923D03 /* MDNurseViewController.h */,
 				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
+				6A3EF84B1C06037100923D03 /* MDnoticeCenterController.h */,
+				6A3EF84C1C06037100923D03 /* MDnoticeCenterController.m */,
+				6A3EF84E1C06038B00923D03 /* MDHospitalViewController.h */,
+				6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */,
+				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
+				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
+				6A3EF8511C06039C00923D03 /* MDConsultDrupViewController.h */,
+				6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */,
 			);
 			name = Controller;
 			path = Home/Controller;
@@ -526,6 +549,7 @@
 				15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */,
 				6A3EF7B61C054E2C00923D03 /* greenlogo@2x.png in Resources */,
 				6A3EF7B21C054E1E00923D03 /* bluelogo@2x.png in Resources */,
+				6A3EF84A1C05FDE000923D03 /* navigationbar_back@2x.png in Resources */,
 				6A3EF7B11C054E1E00923D03 /* arrow@2x.png in Resources */,
 				153C1E641C03F4ED00F87014 /* my@2x.png in Resources */,
 				6A3EF7B51C054E2C00923D03 /* feedback@2x.png in Resources */,
@@ -569,14 +593,18 @@
 				6A3EF8081C05A20400923D03 /* MDNurseViewController.m in Sources */,
 				153C1E831C03FB8C00F87014 /* MX_MASViewAttribute.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
+				6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */,
 				153C1E801C03FB8C00F87014 /* MX_MASConstraint.m in Sources */,
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
+				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,
 				6A3EF80E1C05ADF100923D03 /* MDHomeViewController.m in Sources */,
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
+				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
