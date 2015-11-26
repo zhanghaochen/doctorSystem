@@ -55,7 +55,7 @@
     label.font=[UIFont systemFontOfSize:18];
     label.layer.borderColor = [[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1] CGColor];
     label.layer.borderWidth = 1;
-    label.layer.cornerRadius = 7;
+    label.layer.cornerRadius = 5;
     label.textAlignment = UITextAlignmentCenter;
     [backgrownView addSubview:label];
     [label mas_makeConstraints:^(MX_MASConstraintMaker *make) {
@@ -68,7 +68,7 @@
     label2.text=@"服务人员上门中";
     label2.textAlignment = UITextAlignmentCenter;
     label2.font=[UIFont systemFontOfSize:18];
-    label2.layer.cornerRadius = 7;
+    label2.layer.cornerRadius = 5;
     label2.layer.borderColor = [[UIColor grayColor] CGColor];
     label2.layer.borderWidth = 1;
     [backgrownView addSubview:label2];
@@ -80,12 +80,13 @@
     
     
     UIButton * cancel=[[UIButton alloc] init];
-    [cancel addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+    [cancel addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
     [cancel setBackgroundColor:[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1]];
     cancel.titleLabel.font=[UIFont systemFontOfSize:15];
+    cancel.layer.cornerRadius =5;
     [cancel setTitle:@"取消服务" forState:UIControlStateNormal];
     [cancel setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [backgrownView addSubview:cancel];
+    [self.view addSubview:cancel];
     [cancel mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-120);
@@ -94,11 +95,12 @@
     
     UIButton * finish=[[UIButton alloc] init];
     [finish addTarget:self action:@selector(finish:) forControlEvents:UIControlEventTouchUpInside];
+    finish.layer.cornerRadius = 5;
     [finish setBackgroundColor:[UIColor grayColor]];
     finish.titleLabel.font=[UIFont systemFontOfSize:15];
     [finish setTitle:@"结束" forState:UIControlStateNormal];
     [finish setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [backgrownView addSubview:finish];
+    [self.view addSubview:finish];
     [finish mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-70);
@@ -107,9 +109,15 @@
     
     
 }
--(void)cancel:(UIButton *)button
+-(void)cancel
 {
-    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"距估计时间不足3小时，您不能取消派遣服务"message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"好的"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action) {
+                                                NSLog(@"Action 1 Handler Called");
+                                            }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 -(void)finish:(UIButton *)button
 {
