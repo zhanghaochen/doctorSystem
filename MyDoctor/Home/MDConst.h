@@ -154,4 +154,7 @@ static NSString *const kTrackingId = @"UA-39607394-5";
 //压缩率
 #define CompressPercent 0.6
 
+//红色
+#define RedColor ColorWithRGB(228, 71, 78, 1)
+
 #endif

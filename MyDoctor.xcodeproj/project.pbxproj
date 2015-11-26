@@ -408,16 +408,16 @@
 			children = (
 				6A3EF80D1C05A6DC00923D03 /* MDHomeViewController.h */,
 				6A3EF80B1C05A62E00923D03 /* MDHomeViewController.m */,
-				6A3EF8061C05A20400923D03 /* MDNurseViewController.h */,
-				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
 				6A3EF84B1C06037100923D03 /* MDnoticeCenterController.h */,
 				6A3EF84C1C06037100923D03 /* MDnoticeCenterController.m */,
 				6A3EF84E1C06038B00923D03 /* MDHospitalViewController.h */,
 				6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */,
-				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
-				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
 				6A3EF8511C06039C00923D03 /* MDConsultDrupViewController.h */,
 				6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */,
+				6A3EF8061C05A20400923D03 /* MDNurseViewController.h */,
+				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
+				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
+				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
 			);
 			name = Controller;
 			path = Home/Controller;
