@@ -10,4 +10,6 @@
 
 @interface MDNurseRootViewController : MDBaseViewController
 
+@property(nonatomic,strong) UIScrollView * scrollView;
+
 @end

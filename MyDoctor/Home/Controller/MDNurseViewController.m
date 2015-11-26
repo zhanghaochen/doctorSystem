@@ -8,6 +8,9 @@
 
 #import "MDNurseViewController.h"
 #import "MDNurseRootViewController.h"
+#import "MDTransfuseViewController.h"
+#import "MDExaminationViewController.h"
+#import "MDRecoveryViewController.h"
 
 @interface MDNurseViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -118,9 +121,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MDNurseRootViewController * hospitalVC = [[MDNurseRootViewController alloc] init];
-    MDNurseRootViewController * consultDrupVC = [[MDNurseRootViewController alloc] init];
-    MDNurseRootViewController * nurseVC = [[MDNurseRootViewController alloc] init];
+    MDTransfuseViewController * hospitalVC = [[MDTransfuseViewController alloc] init];
+    MDExaminationViewController * consultDrupVC = [[MDExaminationViewController alloc] init];
+    MDRecoveryViewController * nurseVC = [[MDRecoveryViewController alloc] init];
     MDNurseRootViewController * activityVC = [[MDNurseRootViewController alloc] init];
     
     NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];

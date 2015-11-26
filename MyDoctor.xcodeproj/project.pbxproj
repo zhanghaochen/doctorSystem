@@ -55,6 +55,9 @@
 		6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */; };
 		6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */; };
 		6A3EF8591C06D24600923D03 /* MDNurseRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */; };
+		6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF85B1C06FD5900923D03 /* MDRecoveryViewController.m */; };
+		6A3EF85F1C06FD7400923D03 /* MDExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */; };
+		6A3EF8621C06FDB300923D03 /* MDTransfuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,12 @@
 		6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDActivityViewController.m; sourceTree = "<group>"; };
 		6A3EF8571C06D24600923D03 /* MDNurseRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNurseRootViewController.h; sourceTree = "<group>"; };
 		6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNurseRootViewController.m; sourceTree = "<group>"; };
+		6A3EF85A1C06FD5900923D03 /* MDRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRecoveryViewController.h; sourceTree = "<group>"; };
+		6A3EF85B1C06FD5900923D03 /* MDRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRecoveryViewController.m; sourceTree = "<group>"; };
+		6A3EF85D1C06FD7400923D03 /* MDExaminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDExaminationViewController.h; sourceTree = "<group>"; };
+		6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDExaminationViewController.m; sourceTree = "<group>"; };
+		6A3EF8601C06FDB300923D03 /* MDTransfuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTransfuseViewController.h; sourceTree = "<group>"; };
+		6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTransfuseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,13 +428,27 @@
 				6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */,
 				6A3EF8061C05A20400923D03 /* MDNurseViewController.h */,
 				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
+				6A3EF8631C0700BA00923D03 /* Nurse(照护) */,
 				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
 				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
-				6A3EF8571C06D24600923D03 /* MDNurseRootViewController.h */,
-				6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */,
 			);
 			name = Controller;
 			path = Home/Controller;
+			sourceTree = "<group>";
+		};
+		6A3EF8631C0700BA00923D03 /* Nurse(照护) */ = {
+			isa = PBXGroup;
+			children = (
+				6A3EF8571C06D24600923D03 /* MDNurseRootViewController.h */,
+				6A3EF8581C06D24600923D03 /* MDNurseRootViewController.m */,
+				6A3EF85A1C06FD5900923D03 /* MDRecoveryViewController.h */,
+				6A3EF85B1C06FD5900923D03 /* MDRecoveryViewController.m */,
+				6A3EF85D1C06FD7400923D03 /* MDExaminationViewController.h */,
+				6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */,
+				6A3EF8601C06FDB300923D03 /* MDTransfuseViewController.h */,
+				6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */,
+			);
+			name = "Nurse(照护)";
 			sourceTree = "<group>";
 		};
 		6A8F12B01C040825001ABE2F /* Other */ = {
@@ -583,12 +606,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A3EF8441C05BAFE00923D03 /* MDServiceTableViewCell.m in Sources */,
+				6A3EF8621C06FDB300923D03 /* MDTransfuseViewController.m in Sources */,
 				153C1E7F1C03FB8C00F87014 /* MX_MASCompositeConstraint.m in Sources */,
 				6A3EF8411C05BAFE00923D03 /* MDAllServiceViewController.m in Sources */,
 				6A3EF8451C05BAFE00923D03 /* MDServiceViewController.m in Sources */,
 				15AE53751C02F0680013FF1B /* MDBaseViewController.m in Sources */,
 				153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */,
 				6A3EF8141C05B5B800923D03 /* MDOrderDetailsViewController.m in Sources */,
+				6A3EF85F1C06FD7400923D03 /* MDExaminationViewController.m in Sources */,
 				153C1E851C03FB8C00F87014 /* NSArray+MASAdditions.m in Sources */,
 				6A3EF7E01C058F8600923D03 /* MDMyViewItem.m in Sources */,
 				6A3EF8421C05BAFE00923D03 /* MDOngoingViewController.m in Sources */,
@@ -606,6 +631,7 @@
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
 				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
+				6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,
 				6A3EF80E1C05ADF100923D03 /* MDHomeViewController.m in Sources */,
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,

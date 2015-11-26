@@ -52,7 +52,7 @@
     
     //下方两个按钮设置
     UIButton * consultBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    consultBtn.layer.cornerRadius = 2.0;
+    consultBtn.layer.cornerRadius = 5.0;
     consultBtn.layer.masksToBounds = YES;
     [consultBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
     [consultBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -61,7 +61,7 @@
     
     UIButton * callBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [callBtn setBackgroundColor:RedColor];
-    callBtn.layer.cornerRadius = 2.0;
+    callBtn.layer.cornerRadius = 5.0;
     callBtn.layer.masksToBounds = YES;
     [callBtn setTitle:@"立即订购" forState:UIControlStateNormal];
     [callBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -85,6 +85,7 @@
 
     //下方空白view
     UIView * whiteView = [[UIView alloc] init];
+    whiteView.userInteractionEnabled = YES;
     [self.view addSubview:whiteView];
     whiteView.backgroundColor = ColorWithRGB(255, 255, 255, 0.7);
     [whiteView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
@@ -117,27 +118,49 @@
     [whiteView addSubview:wireViewRirght];
 
     [wireViewLeft mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(30, 5));
         make.left.equalTo(whiteView.mas_left).with.offset(40);
         make.right.equalTo(topLab.mas_left).with.offset(-25);
         make.centerY.mas_equalTo(topLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
-//    [wireViewRirght mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-//        make.left.equalTo(whiteView.mas_left).with.offset(40);
-//        make.right.equalTo(topLab.mas_left).with.offset(-25);
-//        make.centerY.mas_equalTo(topLab.mas_centerY);
-//        make.height.equalTo(@1);
+    [wireViewRirght mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.right.equalTo(whiteView.mas_right).with.offset(-40);
+        make.left.equalTo(topLab.mas_right).with.offset(25);
+        make.centerY.mas_equalTo(topLab.mas_centerY);
+        make.height.equalTo(@1);
+    }];
+    
+    self.scrollView = [[UIScrollView alloc] init];
+    _scrollView.backgroundColor = [UIColor redColor];
+    _scrollView.showsHorizontalScrollIndicator = NO;
+//    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
+    [whiteView addSubview:_scrollView];
+//    [_scrollView addSubview:imageView];
+    
+//    UIImageView * imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
+//    [_scrollView addSubview:imageView2];
+    
+    [_scrollView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.top.equalTo(topLab.mas_bottom).with.offset(15);
+        make.left.equalTo(wireViewLeft.mas_left).with.offset(0);
+        make.right.equalTo(wireViewRirght.mas_right).with.offset(0);
+        make.bottom.equalTo(whiteView.mas_bottom).with.offset(0);
+
+    }];
+    
+//    [imageView2 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+//        make.top.equalTo(imageView.mas_bottom).with.offset(10);
 //    }];
+    
+    //设置scrollView内容物大小
+    CGFloat scrollViewHeight = 0.0;
+    for (UIView* view in _scrollView.subviews)
+    { scrollViewHeight += view.frame.size.height;}
+    [_scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+10))];
+    
 }
 
-//bottomLab.backgroundColor = [UIColor clearColor];
-//bottomLab.font = [UIFont systemFontOfSize:14];
-//bottomLab.numberOfLines = 0;
-//bottomLab.text = [NSString stringWithFormat:@"%@\n\n%@",@"1.发送消息，我会第一时间回复您;",@"2.一键呼叫，直接给我拨打电话;"];
-//bottomLab.textColor = ColorWithRGB(97, 103, 111, 1);
-//[bottomLab sizeToFit];
 /*
 #pragma mark - Navigation
 
