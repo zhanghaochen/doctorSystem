@@ -214,7 +214,7 @@
     
     NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];
     [self.navigationController pushViewController:controllers[indexPath.section] animated:YES];
-    self.tabBarController.tabBar.hidden = YES;
+    self.tabBarController.tabBar.hidden=YES;
 }
 
 /*

@@ -84,11 +84,11 @@
     }];
 
     //下方空白view
-    UIView * whiteView = [[UIView alloc] init];
-    whiteView.userInteractionEnabled = YES;
-    [self.view addSubview:whiteView];
-    whiteView.backgroundColor = ColorWithRGB(255, 255, 255, 0.7);
-    [whiteView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    _whiteView = [[UIView alloc] init];
+    _whiteView.userInteractionEnabled = YES;
+    [self.view addSubview:_whiteView];
+    _whiteView.backgroundColor = ColorWithRGB(255, 255, 255, 0.7);
+    [_whiteView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(topImageView.mas_bottom).with.offset(0);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.width.equalTo(topImageView.mas_width);
@@ -102,7 +102,7 @@
     topLab.font = [UIFont systemFontOfSize:12];
     topLab.textColor = RedColor;
     [topLab sizeToFit];
-    [whiteView addSubview:topLab];
+    [_whiteView addSubview:topLab];
     
     [topLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(topImageView.mas_bottom).with.offset(15);
@@ -114,28 +114,28 @@
     wireViewLeft.backgroundColor = RedColor;
     UIView * wireViewRirght = [[UIView alloc] init];
     wireViewRirght.backgroundColor = RedColor;
-    [whiteView addSubview:wireViewLeft];
-    [whiteView addSubview:wireViewRirght];
+    [_whiteView addSubview:wireViewLeft];
+    [_whiteView addSubview:wireViewRirght];
 
     [wireViewLeft mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.left.equalTo(whiteView.mas_left).with.offset(40);
+        make.left.equalTo(_whiteView.mas_left).with.offset(40);
         make.right.equalTo(topLab.mas_left).with.offset(-25);
         make.centerY.mas_equalTo(topLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
     [wireViewRirght mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.right.equalTo(whiteView.mas_right).with.offset(-40);
+        make.right.equalTo(_whiteView.mas_right).with.offset(-40);
         make.left.equalTo(topLab.mas_right).with.offset(25);
         make.centerY.mas_equalTo(topLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
     self.scrollView = [[UIScrollView alloc] init];
-    _scrollView.backgroundColor = [UIColor redColor];
+    _scrollView.userInteractionEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
 //    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
-    [whiteView addSubview:_scrollView];
+    [_whiteView addSubview:_scrollView];
 //    [_scrollView addSubview:imageView];
     
 //    UIImageView * imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
@@ -145,7 +145,7 @@
         make.top.equalTo(topLab.mas_bottom).with.offset(15);
         make.left.equalTo(wireViewLeft.mas_left).with.offset(0);
         make.right.equalTo(wireViewRirght.mas_right).with.offset(0);
-        make.bottom.equalTo(whiteView.mas_bottom).with.offset(0);
+        make.bottom.equalTo(_whiteView.mas_bottom).with.offset(0);
 
     }];
     
