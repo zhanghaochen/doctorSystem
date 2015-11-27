@@ -8,6 +8,14 @@
 
 #import "MDBaseViewController.h"
 
-@interface MDConsultDrupViewController : MDBaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface MDConsultDrupViewController : MDBaseViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>{
+    NSMutableArray *dataArray;
+    NSMutableArray *searchResults;
+    UISearchBar *mySearchBar;
+    UISearchDisplayController *searchDisplayController;
+    
+}
+
+
 
 @end

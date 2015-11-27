@@ -20,8 +20,15 @@
     [super viewDidLoad];
     self.navigationItem.title=@"订单详情";
     [self draw];
+    [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
+    //返回按钮点击
+    [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
-
+-(void)backBtnClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 -(void)draw
 {
     UIView * backgrownView=[[UIView alloc] init];

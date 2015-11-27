@@ -95,7 +95,7 @@
     cell.selected = NO;
     
     // 带字典的通知
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"11" forKey:@"text"];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"13" forKey:@"text"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushViewInParent" object:nil userInfo:userInfo];
     
