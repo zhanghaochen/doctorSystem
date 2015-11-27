@@ -41,7 +41,6 @@
 -(void)backBtnClick
 {
     [self.navigationController popViewControllerAnimated:YES];
-    self.tabBarController.tabBar.hidden = NO;
     
 }
 
@@ -80,7 +79,7 @@
     [mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     [mySearchBar sizeToFit];
     mySearchBar.backgroundColor = [UIColor clearColor];
-//    mySearchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:mySearchBar.bounds.size];
+    mySearchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:mySearchBar.bounds.size];
     //加入列表的header里面
     _tableView.tableHeaderView = mySearchBar;
     
@@ -258,20 +257,20 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
 }
 
 //取消searchbar背景色
-//- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
-//{
-//    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    
-//    CGContextSetFillColorWithColor(context, [color CGColor]);
-//    CGContextFillRect(context, rect);
-//    
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    return image;
-//}
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -50,7 +50,7 @@
 
 -(void)TableView
 {
-    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,104, appWidth, appHeight-64) style:UITableViewStylePlain];
+    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,104, appWidth, appHeight-104-49) style:UITableViewStylePlain];
     _tableView.separatorColor = [UIColor colorWithRed:223.0f/255.0f green:223.0f/255.0f blue:223.0f/255.0f alpha:1];
     _tableView.backgroundColor=[UIColor clearColor];
     
