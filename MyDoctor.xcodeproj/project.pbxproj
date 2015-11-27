@@ -96,6 +96,11 @@
 		6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF85B1C06FD5900923D03 /* MDRecoveryViewController.m */; };
 		6A3EF85F1C06FD7400923D03 /* MDExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */; };
 		6A3EF8621C06FDB300923D03 /* MDTransfuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */; };
+		6AF2021B1C082CA100933EAF /* 头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2021A1C082CA100933EAF /* 头像@2x.png */; };
+		6AF2021F1C083F4000933EAF /* activityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2021D1C083F4000933EAF /* activityCell.m */; };
+		6AF202201C083F4000933EAF /* activityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2021E1C083F4000933EAF /* activityCell.xib */; };
+		6AF202271C08498100933EAF /* MDExpertConsultationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202261C08498100933EAF /* MDExpertConsultationViewController.m */; };
+		6AF2022D1C084FC900933EAF /* MDLectureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2022C1C084FC900933EAF /* MDLectureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +251,14 @@
 		6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDExaminationViewController.m; sourceTree = "<group>"; };
 		6A3EF8601C06FDB300923D03 /* MDTransfuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTransfuseViewController.h; sourceTree = "<group>"; };
 		6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTransfuseViewController.m; sourceTree = "<group>"; };
+		6AF2021A1C082CA100933EAF /* 头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像@2x.png"; sourceTree = "<group>"; };
+		6AF2021C1C083F4000933EAF /* activityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = activityCell.h; path = Home/View/activityCell.h; sourceTree = "<group>"; };
+		6AF2021D1C083F4000933EAF /* activityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = activityCell.m; path = Home/View/activityCell.m; sourceTree = "<group>"; };
+		6AF2021E1C083F4000933EAF /* activityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = activityCell.xib; path = Home/View/activityCell.xib; sourceTree = "<group>"; };
+		6AF202251C08498100933EAF /* MDExpertConsultationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDExpertConsultationViewController.h; sourceTree = "<group>"; };
+		6AF202261C08498100933EAF /* MDExpertConsultationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDExpertConsultationViewController.m; sourceTree = "<group>"; };
+		6AF2022B1C084FC900933EAF /* MDLectureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLectureViewController.h; sourceTree = "<group>"; };
+		6AF2022C1C084FC900933EAF /* MDLectureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLectureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +294,7 @@
 				1590497F1C06CD6100EE51FB /* 按钮页@2x.png */,
 				159049801C06CD6100EE51FB /* 登录-框-图标1@2x.png */,
 				159049811C06CD6100EE51FB /* 登录-框-图标2@2x.png */,
+				6AF2021A1C082CA100933EAF /* 头像@2x.png */,
 				159049821C06CD6100EE51FB /* 登录-注册底@2x.png */,
 				159049841C06CD6100EE51FB /* 注册-添加照片@2x.png */,
 				159049851C06CD6100EE51FB /* 注册按钮@2x.png */,
@@ -529,6 +543,9 @@
 		6A3EF7C61C058B5200923D03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6AF2021C1C083F4000933EAF /* activityCell.h */,
+				6AF2021D1C083F4000933EAF /* activityCell.m */,
+				6AF2021E1C083F4000933EAF /* activityCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -584,6 +601,7 @@
 				6A3EF8631C0700BA00923D03 /* Nurse(照护) */,
 				6A3EF8541C0603DE00923D03 /* MDActivityViewController.h */,
 				6A3EF8551C0603DE00923D03 /* MDActivityViewController.m */,
+				6AF202211C08489100933EAF /* Activity(活动) */,
 			);
 			name = Controller;
 			path = Home/Controller;
@@ -641,6 +659,17 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6AF202211C08489100933EAF /* Activity(活动) */ = {
+			isa = PBXGroup;
+			children = (
+				6AF202251C08498100933EAF /* MDExpertConsultationViewController.h */,
+				6AF202261C08498100933EAF /* MDExpertConsultationViewController.m */,
+				6AF2022B1C084FC900933EAF /* MDLectureViewController.h */,
+				6AF2022C1C084FC900933EAF /* MDLectureViewController.m */,
+			);
+			name = "Activity(活动)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -729,6 +758,7 @@
 				159049951C06CFD900EE51FB /* 红色提醒@2x.png in Resources */,
 				153ED8271C08022E00171DFA /* 登录状态@2x.png in Resources */,
 				153ED8231C08022E00171DFA /* 动图@2x.png in Resources */,
+				6AF202201C083F4000933EAF /* activityCell.xib in Resources */,
 				15AE53781C02F0680013FF1B /* Main.storyboard in Resources */,
 				159049911C06CD6100EE51FB /* mx_selected_phone@2x.png in Resources */,
 				159049881C06CD6100EE51FB /* 按钮@2x.png in Resources */,
@@ -761,6 +791,7 @@
 				153C1E641C03F4ED00F87014 /* my@2x.png in Resources */,
 				6A3EF7B51C054E2C00923D03 /* feedback@2x.png in Resources */,
 				153ED8261C08022E00171DFA /* 男性@2x.png in Resources */,
+				6AF2021B1C082CA100933EAF /* 头像@2x.png in Resources */,
 				153ED8241C08022E00171DFA /* 女性@2x.png in Resources */,
 				15AE537A1C02F0680013FF1B /* Images.xcassets in Resources */,
 				6A3EF7C21C05561500923D03 /* topImg@2x.png in Resources */,
@@ -815,11 +846,14 @@
 				159049761C069FA600EE51FB /* BRSSignInViewController.m in Sources */,
 				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
+				6AF202271C08498100933EAF /* MDExpertConsultationViewController.m in Sources */,
+				6AF2022D1C084FC900933EAF /* MDLectureViewController.m in Sources */,
 				6A3EF8561C0603DE00923D03 /* MDActivityViewController.m in Sources */,
 				153C1E801C03FB8C00F87014 /* MX_MASConstraint.m in Sources */,
 				159049751C069FA600EE51FB /* BRSSignIn2ViewController.m in Sources */,
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
 				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
+				6AF2021F1C083F4000933EAF /* activityCell.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,

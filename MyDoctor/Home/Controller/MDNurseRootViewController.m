@@ -35,7 +35,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES
      ];
-    self.tabBarController.tabBar.hidden = NO;
     
 }
 
@@ -51,36 +50,36 @@
     }];
     
     //下方两个按钮设置
-    UIButton * consultBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    consultBtn.layer.cornerRadius = 5.0;
-    consultBtn.layer.masksToBounds = YES;
-    [consultBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
-    [consultBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [consultBtn setBackgroundColor:RedColor];
-    [self.view addSubview:consultBtn];
+    self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.leftBtn.layer.cornerRadius = 5.0;
+    self.leftBtn.layer.masksToBounds = YES;
+    [self.leftBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
+    [self.leftBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.leftBtn setBackgroundColor:RedColor];
+    [self.view addSubview:self.leftBtn];
     
-    UIButton * callBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [callBtn setBackgroundColor:RedColor];
-    callBtn.layer.cornerRadius = 5.0;
-    callBtn.layer.masksToBounds = YES;
-    [callBtn setTitle:@"立即订购" forState:UIControlStateNormal];
-    [callBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.view addSubview:callBtn];
+    self.rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.rightBtn setBackgroundColor:RedColor];
+    self.rightBtn.layer.cornerRadius = 5.0;
+    self.rightBtn.layer.masksToBounds = YES;
+    [self.rightBtn setTitle:@"立即订购" forState:UIControlStateNormal];
+    [self.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:self.rightBtn];
     
-    [consultBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    [self.leftBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).with.offset(36);
-        make.bottom.equalTo(self.view.mas_bottom).with.offset(-110.0/1333.0*appHeight);
-        make.right.equalTo(callBtn.mas_left).with.offset(-33);
-        make.width.equalTo(callBtn.mas_width);
-        make.height.equalTo(callBtn.mas_height);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-110.0/1333.0*appHeight+20);
+        make.right.equalTo(self.rightBtn.mas_left).with.offset(-33);
+        make.width.equalTo(self.rightBtn.mas_width);
+        make.height.equalTo(self.rightBtn.mas_height);
     }];
     
-    [callBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    [self.rightBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.right.equalTo(self.view.mas_right).with.offset(-36);
-        make.bottom.equalTo(self.view.mas_bottom).with.offset(-110.0/1333.0*appHeight);
-        make.left.equalTo(callBtn.mas_right).with.offset(33);
-        make.width.equalTo(callBtn.mas_width);
-        make.height.equalTo(callBtn.mas_height);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-110.0/1333.0*appHeight+20);
+        make.left.equalTo(self.rightBtn.mas_right).with.offset(33);
+        make.width.equalTo(self.rightBtn.mas_width);
+        make.height.equalTo(self.rightBtn.mas_height);
     }];
 
     //下方空白view
@@ -92,19 +91,19 @@
         make.top.equalTo(topImageView.mas_bottom).with.offset(0);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.width.equalTo(topImageView.mas_width);
-        make.bottom.equalTo(callBtn.mas_top).with.offset(-15);
+        make.bottom.equalTo(self.rightBtn.mas_top).with.offset(-15);
     }];
 //文字设置
-    UILabel * topLab = [[UILabel alloc] init];
-    topLab.text = @"产品介绍";
-    topLab.textAlignment = NSTextAlignmentCenter;
-    topLab.backgroundColor = [UIColor clearColor];
-    topLab.font = [UIFont systemFontOfSize:12];
-    topLab.textColor = RedColor;
-    [topLab sizeToFit];
-    [_whiteView addSubview:topLab];
+    _titleLab = [[UILabel alloc] init];
+    _titleLab.text = @"产品介绍";
+    _titleLab.textAlignment = NSTextAlignmentCenter;
+    _titleLab.backgroundColor = [UIColor clearColor];
+    _titleLab.font = [UIFont systemFontOfSize:12];
+    _titleLab.textColor = RedColor;
+    [_titleLab sizeToFit];
+    [_whiteView addSubview:_titleLab];
     
-    [topLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    [_titleLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(topImageView.mas_bottom).with.offset(15);
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
@@ -119,15 +118,15 @@
 
     [wireViewLeft mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.left.equalTo(_whiteView.mas_left).with.offset(40);
-        make.right.equalTo(topLab.mas_left).with.offset(-25);
-        make.centerY.mas_equalTo(topLab.mas_centerY);
+        make.right.equalTo(_titleLab.mas_left).with.offset(-25);
+        make.centerY.mas_equalTo(_titleLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
     [wireViewRirght mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.right.equalTo(_whiteView.mas_right).with.offset(-40);
-        make.left.equalTo(topLab.mas_right).with.offset(25);
-        make.centerY.mas_equalTo(topLab.mas_centerY);
+        make.left.equalTo(_titleLab.mas_right).with.offset(25);
+        make.centerY.mas_equalTo(_titleLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
@@ -142,7 +141,7 @@
 //    [_scrollView addSubview:imageView2];
     
     [_scrollView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(topLab.mas_bottom).with.offset(15);
+        make.top.equalTo(_titleLab.mas_bottom).with.offset(15);
         make.left.equalTo(wireViewLeft.mas_left).with.offset(0);
         make.right.equalTo(wireViewRirght.mas_right).with.offset(0);
         make.bottom.equalTo(_whiteView.mas_bottom).with.offset(0);

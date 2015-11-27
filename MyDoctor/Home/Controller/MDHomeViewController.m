@@ -51,8 +51,9 @@
 -(void)noticeClick
 {
     MDnoticeCenterController * notice = [[MDnoticeCenterController alloc] init];
+    notice.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:notice animated:YES];
-    self.tabBarController.tabBar.hidden = YES;
 }
 
 -(void)createView
@@ -207,14 +208,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MDHospitalViewController * hospitalVC = [[MDHospitalViewController alloc] init];
-    MDConsultDrupViewController * consultDrupVC = [[MDConsultDrupViewController alloc] init];
-    MDNurseViewController * nurseVC = [[MDNurseViewController alloc] init];
-    MDActivityViewController * activityVC = [[MDActivityViewController alloc] init];
-    
-    NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];
-    [self.navigationController pushViewController:controllers[indexPath.section] animated:YES];
-    self.tabBarController.tabBar.hidden=YES;
     if (indexPath.section==0) {
         MDHospitalViewController * hospitalVC = [[MDHospitalViewController alloc] init];
         hospitalVC.hidesBottomBarWhenPushed=YES;

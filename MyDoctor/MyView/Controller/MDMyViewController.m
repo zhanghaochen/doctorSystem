@@ -10,6 +10,7 @@
 #import "MDMyViewItem.h"
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
+#import "MDServiceViewController.h"
 
 @interface MDMyViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -134,6 +135,8 @@
     cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:item.rightImg]];
     cell.imageView.image = [UIImage imageNamed:item.icon];
     cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.7];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
         return cell;
 }
 
@@ -145,6 +148,14 @@
     return view;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        MDServiceViewController * serviceVc = [[MDServiceViewController alloc] init];
+        serviceVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:serviceVc animated:YES];
+    }
+}
 
 /*
 #pragma mark - Navigation

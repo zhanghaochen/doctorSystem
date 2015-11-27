@@ -30,7 +30,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES
      ];
-    self.tabBarController.tabBar.hidden = NO;
     
 }
 

@@ -39,7 +39,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES
      ];
-    self.tabBarController.tabBar.hidden = NO;
     
 }
 
@@ -121,14 +120,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MDTransfuseViewController * hospitalVC = [[MDTransfuseViewController alloc] init];
-    MDExaminationViewController * consultDrupVC = [[MDExaminationViewController alloc] init];
-    MDRecoveryViewController * nurseVC = [[MDRecoveryViewController alloc] init];
-    MDNurseRootViewController * activityVC = [[MDNurseRootViewController alloc] init];
-    
-    NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];
-    [self.navigationController pushViewController:controllers[indexPath.section] animated:YES];
-    self.tabBarController.tabBar.hidden = YES;
+    if (indexPath.section==0) {
+        MDTransfuseViewController * transfuseVC = [[MDTransfuseViewController alloc] init];
+        transfuseVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:transfuseVC animated:YES];
+    }else if(indexPath.section==1){
+        MDExaminationViewController * examinationVC = [[MDExaminationViewController alloc] init];
+        examinationVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:examinationVC animated:YES];
+        
+    }else if (indexPath.section==2){
+        MDRecoveryViewController * recoveryVC = [[MDRecoveryViewController alloc] init];
+        recoveryVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:recoveryVC animated:YES];
+    }else if (indexPath.section==3){
+        MDNurseRootViewController * nurseVC = [[MDNurseRootViewController alloc] init];
+        nurseVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:nurseVC animated:YES];
+        
+    }
+
 }
 
 
