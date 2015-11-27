@@ -30,6 +30,7 @@
     UITextField * number;
     UITextField * password;
     UITextField * password2;
+    UITextField * IdNumber;
     
     UITextField *sexField;
     UIButton *maleButton;
@@ -65,6 +66,18 @@
     number.layer.borderWidth= 1.0f;
     number.placeholder=@"名字";
     number.leftViewMode = UITextFieldViewModeAlways;
+    
+    IdNumber = [[UITextField alloc] init];
+    [IdNumber setBorderStyle:UITextBorderStyleLine]; //外框类型
+    IdNumber.returnKeyType = UIReturnKeyNext;  //键盘返回类型
+    IdNumber.delegate = self;
+    IdNumber.keyboardType = UIKeyboardTypeNumberPad;//键盘显示类型
+    IdNumber.tag=22;
+    IdNumber.placeholder=@"身份证号";
+    IdNumber.leftViewMode = UITextFieldViewModeAlways;
+    IdNumber.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
+    IdNumber.layer.borderWidth= 1.0f;
+    
     password = [[UITextField alloc] init];
     [password setBorderStyle:UITextBorderStyleLine]; //外框类型
     password.secureTextEntry = YES; //是否以密码形式显示
@@ -92,6 +105,7 @@
     [self.rightBtn addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:number];
+    [self.view addSubview:IdNumber];
     [self.view addSubview:password];
     [self.view addSubview:password2];
     
@@ -153,7 +167,7 @@
     }];
     
     
-    [password mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    [IdNumber mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
         make.top.equalTo(self.view.mas_top).with.offset(185);
         make.left.equalTo(self.view.mas_left).with.offset(15);
@@ -161,9 +175,18 @@
         make.height.mas_equalTo(40);
     }];
     
-    [password2 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    
+    [password mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
         make.top.equalTo(self.view.mas_top).with.offset(235);
+        make.left.equalTo(self.view.mas_left).with.offset(15);
+        make.right.equalTo(self.view.mas_right).with.offset(-15);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [password2 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(self.view.mas_top).with.offset(285);
         make.left.equalTo(self.view.mas_left).with.offset(15);
         make.right.equalTo(self.view.mas_right).with.offset(-15);
         make.height.mas_equalTo(40);
@@ -280,9 +303,13 @@
 {
     if(textField.tag==1)
     {
+        UITextField * textField2=(id)[self.view viewWithTag:22];
+        [textField2 becomeFirstResponder];
+    }else if (textField.tag==22){
         UITextField * textField2=(id)[self.view viewWithTag:2];
         [textField2 becomeFirstResponder];
-    }else if(textField.tag==2){
+    }
+    else if(textField.tag==2){
         UITextField * textField2=(id)[self.view viewWithTag:3];
         [textField2 becomeFirstResponder];
     }else{
@@ -316,6 +343,7 @@
     [number resignFirstResponder];
     [password resignFirstResponder];
     [password2 resignFirstResponder];
+    [IdNumber resignFirstResponder];
 }
 /*
  #pragma mark - Navigation
