@@ -215,6 +215,25 @@
     NSArray * controllers = @[hospitalVC,consultDrupVC,nurseVC,activityVC];
     [self.navigationController pushViewController:controllers[indexPath.section] animated:YES];
     self.tabBarController.tabBar.hidden=YES;
+    if (indexPath.section==0) {
+        MDHospitalViewController * hospitalVC = [[MDHospitalViewController alloc] init];
+        hospitalVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:hospitalVC animated:YES];
+    }else if(indexPath.section==1){
+        MDConsultDrupViewController * consultDrupVC = [[MDConsultDrupViewController alloc] init];
+        consultDrupVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:consultDrupVC animated:YES];
+
+    }else if (indexPath.section==2){
+        MDNurseViewController * nurseVC = [[MDNurseViewController alloc] init];
+        nurseVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:nurseVC animated:YES];
+    }else if (indexPath.section==3){
+        MDActivityViewController * activityVC = [[MDActivityViewController alloc] init];
+        activityVC.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:activityVC animated:YES];
+
+    }
 }
 
 /*

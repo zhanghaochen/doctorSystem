@@ -58,15 +58,24 @@
     sfv2.deleteOrCancel=@"取消订单";
     sfv2.paymentOrRemind=@"付款";
     
+    MDServiceFolerVO * sfv3=[[MDServiceFolerVO alloc] init];
+    sfv3.serviceType=@"照护";
+    sfv3.serviceName=@"服务名";
+    sfv3.money=@"15元";
+    sfv3.nowCondition=@"等待买家付款";
+    sfv3.deleteOrCancel=@"取消订单";
+    sfv3.paymentOrRemind=@"付款";
+    
     [dataArray addObject:sfv];
     [dataArray addObject:sfv1];
     [dataArray addObject:sfv2];
+    [dataArray addObject:sfv3];
 }
 
 -(void)TableView
 {
     
-    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,104, appWidth, appHeight-64) style:UITableViewStylePlain];
+    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,104, appWidth, appHeight-104-49) style:UITableViewStylePlain];
     _tableView.separatorColor = [UIColor colorWithRed:223.0f/255.0f green:223.0f/255.0f blue:223.0f/255.0f alpha:1];
     _tableView.backgroundColor=[UIColor clearColor];
     _tableView.dataSource=self;

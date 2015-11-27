@@ -40,11 +40,11 @@
     [view addSubview:type];
     
     UIImageView * headImage=[[UIImageView alloc] initWithFrame:CGRectMake(25, 35, 80, 80)];
-    [headImage setImage:[UIImage imageNamed:@"home"]];
+    [headImage setImage:[UIImage imageNamed:@"默认头像"]];
     [view addSubview:headImage];
     
     UIImageView * line=[[UIImageView alloc] initWithFrame:CGRectMake(120, 35, appWidth-120-30, 80)];
-    [line setImage:[UIImage imageNamed:@"servicekuang"]];
+    [line setImage:[UIImage imageNamed:@"服务名框"]];
     [view addSubview:line];
     
     
