@@ -83,7 +83,7 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
 
 }
 

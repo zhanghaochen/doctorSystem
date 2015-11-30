@@ -7,7 +7,9 @@
 //
 
 #import "MDConsultDrupViewController.h"
+#import "MDDrugTableViewController.h"
 #import "MDConst.h"
+
 @interface MDConsultDrupViewController ()
 
 @end
@@ -23,7 +25,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"药品咨询";
-    amedicineArray=[[NSArray alloc] initWithObjects:@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常", nil];
+    amedicineArray=[[NSArray alloc] initWithObjects:@"感冒发烧",@"内分泌失常",@"家庭常备",@"抗寄生虫类",@"儿科用药",@"肾病",@"妇科用药",@"性病",@"男科用药",@"抗结核",@"肠胃用药",@"免疫功能调节",@"皮肤用药",@"水电解质及酸碱",@"呼吸系统类",@"五官用药",@"维生素及营养类",@"肝胆用药",@"肿瘤类",@"其他", nil];
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -33,7 +35,7 @@
 -(void)searchview{
     mySearchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, appWidth, 40)];
     mySearchBar.delegate = self;
-    [mySearchBar setPlaceholder:@"搜索列表"];
+    [mySearchBar setPlaceholder:@"输入药品名"];
     
     searchDisplayController = [[UISearchDisplayController alloc]initWithSearchBar:mySearchBar contentsController:self];
     searchDisplayController.active = NO;
@@ -69,7 +71,7 @@
             medicineButton.titleLabel.font=[UIFont systemFontOfSize:15];
             [medicineButton setTitle:amedicineArray[a] forState:UIControlStateNormal];
             [medicineButton setBackgroundImage:[UIImage imageNamed:@"按钮框"] forState:UIControlStateNormal];
-            [medicineButton setBackgroundColor:[UIColor grayColor]];
+            [medicineButton setBackgroundColor:[UIColor clearColor]];
             [medicineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             a++;
             [backView addSubview:medicineButton];
@@ -86,7 +88,9 @@
 
 -(void)medicineButton:(UIButton *)button
 {
-    
+    MDDrugTableViewController * drugTable=[[MDDrugTableViewController alloc] init];
+    drugTable.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:drugTable animated:YES];
 }
 
 -(void)backBtnClick
