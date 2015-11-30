@@ -28,37 +28,32 @@
 
 -(void)setText
 {
-    UILabel * introduceLab = [[UILabel alloc] init];
+    UILabel * introduceLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, appWidth - 48*2, 0)];
     introduceLab.text = @"    工作经验丰富专业技能娴熟，各类证书齐全，本着尽心尽职的同时现利用空余时间为本市区内不方便去医院打针，挂水，输液的病人提供上门服务";
     introduceLab.textAlignment = NSTextAlignmentLeft;
     introduceLab.font = [UIFont systemFontOfSize:14];
     introduceLab.textColor = ColorWithRGB(97, 103, 111, 1);
     introduceLab.numberOfLines = 0;
-//    [introduceLab sizeToFit];
+    [introduceLab sizeToFit];
     [self.scrollView addSubview:introduceLab];
-    [introduceLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.scrollView.mas_top).with.offset(0);
-        make.left.equalTo(self.scrollView.mas_left).with.offset(0);
-        make.right.equalTo(self.scrollView.mas_right).with.offset(0);
-
-    }];
     
-    UILabel * priceLab = [[UILabel alloc] init];
+    UILabel * priceLab = [[UILabel alloc] initWithFrame:CGRectMake(0, introduceLab.frame.origin.y+introduceLab.frame.size.height+50, appWidth - 48*2, 0)];
     priceLab.text = @"每次价格:8.8元";
+    [priceLab sizeToFit];
     priceLab.textColor = ColorWithRGB(97, 103, 111, 1);
     priceLab.textAlignment = NSTextAlignmentLeft;
     priceLab.font = [UIFont systemFontOfSize:14];
     [self.scrollView addSubview:priceLab];
-    
-    [priceLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.equalTo(introduceLab.mas_bottom).with.offset(75);
-        make.left.equalTo(self.scrollView.mas_left).with.offset(0);
-        make.right.equalTo(self.scrollView.mas_right).with.offset(0);
-    }];
-    }
 
+//设置scrollView内容物大小
+CGFloat scrollViewHeight = 0.0;
+for (UIView* view in self.scrollView.subviews)
+{
+    scrollViewHeight += view.frame.size.height;
+}
+[self.scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+50))];
+
+}
 /*
 #pragma mark - Navigation
 
