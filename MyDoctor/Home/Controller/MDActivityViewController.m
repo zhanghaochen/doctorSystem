@@ -50,7 +50,7 @@
     _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, appWidth - 42, 60.0/69.0*(appWidth - 42))];
     _headerView.backgroundColor = ColorWithRGB(255, 255, 255, 0.7);
     //专家详情View设置
-    UIImageView * headView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"头像"]];
+    UIImageView * headView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"专家头像"]];
     headView.backgroundColor = RedColor;
     headView.contentMode = UIViewContentModeScaleAspectFill;
     [_headerView addSubview:headView];

@@ -12,6 +12,7 @@
 #import "MDPaymentViewController.h"
 #import "MDOngoingViewController.h"
 #import "MDOrderDetailsViewController.h"
+#import "MDNoPaymentViewController.h"
 
 @interface MDServiceViewController ()
 
@@ -105,11 +106,18 @@
 -(void)pushViewInParent:(id)sender
 {
     
-    [[sender userInfo] objectForKey:@"text"];
+    NSString * text= [[sender userInfo] objectForKey:@"text"];
+    if ([text isEqualToString:@"12"]) {
+        MDNoPaymentViewController * ndvc=[[MDNoPaymentViewController alloc] init];
+        ndvc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:ndvc animated:YES];
+
+    }else{
     MDOrderDetailsViewController * odvc=[[MDOrderDetailsViewController alloc] init];
     odvc.hidesBottomBarWhenPushed=YES;
     
     [self.navigationController pushViewController:odvc animated:YES];
+    }
 }
 
 

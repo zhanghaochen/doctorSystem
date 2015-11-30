@@ -90,7 +90,7 @@
     _headerView.delegate = self;
     [self.view addSubview:_headerView];
     
-    NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"background",@"topImg",@"greenlogo", nil];
+    NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"topImg1",@"background",@"topImg", nil];
     
     for (int i = 0; i < imageArr.count; i ++) {
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(width * i, 0, width, width*0.42)];

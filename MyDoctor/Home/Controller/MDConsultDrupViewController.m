@@ -16,86 +16,121 @@
 
 {
     UITableView *_tableView;
-    NSMutableArray *_dataArray;//数据源
-    NSMutableArray *_resultsData;//搜索结果数据
-    UISearchBar *mySearchBar;
-    UISearchDisplayController *mySearchDisplayController;
+    UIView * backView;
+    NSArray * amedicineArray;
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.title = @"药品咨询";
-    
+    amedicineArray=[[NSArray alloc] initWithObjects:@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常",@"感冒发烧",@"内分泌失常", nil];
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
-
-    
-    _dataArray = [NSMutableArray array];
-    _resultsData = [NSMutableArray array];
-    
-    [self initDataSource];
-    [self initTableView];
-    [self initMysearchBarAndMysearchDisPlay];
+    [self searchview];
+  
 }
+-(void)searchview{
+    mySearchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, appWidth, 40)];
+    mySearchBar.delegate = self;
+    [mySearchBar setPlaceholder:@"搜索列表"];
+    
+    searchDisplayController = [[UISearchDisplayController alloc]initWithSearchBar:mySearchBar contentsController:self];
+    searchDisplayController.active = NO;
+    searchDisplayController.searchResultsDataSource = self;
+    searchDisplayController.searchResultsDelegate = self;
+    
+//    _tableView = [[UITableView alloc] init];
+//    _tableView.frame = CGRectMake(0, 0, appWidth, appHeight);
+//    _tableView.showsVerticalScrollIndicator = NO;
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
+//    _tableView.backgroundColor = [UIColor whiteColor];
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+////    _tableView.showsVerticalScrollIndicator = NO;
+//    _tableView.tableHeaderView=mySearchBar;
+    
+    backView=[[UIView alloc] initWithFrame:CGRectMake(0, 64, appWidth, appHeight-64)];
+    backView.backgroundColor=[UIColor clearColor];
+    [backView addSubview:mySearchBar];
+    [self.view addSubview:backView];
+//    [self.view addSubview:_tableView];
+     dataArray = [@[@"百度",@"六六",@"谷歌",@"苹果",@"and",@"table",@"view",@"and",@"and",@"苹果IOS",@"谷歌android",@"微软",@"微软WP",@"table",@"table",@"table",@"六六",@"六六",@"六六",@"table",@"table",@"table"]mutableCopy];
+    [self medicineButton];
+}
+-(void)medicineButton
+{
+    int a=0;
+    for (int i=0; i<10; i++) {
+        for (int j=0; j<2; j++) {
+            UIButton * medicineButton=[[UIButton alloc] init];
+            [medicineButton addTarget:self action:@selector(medicineButton:) forControlEvents:UIControlEventTouchUpInside];
+            medicineButton.tag=a;
+            medicineButton.titleLabel.font=[UIFont systemFontOfSize:15];
+            [medicineButton setTitle:amedicineArray[a] forState:UIControlStateNormal];
+            [medicineButton setBackgroundImage:[UIImage imageNamed:@"按钮框"] forState:UIControlStateNormal];
+            [medicineButton setBackgroundColor:[UIColor grayColor]];
+            [medicineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            a++;
+            [backView addSubview:medicineButton];
+            
+            [medicineButton mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+                make.left.equalTo(backView.mas_left).with.offset(10+(appWidth/2-5)*j);
+                make.top.equalTo(backView.mas_top).with.offset(50+35*i);
+                make.size.mas_equalTo(CGSizeMake(appWidth/2-15,30));
+            }];
+            
+        }
+    }
+}
+
+-(void)medicineButton:(UIButton *)button
+{
+    
+}
+
 -(void)backBtnClick
 {
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+#pragma UITableViewDataSource
 
--(void)initDataSource
-{
-    for (int i = 0; i < 50; i ++) {
-        [_dataArray addObject:[NSString stringWithFormat:@"Hello World %d",i]];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return searchResults.count;
+    }
+    else {
+        return 0;
     }
 }
 
-
-- (void)initTableView
-{
-    _tableView = [[UITableView alloc] init];
-    _tableView.frame = CGRectMake(0,0, appWidth, appHeight);
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.tableHeaderView = [[UIView alloc] init];
-    _tableView.tableFooterView = [[UIView alloc] init];
-    [self.view addSubview:_tableView];
-    
-    if (is_IOS_7)
-        //分割线的位置不带偏移
-        _tableView.separatorInset = UIEdgeInsetsZero;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = searchResults[indexPath.row];
+    }
+    else {
+        cell.textLabel.text = dataArray[indexPath.row];
+    }
+    return cell;
 }
 
--(void)initMysearchBarAndMysearchDisPlay
-{
-    mySearchBar = [[UISearchBar alloc] init];
-    mySearchBar.delegate = self;
-    //    //设置选项
-    //    [mySearchBar setScopeButtonTitles:[NSArray arrayWithObjects:@"First",@"Last",nil]];
-    [mySearchBar setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    [mySearchBar sizeToFit];
-    mySearchBar.backgroundColor = [UIColor clearColor];
-    mySearchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:mySearchBar.bounds.size];
-    //加入列表的header里面
-    _tableView.tableHeaderView = mySearchBar;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    mySearchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:mySearchBar contentsController:self];
-    mySearchDisplayController.delegate = self;
-    mySearchDisplayController.searchResultsDataSource = self;
-    mySearchDisplayController.searchResultsDelegate = self;
 }
 
-#pragma mark UISearchBar and UISearchDisplayController Delegate Methods
-
+#pragma UISearchDisplayDelegate
 //searchBar开始编辑时改变取消按钮的文字
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     mySearchBar.showsCancelButton = YES;
-    
+    backView.frame=CGRectMake(0, 20, appWidth, appHeight);
     NSArray *subViews;
     
     if (is_IOS_7) {
@@ -113,64 +148,27 @@
         }
     }
 }
-
--(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
-{
-    //準備搜尋前，把上面調整的TableView調整回全屏幕的狀態
-    [UIView animateWithDuration:0.5 animations:^{
-        _tableView.frame = CGRectMake(0, 20, appWidth, SCREEN_HEIGHT-20);
-    }];
-    
-    return YES;
-}
-
 -(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
 {
-    //搜尋結束後，恢復原狀
-    [UIView animateWithDuration:0.5 animations:^{
-        _tableView.frame = CGRectMake(0, 0, appWidth, SCREEN_HEIGHT);
-    }];
     
+    backView.frame= CGRectMake(0, 64, appWidth, appHeight-64);
     return YES;
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    searchResults = [[NSMutableArray alloc]init];
 
-{
-    //一旦SearchBar輸入內容有變化，則執行這個方法，詢問要不要重裝searchResultTableView的數據
+    [self filterContentForSearchText:searchText];
     
-    // Return YES to cause the search result table view to be reloaded.
-    
-    [self filterContentForSearchText:searchString
-                               scope:[mySearchBar scopeButtonTitles][mySearchBar.selectedScopeButtonIndex]];
-    
-    return YES;
 }
 
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
-
-shouldReloadTableForSearchScope:(NSInteger)searchOption
-
-{
-    //如果设置了选项，当Scope Button选项有變化的时候，則執行這個方法，詢問要不要重裝searchResultTableView的數據
-    
-    // Return YES to cause the search result table view to be reloaded.
-    
-    [self filterContentForSearchText:mySearchBar.text
-                               scope:mySearchBar.scopeButtonTitles[searchOption]];
-    
-    return YES;
-}
-
-//源字符串内容是否包含或等于要搜索的字符串内容
--(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+-(void)filterContentForSearchText:(NSString*)searchText
 {
     NSMutableArray *tempResults = [NSMutableArray array];
     NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
     
-    for (int i = 0; i < _dataArray.count; i++) {
-        NSString *storeString = _dataArray[i];
+    for (int i = 0; i < dataArray.count; i++) {
+        NSString *storeString = dataArray[i];
         NSRange storeRange = NSMakeRange(0, storeString.length);
         NSRange foundRange = [storeString rangeOfString:searchText options:searchOptions range:storeRange];
         if (foundRange.length) {
@@ -178,99 +176,10 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
         }
     }
     
-    [_resultsData removeAllObjects];
-    [_resultsData addObjectsFromArray:tempResults];
+    [searchResults removeAllObjects];
+    [searchResults addObjectsFromArray:tempResults];
 }
 
-#pragma mark - tableView代理
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    //searchDisplayController自身有一个searchResultsTableView，所以在执行操作的时候首先要判断是否是搜索结果的tableView，如果是显示的就是搜索结果的数据，如果不是，则显示原始数据。
-    
-    if(tableView == mySearchDisplayController.searchResultsTableView)
-    {
-        tableView.frame = CGRectMake(0, 20, appWidth, SCREEN_HEIGHT-20);
-        //解决上面空出的20个像素
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        
-        if (is_IOS_7)
-            //分割线的位置不带偏移
-            tableView.separatorInset = UIEdgeInsetsZero;
-        
-        return _resultsData.count;
-    }
-    else
-    {
-        return 0;//_dataArray.count;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 40;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *myCell = @"cell_identifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCell];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myCell];
-    }
-    
-    while ([cell.contentView.subviews lastObject] != nil) {
-        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
-    }
-    
-    if (tableView == mySearchDisplayController.searchResultsTableView)
-    {
-        cell.textLabel.text = _resultsData[indexPath.row];
-    }
-    else
-    {
-        cell.textLabel.text = _dataArray[indexPath.row];
-    }
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //取消选中
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (tableView == mySearchDisplayController.searchResultsTableView)
-    {
-        [self myAlertViewAccording:_resultsData[indexPath.row]];
-    }
-    else
-    {
-        [self myAlertViewAccording:_dataArray[indexPath.row]];
-    }
-}
-
--(void)myAlertViewAccording:(NSString *)content
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"cell－content" message:content delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-    [alert show];
-}
-
-//取消searchbar背景色
-- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
-{
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
 
 - (void)didReceiveMemoryWarning
 {

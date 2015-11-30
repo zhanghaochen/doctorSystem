@@ -31,14 +31,14 @@
     // Do any additional setup after loading the view.
 //    CGRect rx = [ UIScreen mainScreen ].bounds;
     
-    UIImage * draw = [UIImage imageNamed:@"登录logo"];
+    UIImage * draw = [UIImage imageNamed:@"首页图标"];
     UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
     [self.view addSubview:drawView];
     
     [drawView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.view.mas_top).with.offset(100);
-        make.size.mas_equalTo(CGSizeMake(160, 80));
+        make.top.equalTo(self.view.mas_top).with.offset(90);
+        make.size.mas_equalTo(CGSizeMake(80, 80));
     }];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 

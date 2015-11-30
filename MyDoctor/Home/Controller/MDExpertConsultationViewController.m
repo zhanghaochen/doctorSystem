@@ -59,7 +59,7 @@
     }];
 
     //专家详情View设置
-    UIImageView * headView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"头像"]];
+    UIImageView * headView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"专家头像"]];
     headView.backgroundColor = RedColor;
     headView.contentMode = UIViewContentModeScaleAspectFill;
     [bgView addSubview:headView];

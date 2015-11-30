@@ -9,6 +9,8 @@
 #import "MDPaymentViewController.h"
 #import "MDServiceFolerVO.h"
 #import "MDServiceTableViewCell.h"
+
+
 @interface MDPaymentViewController ()
 
 @end
@@ -100,6 +102,12 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    
+    
+    // 带字典的通知
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"12" forKey:@"text"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushViewInParent" object:nil userInfo:userInfo];
     
 }
 
