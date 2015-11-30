@@ -43,6 +43,16 @@
 		153ED8481C08523600171DFA /* MDAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8471C08523600171DFA /* MDAddressViewController.m */; };
 		153ED84A1C08535E00171DFA /* 按钮框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED8491C08535E00171DFA /* 按钮框@2x.png */; };
 		153ED84C1C08536700171DFA /* 按钮框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED84B1C08536700171DFA /* 按钮框@3x.png */; };
+		153ED84F1C0BE03000171DFA /* MDUserInformationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */; };
+		153ED8521C0BE4D700171DFA /* MDAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */; };
+		153ED8551C0BEC8000171DFA /* MDNewAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */; };
+		153ED8581C0BF73C00171DFA /* MDDrugTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8571C0BF73C00171DFA /* MDDrugTableViewController.m */; };
+		153ED85F1C0C17DC00171DFA /* 搜索药品@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED85E1C0C17DC00171DFA /* 搜索药品@2x.png */; };
+		153ED8611C0C17E700171DFA /* 搜索药品@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED8601C0C17E700171DFA /* 搜索药品@3x.png */; };
+		153ED8641C0C228500171DFA /* MDDrugVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8631C0C228500171DFA /* MDDrugVO.m */; };
+		153ED8671C0C266C00171DFA /* MDDrugTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8661C0C266C00171DFA /* MDDrugTableViewCell.m */; };
+		155CEBE91C0C2E8E006B5CFA /* 药@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBE81C0C2E8E006B5CFA /* 药@2x.png */; };
+		155CEBEB1C0C2E9A006B5CFA /* 药@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBEA1C0C2E9A006B5CFA /* 药@3x.png */; };
 		159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049671C069FA600EE51FB /* BRSlogInViewController.m */; };
 		159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049691C069FA600EE51FB /* BRSNewPageViewController.m */; };
 		159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */; };
@@ -188,6 +198,22 @@
 		153ED8471C08523600171DFA /* MDAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAddressViewController.m; path = Service/MDAddressViewController.m; sourceTree = "<group>"; };
 		153ED8491C08535E00171DFA /* 按钮框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮框@2x.png"; sourceTree = "<group>"; };
 		153ED84B1C08536700171DFA /* 按钮框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮框@3x.png"; sourceTree = "<group>"; };
+		153ED84D1C0BE03000171DFA /* MDUserInformationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUserInformationVO.h; sourceTree = "<group>"; };
+		153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUserInformationVO.m; sourceTree = "<group>"; };
+		153ED8501C0BE4D700171DFA /* MDAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDAddressTableViewCell.h; path = Service/MDAddressTableViewCell.h; sourceTree = "<group>"; };
+		153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAddressTableViewCell.m; path = Service/MDAddressTableViewCell.m; sourceTree = "<group>"; };
+		153ED8531C0BEC8000171DFA /* MDNewAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDNewAddressViewController.h; path = Service/MDNewAddressViewController.h; sourceTree = "<group>"; };
+		153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDNewAddressViewController.m; path = Service/MDNewAddressViewController.m; sourceTree = "<group>"; };
+		153ED8561C0BF73C00171DFA /* MDDrugTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDrugTableViewController.h; sourceTree = "<group>"; };
+		153ED8571C0BF73C00171DFA /* MDDrugTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDrugTableViewController.m; sourceTree = "<group>"; };
+		153ED85E1C0C17DC00171DFA /* 搜索药品@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索药品@2x.png"; sourceTree = "<group>"; };
+		153ED8601C0C17E700171DFA /* 搜索药品@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索药品@3x.png"; sourceTree = "<group>"; };
+		153ED8621C0C228500171DFA /* MDDrugVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDDrugVO.h; path = Home/Model/MDDrugVO.h; sourceTree = "<group>"; };
+		153ED8631C0C228500171DFA /* MDDrugVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDDrugVO.m; path = Home/Model/MDDrugVO.m; sourceTree = "<group>"; };
+		153ED8651C0C266C00171DFA /* MDDrugTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDDrugTableViewCell.h; path = Home/View/MDDrugTableViewCell.h; sourceTree = "<group>"; };
+		153ED8661C0C266C00171DFA /* MDDrugTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDDrugTableViewCell.m; path = Home/View/MDDrugTableViewCell.m; sourceTree = "<group>"; };
+		155CEBE81C0C2E8E006B5CFA /* 药@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "药@2x.png"; sourceTree = "<group>"; };
+		155CEBEA1C0C2E9A006B5CFA /* 药@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "药@3x.png"; sourceTree = "<group>"; };
 		159049661C069FA600EE51FB /* BRSlogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSlogInViewController.h; sourceTree = "<group>"; };
 		159049671C069FA600EE51FB /* BRSlogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSlogInViewController.m; sourceTree = "<group>"; };
 		159049681C069FA600EE51FB /* BRSNewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSNewPageViewController.h; sourceTree = "<group>"; };
@@ -425,6 +451,10 @@
 				153ED8381C082DA300171DFA /* MDNoPaymentViewController.m */,
 				153ED8461C08523600171DFA /* MDAddressViewController.h */,
 				153ED8471C08523600171DFA /* MDAddressViewController.m */,
+				153ED8501C0BE4D700171DFA /* MDAddressTableViewCell.h */,
+				153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */,
+				153ED8531C0BEC8000171DFA /* MDNewAddressViewController.h */,
+				153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */,
 			);
 			name = "The Order Details";
 			sourceTree = "<group>";
@@ -432,6 +462,8 @@
 		153ED8111C08022E00171DFA /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				155CEBE81C0C2E8E006B5CFA /* 药@2x.png */,
+				153ED85E1C0C17DC00171DFA /* 搜索药品@2x.png */,
 				6AF202301C0B3BAA00933EAF /* background@2x.png */,
 				6AF202441C0BEC1D00933EAF /* 个人头像默认@2x.png */,
 				6AF2023C1C0B471700933EAF /* topImg1@2x.png */,
@@ -452,6 +484,10 @@
 		153ED81A1C08022E00171DFA /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+
+				155CEBEA1C0C2E9A006B5CFA /* 药@3x.png */,
+				153ED8601C0C17E700171DFA /* 搜索药品@3x.png */,
+				6AF202321C0B3BAF00933EAF /* background@3x.png */,
 				153ED84B1C08536700171DFA /* 按钮框@3x.png */,
 				6AF2023E1C0B471B00933EAF /* topImg1@3x.png */,
 				6AF202421C0BE5D300933EAF /* background@3x.png */,
@@ -479,6 +515,17 @@
 				153ED8421C083DB500171DFA /* KTSelectPickerView.xib */,
 			);
 			path = KTSelectDatePicker;
+			sourceTree = "<group>";
+		};
+		153ED8591C0BF74D00171DFA /* Drug(药品) */ = {
+			isa = PBXGroup;
+			children = (
+				6A3EF8511C06039C00923D03 /* MDConsultDrupViewController.h */,
+				6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */,
+				153ED8561C0BF73C00171DFA /* MDDrugTableViewController.h */,
+				153ED8571C0BF73C00171DFA /* MDDrugTableViewController.m */,
+			);
+			name = "Drug(药品)";
 			sourceTree = "<group>";
 		};
 		159049651C069FA600EE51FB /* logIn */ = {
@@ -602,6 +649,8 @@
 		6A3EF7C41C058B4D00923D03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				153ED8621C0C228500171DFA /* MDDrugVO.h */,
+				153ED8631C0C228500171DFA /* MDDrugVO.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -612,6 +661,8 @@
 				6AF2021C1C083F4000933EAF /* activityCell.h */,
 				6AF2021D1C083F4000933EAF /* activityCell.m */,
 				6AF2021E1C083F4000933EAF /* activityCell.xib */,
+				153ED8651C0C266C00171DFA /* MDDrugTableViewCell.h */,
+				153ED8661C0C266C00171DFA /* MDDrugTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -644,6 +695,8 @@
 				6A3EF7DF1C058F8600923D03 /* MDMyViewItem.m */,
 				6AF2024E1C0C1B4F00933EAF /* MDMyDoctorModel.h */,
 				6AF2024F1C0C1B4F00933EAF /* MDMyDoctorModel.m */,
+				153ED84D1C0BE03000171DFA /* MDUserInformationVO.h */,
+				153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -667,8 +720,7 @@
 				6A3EF84C1C06037100923D03 /* MDnoticeCenterController.m */,
 				6A3EF84E1C06038B00923D03 /* MDHospitalViewController.h */,
 				6A3EF84F1C06038B00923D03 /* MDHospitalViewController.m */,
-				6A3EF8511C06039C00923D03 /* MDConsultDrupViewController.h */,
-				6A3EF8521C06039C00923D03 /* MDConsultDrupViewController.m */,
+				153ED8591C0BF74D00171DFA /* Drug(药品) */,
 				6A3EF8061C05A20400923D03 /* MDNurseViewController.h */,
 				6A3EF8071C05A20400923D03 /* MDNurseViewController.m */,
 				6A3EF8631C0700BA00923D03 /* Nurse(照护) */,
@@ -845,6 +897,7 @@
 				1590498C1C06CD6100EE51FB /* 登录-注册底@2x.png in Resources */,
 				1590499D1C0702E600EE51FB /* serviceback@2x.png in Resources */,
 				1590499C1C0702E600EE51FB /* myback@2x.png in Resources */,
+				155CEBEB1C0C2E9A006B5CFA /* 药@3x.png in Resources */,
 				153C1E631C03F4ED00F87014 /* home@2x.png in Resources */,
 				6AF202551C0C1F2100933EAF /* MDMyDoctorCell.xib in Resources */,
 				153ED82F1C08022E00171DFA /* 登录状态@3x.png in Resources */,
@@ -867,6 +920,8 @@
 				159049901C06CD6100EE51FB /* mx_defaultSelect_phone@2x.png in Resources */,
 				6A3EF84A1C05FDE000923D03 /* navigationbar_back@2x.png in Resources */,
 				6A3EF7B11C054E1E00923D03 /* arrow@2x.png in Resources */,
+				153ED8611C0C17E700171DFA /* 搜索药品@3x.png in Resources */,
+				153ED85F1C0C17DC00171DFA /* 搜索药品@2x.png in Resources */,
 				153C1E641C03F4ED00F87014 /* my@2x.png in Resources */,
 				6A3EF7B51C054E2C00923D03 /* feedback@2x.png in Resources */,
 				153ED8261C08022E00171DFA /* 男性@2x.png in Resources */,
@@ -880,6 +935,7 @@
 				6AF202371C0B45C600933EAF /* 默认头像@3x.png in Resources */,
 				6AF202451C0BEC1D00933EAF /* 个人头像默认@2x.png in Resources */,
 				153ED8311C08022E00171DFA /* 首页图标@3x.png in Resources */,
+				155CEBE91C0C2E8E006B5CFA /* 药@2x.png in Resources */,
 				6A3EF7BC1C054E4000923D03 /* mydoctor@2x.png in Resources */,
 				6AF202351C0B45C300933EAF /* c.png in Resources */,
 				6A3EF7BA1C054E3D00923D03 /* navigationbar_rightbtn@2x.png in Resources */,
@@ -915,6 +971,7 @@
 				159049771C069FA600EE51FB /* BRSTextField.m in Sources */,
 				153C1E8B1C0405FE00F87014 /* WBToolBar.m in Sources */,
 				6AF202541C0C1F2100933EAF /* MDMyDoctorCell.m in Sources */,
+				153ED8641C0C228500171DFA /* MDDrugVO.m in Sources */,
 				6A3EF8141C05B5B800923D03 /* MDOrderDetailsViewController.m in Sources */,
 				6A3EF85F1C06FD7400923D03 /* MDExaminationViewController.m in Sources */,
 				159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */,
@@ -929,6 +986,7 @@
 				6A3EF8591C06D24600923D03 /* MDNurseRootViewController.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				159049761C069FA600EE51FB /* BRSSignInViewController.m in Sources */,
+				153ED84F1C0BE03000171DFA /* MDUserInformationVO.m in Sources */,
 				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				153ED8481C08523600171DFA /* MDAddressViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
@@ -943,15 +1001,19 @@
 				159049751C069FA600EE51FB /* BRSSignIn2ViewController.m in Sources */,
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
 				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
+				153ED8551C0BEC8000171DFA /* MDNewAddressViewController.m in Sources */,
 				6AF2021F1C083F4000933EAF /* activityCell.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,
+				153ED8581C0BF73C00171DFA /* MDDrugTableViewController.m in Sources */,
 				6A3EF80E1C05ADF100923D03 /* MDHomeViewController.m in Sources */,
 				159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */,
+				153ED8671C0C266C00171DFA /* MDDrugTableViewCell.m in Sources */,
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
 				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
+				153ED8521C0BE4D700171DFA /* MDAddressTableViewCell.m in Sources */,
 				159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

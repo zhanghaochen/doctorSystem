@@ -7,7 +7,11 @@
 //
 
 #import "MDBaseViewController.h"
+#import "MDConst.h"
 
-@interface MDAddressViewController :MDBaseViewController
+@interface MDAddressViewController :MDBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong)     UITableView * tableView;
+
+
 
 @end

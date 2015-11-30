@@ -164,18 +164,19 @@
     
     UIButton * makeOrder=[[UIButton alloc] init];
     [makeOrder addTarget:self action:@selector(makeOrder:) forControlEvents:UIControlEventTouchUpInside];
-    makeOrder.titleLabel.font=[UIFont systemFontOfSize:15];
+    makeOrder.titleLabel.font=[UIFont boldSystemFontOfSize:16];
     [makeOrder setTitle:@"确认订单" forState:UIControlStateNormal];
     [makeOrder setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [makeOrder setBackgroundColor:[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1]];
     makeOrder.layer.cornerRadius =5;
     [self.view addSubview:makeOrder];
     [makeOrder mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(backView.mas_bottom).with.offset(40);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-40);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(appWidth-20, 40));
     }];
 }
+
 -(void)dayButton:(UIButton *)button
 {
     selectPicker = [[KTSelectDatePicker alloc] init];
