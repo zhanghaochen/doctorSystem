@@ -29,11 +29,13 @@
 -(void)setText
 {
     UILabel * introduceLab = [[UILabel alloc] init];
-    introduceLab.text = @"    社区全科医生金季带着“移动随访包”上门随访体检，在完成血压、血糖、血脂等指标快速检测后，数据直接通过包内的IPAD上传到健康档案管理系统，在区域内实现互联共享";
+//    introduceLab.userInteractionEnabled = YES;
+    introduceLab.text = @"    社区全科医生金季带着“移动随访包”上门随访体检，在完成血压、血糖、血脂等指标快速检测后，数据直接通过包内的IPAD上传到健康档案管理系统，在区域内实现互联共享    社区全科医生金季带着“移动随访包”上门随访体检，在完成血压、血糖、血脂等指标快速检测后，数据直接通过包内的IPAD上传到健康档案管理系统，在区域内实现互联共享    社区全科医生金季带着“移动随访包”上门随访体检，在完成血压、血糖、血脂等指标快速检测后，数据直接通过包内的IPAD上传到健康档案管理系统，在区域内实现互联共享    社区全科医生金季带着“移动随访包”上门随访体检，在完成血压、血糖、血脂等指标快速检测后，数据直接通过包内的IPAD上传到健康档案管理系统，在区域内实现互联共享";
     introduceLab.textAlignment = NSTextAlignmentLeft;
     introduceLab.font = [UIFont systemFontOfSize:14];
     introduceLab.textColor = ColorWithRGB(97, 103, 111, 1);
     introduceLab.numberOfLines = 0;
+//    introduceLab.backgroundColor = [UIColor grayColor];
     //    [introduceLab sizeToFit];
     [self.scrollView addSubview:introduceLab];
     [introduceLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
@@ -41,6 +43,7 @@
         make.top.equalTo(self.scrollView.mas_top).with.offset(0);
         make.left.equalTo(self.scrollView.mas_left).with.offset(0);
         make.right.equalTo(self.scrollView.mas_right).with.offset(0);
+        make.size.mas_equalTo(CGSizeMake(30, 50));
         
     }];
     

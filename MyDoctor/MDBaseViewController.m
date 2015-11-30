@@ -24,8 +24,13 @@
     NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
     [titleBarAttributes setValue:[UIFont fontWithName:@"Bold Heiti SC" size:18] forKey:NSFontAttributeName];
     [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    imgView.frame = self.view.bounds;
+    
+    imgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    [self.view insertSubview:imgView atIndex:0];
     
 }
 

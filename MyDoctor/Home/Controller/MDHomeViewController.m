@@ -32,11 +32,13 @@
     currentPage = 0;
     self.navigationItem.title=@"寻医问药";
     
+    [self setNavigationBarWithrightBtn:@"通知" leftBtn:nil];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    
     [self createView];
     
     [self setHeaderView];
     
-    [self setNavigationBarWithrightBtn:@"通知" leftBtn:nil];
     
     //通知按钮点击
     [self.rightBtn addTarget:self action:@selector(noticeClick) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +69,7 @@
         _listArray = [NSMutableArray arrayWithObjects:group0,group1,group2,group3, nil];
     }
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(21, 18, SCREENWIDTH - 42, self.view.frame.size.height - 18) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(21, TOPHEIGHT, SCREENWIDTH - 42, appHeight-TOPHEIGHT - 49) style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -75,20 +77,24 @@
     _tableView.bounces = YES;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.contentOffset = CGPointMake(100, 100);
 
     [self.view addSubview:_tableView];
 }
 
 -(void)setHeaderView
 {
-    _headerView = [[UIScrollView alloc] initWithFrame:CGRectMake(21, 18, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
+    _headerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
     CGFloat width = SCREENWIDTH - 42;
     _headerView.contentSize = CGSizeMake(width*3, width*0.42);
     _headerView.bounces = NO;
     _headerView.pagingEnabled = YES;
     _headerView.showsHorizontalScrollIndicator = NO;
     _headerView.delegate = self;
-    [self.view addSubview:_headerView];
+//    _tableView.tableHeaderView = _headerView;
+    _tableView.contentInset = UIEdgeInsetsMake(18, 0, 0, 0);
+    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(18, 0, 0, 0);
+//    [self.view addSubview:_headerView];
     
     NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"topImg1",@"background",@"topImg", nil];
     
@@ -161,7 +167,7 @@
     [_tableView sendSubviewToBack:_headerView];
     
 }
-
+//
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _listArray.count;

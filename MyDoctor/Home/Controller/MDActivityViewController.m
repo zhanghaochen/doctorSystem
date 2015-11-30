@@ -143,11 +143,12 @@
 {
     
     //tableView
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(21,18, appWidth - 42, appHeight-20) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(21,TOPHEIGHT, appWidth - 42, appHeight-TOPHEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.dataSource  =self;
+    _tableView.contentInset = UIEdgeInsetsMake(18, 0, 0, 0);
     [self.view addSubview:_tableView];
     
     [_tableView registerNib:[UINib nibWithNibName:@"activityCell" bundle:nil] forCellReuseIdentifier:@"iden"];

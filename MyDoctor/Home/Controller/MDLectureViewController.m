@@ -23,8 +23,8 @@
     
     self.titleLab.text = @"讲座内容";
     
-    [self.leftBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
-    [self.rightBtn setTitle:@"立即预约" forState:UIControlStateNormal];
+    [self.leftDownBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
+    [self.rightDownBtn setTitle:@"立即预约" forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
 }
 

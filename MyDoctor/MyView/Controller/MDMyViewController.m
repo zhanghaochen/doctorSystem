@@ -11,6 +11,7 @@
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
 #import "MDServiceViewController.h"
+#import "MDMyDoctorViewController.h"
 
 @interface MDMyViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -62,6 +63,7 @@
 -(void)createView
 {
     UIImageView * headerView = [[UIImageView alloc] init];
+    headerView.image = [UIImage imageNamed:@"个人头像默认"];
     headerView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:headerView];
     
@@ -154,6 +156,12 @@
         MDServiceViewController * serviceVc = [[MDServiceViewController alloc] init];
         serviceVc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:serviceVc animated:YES];
+    }
+    else if(indexPath.section == 0)
+    {
+        MDMyDoctorViewController * myDoctorVC = [[MDMyDoctorViewController alloc] init];
+        myDoctorVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:myDoctorVC animated:YES];
     }
 }
 
