@@ -12,5 +12,8 @@
 
 @property(nonatomic,strong) UIScrollView * scrollView;
 @property(nonatomic,strong) UIView * whiteView;
+@property (nonatomic,strong) UILabel * titleLab;
+@property (nonatomic,strong) UIButton * leftBtn;
+@property (nonatomic,strong) UIButton * rightBtn;
 
 @end
