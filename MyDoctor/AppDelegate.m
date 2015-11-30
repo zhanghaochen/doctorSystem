@@ -40,8 +40,8 @@
 //    [self.window addSubview:drawView];
     
     
-    [self logIn];
-    
+//    [self logIn];
+    [self showMainView];
     return YES;
 }
 

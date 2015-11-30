@@ -45,6 +45,9 @@
 		153ED8481C08523600171DFA /* MDAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8471C08523600171DFA /* MDAddressViewController.m */; };
 		153ED84A1C08535E00171DFA /* 按钮框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED8491C08535E00171DFA /* 按钮框@2x.png */; };
 		153ED84C1C08536700171DFA /* 按钮框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153ED84B1C08536700171DFA /* 按钮框@3x.png */; };
+		153ED84F1C0BE03000171DFA /* MDUserInformationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */; };
+		153ED8521C0BE4D700171DFA /* MDAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */; };
+		153ED8551C0BEC8000171DFA /* MDNewAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */; };
 		159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049671C069FA600EE51FB /* BRSlogInViewController.m */; };
 		159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049691C069FA600EE51FB /* BRSNewPageViewController.m */; };
 		159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */; };
@@ -175,6 +178,12 @@
 		153ED8471C08523600171DFA /* MDAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAddressViewController.m; path = Service/MDAddressViewController.m; sourceTree = "<group>"; };
 		153ED8491C08535E00171DFA /* 按钮框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮框@2x.png"; sourceTree = "<group>"; };
 		153ED84B1C08536700171DFA /* 按钮框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮框@3x.png"; sourceTree = "<group>"; };
+		153ED84D1C0BE03000171DFA /* MDUserInformationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUserInformationVO.h; sourceTree = "<group>"; };
+		153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUserInformationVO.m; sourceTree = "<group>"; };
+		153ED8501C0BE4D700171DFA /* MDAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDAddressTableViewCell.h; path = Service/MDAddressTableViewCell.h; sourceTree = "<group>"; };
+		153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDAddressTableViewCell.m; path = Service/MDAddressTableViewCell.m; sourceTree = "<group>"; };
+		153ED8531C0BEC8000171DFA /* MDNewAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDNewAddressViewController.h; path = Service/MDNewAddressViewController.h; sourceTree = "<group>"; };
+		153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDNewAddressViewController.m; path = Service/MDNewAddressViewController.m; sourceTree = "<group>"; };
 		159049661C069FA600EE51FB /* BRSlogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSlogInViewController.h; sourceTree = "<group>"; };
 		159049671C069FA600EE51FB /* BRSlogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSlogInViewController.m; sourceTree = "<group>"; };
 		159049681C069FA600EE51FB /* BRSNewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSNewPageViewController.h; sourceTree = "<group>"; };
@@ -390,6 +399,10 @@
 				153ED8381C082DA300171DFA /* MDNoPaymentViewController.m */,
 				153ED8461C08523600171DFA /* MDAddressViewController.h */,
 				153ED8471C08523600171DFA /* MDAddressViewController.m */,
+				153ED8501C0BE4D700171DFA /* MDAddressTableViewCell.h */,
+				153ED8511C0BE4D700171DFA /* MDAddressTableViewCell.m */,
+				153ED8531C0BEC8000171DFA /* MDNewAddressViewController.h */,
+				153ED8541C0BEC8000171DFA /* MDNewAddressViewController.m */,
 			);
 			name = "The Order Details";
 			sourceTree = "<group>";
@@ -594,6 +607,8 @@
 			children = (
 				6A3EF7DE1C058F8600923D03 /* MDMyViewItem.h */,
 				6A3EF7DF1C058F8600923D03 /* MDMyViewItem.m */,
+				153ED84D1C0BE03000171DFA /* MDUserInformationVO.h */,
+				153ED84E1C0BE03000171DFA /* MDUserInformationVO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -853,6 +868,7 @@
 				6A3EF8591C06D24600923D03 /* MDNurseRootViewController.m in Sources */,
 				153C1E861C03FB8C00F87014 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				159049761C069FA600EE51FB /* BRSSignInViewController.m in Sources */,
+				153ED84F1C0BE03000171DFA /* MDUserInformationVO.m in Sources */,
 				6A3EF8531C06039C00923D03 /* MDConsultDrupViewController.m in Sources */,
 				153ED8481C08523600171DFA /* MDAddressViewController.m in Sources */,
 				15AE536F1C02F0680013FF1B /* main.m in Sources */,
@@ -864,6 +880,7 @@
 				159049751C069FA600EE51FB /* BRSSignIn2ViewController.m in Sources */,
 				6A3EF8431C05BAFE00923D03 /* MDPaymentViewController.m in Sources */,
 				6A3EF84D1C06037100923D03 /* MDnoticeCenterController.m in Sources */,
+				153ED8551C0BEC8000171DFA /* MDNewAddressViewController.m in Sources */,
 				6A3EF7DD1C058F1200923D03 /* MDMyViewController.m in Sources */,
 				6A3EF85C1C06FD5900923D03 /* MDRecoveryViewController.m in Sources */,
 				6A3EF8481C05BB1D00923D03 /* AppDelegate.m in Sources */,
@@ -872,6 +889,7 @@
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
 				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
+				153ED8521C0BE4D700171DFA /* MDAddressTableViewCell.m in Sources */,
 				159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
