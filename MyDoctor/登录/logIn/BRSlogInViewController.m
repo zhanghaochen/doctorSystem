@@ -160,8 +160,34 @@
     NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
     NSString * str=[stdDefault objectForKey:@"user_name"];
     logInField.text=str;
+    
+    
+    UIButton * back=[[UIButton alloc] init];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    back.layer.borderColor = [[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1] CGColor];
+    back.layer.borderWidth = 1;
+    back.layer.cornerRadius = 5;
+    [back setBackgroundColor:[UIColor clearColor]];
+    back.titleLabel.font=[UIFont systemFontOfSize:15];
+    [back setTitle:@"返回" forState:UIControlStateNormal];
+    [back setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.view addSubview:back];
+    [back mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).with.offset(30*autoSizeScaleY);
+        make.left.equalTo(self.view.mas_left).with.offset(20);
+        make.size.mas_equalTo(CGSizeMake(50,25));
+    }];
 }
+-(void)back:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"back");
+    }];
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backselected1" object:self];
+    
+}
 -(void)tunch:(UIButton *)tunch
 {
     button.enabled = NO;
@@ -172,8 +198,8 @@
 //        NSLog(@"result==%@",result);
 //        NSLog(@"error==%@",error);
 //        if(result && !error) {
-        [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"showBRSMainView" object:self];
+//        [[NSNotificationCenter defaultCenter]
+//     postNotificationName:@"showBRSMainView" object:self];
             NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
             [stdDefault setObject:logInField.text forKey:@"user_name"];
 //        }else{
@@ -186,6 +212,11 @@
 //        }
 //    }];
 //
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"back");
+    }];
 
     
 }

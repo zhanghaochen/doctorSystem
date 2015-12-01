@@ -50,6 +50,7 @@
 {
     number = [[UITextField alloc] init];
     [number setBorderStyle:UITextBorderStyleLine]; //外框类型
+    number.backgroundColor=[UIColor whiteColor];
     number.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
     [number setValue:[UIFont boldSystemFontOfSize:T4FontSize] forKeyPath:@"_placeholderLabel.font"];
 
@@ -66,6 +67,7 @@
     }
     number.leftViewMode = UITextFieldViewModeAlways;
     password = [[UITextField alloc] init];
+    password.backgroundColor=[UIColor whiteColor];
     [password setBorderStyle:UITextBorderStyleLine]; //外框类型
     password.secureTextEntry = NO; //是否以密码形式显示
     password.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];

@@ -7,6 +7,7 @@
 //
 
 #import "MDHospitalViewController.h"
+#import "BRSlogInViewController.h"
 
 @interface MDHospitalViewController ()
 
@@ -92,6 +93,8 @@
     consultBtn.layer.cornerRadius = 2.0;
     consultBtn.layer.masksToBounds = YES;
     [consultBtn setTitle:@"图文咨询" forState:UIControlStateNormal];
+    [consultBtn addTarget:self action:@selector(consult:) forControlEvents:UIControlEventTouchUpInside];
+
     [consultBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [consultBtn setBackgroundColor:RedColor];
     [whiteView addSubview:consultBtn];
@@ -100,6 +103,7 @@
     [callBtn setBackgroundColor:RedColor];
     callBtn.layer.cornerRadius = 2.0;
     callBtn.layer.masksToBounds = YES;
+    [callBtn addTarget:self action:@selector(callBtn:) forControlEvents:UIControlEventTouchUpInside];
     [callBtn setTitle:@"一键呼叫" forState:UIControlStateNormal];
     [callBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [whiteView addSubview:callBtn];
@@ -120,15 +124,27 @@
         make.height.equalTo(callBtn.mas_height);
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)consult:(UIButton *)button
+{
+    [self logInView];
 }
-*/
+-(void)callBtn:(UIButton *)button
+{
+    [self logInView];
+}
+-(void)logInView
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        
+    }else{
+        BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
+        UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
+        
+        nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:nvc animated:YES completion:nil];
+    }
+}
 
 @end

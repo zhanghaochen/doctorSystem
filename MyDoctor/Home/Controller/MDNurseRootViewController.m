@@ -7,6 +7,7 @@
 //
 
 #import "MDNurseRootViewController.h"
+#import "BRSlogInViewController.h"
 
 @interface MDNurseRootViewController ()
 
@@ -53,6 +54,8 @@
     self.leftDownBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftDownBtn.layer.cornerRadius = 5.0;
     self.leftDownBtn.layer.masksToBounds = YES;
+    [self.leftDownBtn addTarget:self action:@selector(leftDownBtn:) forControlEvents:UIControlEventTouchUpInside];
+
     [self.leftDownBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
     [self.leftDownBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.leftDownBtn setBackgroundColor:RedColor];
@@ -62,6 +65,7 @@
     [self.rightDownBtn setBackgroundColor:RedColor];
     self.rightDownBtn.layer.cornerRadius = 5.0;
     self.rightDownBtn.layer.masksToBounds = YES;
+    [self.rightDownBtn addTarget:self action:@selector(rightDownBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.rightDownBtn setTitle:@"立即订购" forState:UIControlStateNormal];
     [self.rightDownBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.rightDownBtn];
@@ -170,5 +174,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)leftDownBtn:(UIButton *)button
+{
+    [self logInView];
+}
+-(void)rightDownBtn:(UIButton *)button
+{
+    [self logInView];
+}
 
+-(void)logInView
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        
+    }else{
+        BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
+        UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
+        
+        nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:nvc animated:YES completion:nil];
+    }
+}
 @end

@@ -60,6 +60,7 @@
     
     number.returnKeyType = UIReturnKeyNext;  //键盘返回类型
     number.delegate = self;
+    number.backgroundColor=[UIColor whiteColor];
     number.keyboardType = UIKeyboardTypeDefault;//键盘显示类型
     number.tag=1;
     number.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
@@ -74,6 +75,7 @@
     IdNumber.keyboardType = UIKeyboardTypeNumberPad;//键盘显示类型
     IdNumber.tag=22;
     IdNumber.placeholder=@"身份证号";
+    IdNumber.backgroundColor=[UIColor whiteColor];
     IdNumber.leftViewMode = UITextFieldViewModeAlways;
     IdNumber.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
     IdNumber.layer.borderWidth= 1.0f;
@@ -85,6 +87,7 @@
     password.delegate = self;
     password.keyboardType = UIKeyboardTypeDefault;//键盘显示类型
     password.tag=2;
+    password.backgroundColor=[UIColor whiteColor];
     password.placeholder=@"密码";
     password.leftViewMode = UITextFieldViewModeAlways;
     password.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
@@ -98,6 +101,7 @@
     password2.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
     password2.layer.borderWidth= 1.0f;
     password2.tag=3;
+    password2.backgroundColor=[UIColor whiteColor];
     password2.placeholder=@"再次输入密码";
     password2.leftViewMode = UITextFieldViewModeAlways;
     
@@ -118,6 +122,7 @@
     sexField.delegate = self;
     sexField.keyboardType = UIKeyboardTypeDefault;//键盘显示类型
     sexField.tag=1;
+    sexField.backgroundColor=[UIColor whiteColor];
     sexField.layer.borderColor=[[UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:1]CGColor];
     sexField.layer.borderWidth= 1.0f;
     sexField.placeholder=@"性别";

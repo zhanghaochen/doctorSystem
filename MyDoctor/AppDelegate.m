@@ -33,6 +33,8 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showBRSMainView"  object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMainView) name:@"showBRSMainView" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"backselected1"  object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backselected1) name:@"backselected1" object:nil];
     
 //    UIImage*draw = [UIImage imageNamed:@"topImg"];
 //    UIImageView *drawView = [[UIImageView alloc]initWithImage:draw];
@@ -92,7 +94,11 @@
 
 }
 
-
+-(void)backselected1
+{
+// 跳到指定页面
+    [self.tabBarController setSelectedIndex:0];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 }
