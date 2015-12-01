@@ -157,7 +157,6 @@
 
 -(void)orderClcik
 {
-    NSLog(@"11");
     MDNoPaymentViewController * noPaymentVC = [[MDNoPaymentViewController alloc] init];
     noPaymentVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noPaymentVC animated:YES];

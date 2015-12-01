@@ -10,7 +10,7 @@
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
 
-@interface MDOrderDetailsViewController ()
+@interface MDOrderDetailsViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -118,13 +118,18 @@
 }
 -(void)cancel
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"距估计时间不足3小时，您不能取消派遣服务"message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"好的"
-                                              style:UIAlertActionStyleDefault
-                                            handler:^(UIAlertAction *action) {
-                                                NSLog(@"Action 1 Handler Called");
-                                            }]];
-    [self presentViewController:alert animated:YES completion:nil];
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"距估计时间不足3小时，您不能取消派遣服务"
+                         
+                                                  message:nil
+                         
+                                                 delegate:self
+                         
+                                        cancelButtonTitle:@"好的"
+                         
+                                        otherButtonTitles:nil];
+    
+    [alert show];
+
 }
 -(void)finish:(UIButton *)button
 {
