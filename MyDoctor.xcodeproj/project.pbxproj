@@ -59,6 +59,8 @@
 		155CEBF51C0D47FC006B5CFA /* 用户地址@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBF21C0D47FC006B5CFA /* 用户地址@3x.png */; };
 		155CEBF61C0D47FC006B5CFA /* 用户电话@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBF31C0D47FC006B5CFA /* 用户电话@3x.png */; };
 		155CEBF71C0D47FC006B5CFA /* 用户姓名@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBF41C0D47FC006B5CFA /* 用户姓名@3x.png */; };
+		155CEBFC1C0D880C006B5CFA /* 箭头@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBFB1C0D880C006B5CFA /* 箭头@2x.png */; };
+		155CEBFE1C0D8817006B5CFA /* 箭头@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155CEBFD1C0D8817006B5CFA /* 箭头@3x.png */; };
 		159049721C069FA600EE51FB /* BRSlogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049671C069FA600EE51FB /* BRSlogInViewController.m */; };
 		159049731C069FA600EE51FB /* BRSNewPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159049691C069FA600EE51FB /* BRSNewPageViewController.m */; };
 		159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1590496B1C069FA600EE51FB /* BRSNewPasswordViewController.m */; };
@@ -227,6 +229,8 @@
 		155CEBF21C0D47FC006B5CFA /* 用户地址@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户地址@3x.png"; sourceTree = "<group>"; };
 		155CEBF31C0D47FC006B5CFA /* 用户电话@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户电话@3x.png"; sourceTree = "<group>"; };
 		155CEBF41C0D47FC006B5CFA /* 用户姓名@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户姓名@3x.png"; sourceTree = "<group>"; };
+		155CEBFB1C0D880C006B5CFA /* 箭头@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头@2x.png"; sourceTree = "<group>"; };
+		155CEBFD1C0D8817006B5CFA /* 箭头@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头@3x.png"; sourceTree = "<group>"; };
 		159049661C069FA600EE51FB /* BRSlogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSlogInViewController.h; sourceTree = "<group>"; };
 		159049671C069FA600EE51FB /* BRSlogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSlogInViewController.m; sourceTree = "<group>"; };
 		159049681C069FA600EE51FB /* BRSNewPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSNewPageViewController.h; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 		153ED8111C08022E00171DFA /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				155CEBFB1C0D880C006B5CFA /* 箭头@2x.png */,
 				155CEBEC1C0D47F0006B5CFA /* 用户地址@2x.png */,
 				155CEBED1C0D47F0006B5CFA /* 用户电话@2x.png */,
 				155CEBEE1C0D47F0006B5CFA /* 用户姓名@2x.png */,
@@ -503,6 +508,7 @@
 		153ED81A1C08022E00171DFA /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+				155CEBFD1C0D8817006B5CFA /* 箭头@3x.png */,
 				155CEBF21C0D47FC006B5CFA /* 用户地址@3x.png */,
 				155CEBF31C0D47FC006B5CFA /* 用户电话@3x.png */,
 				155CEBF41C0D47FC006B5CFA /* 用户姓名@3x.png */,
@@ -915,6 +921,7 @@
 				153ED8271C08022E00171DFA /* 登录状态@2x.png in Resources */,
 				153ED8231C08022E00171DFA /* 动图@2x.png in Resources */,
 				6AF202201C083F4000933EAF /* activityCell.xib in Resources */,
+				155CEBFE1C0D8817006B5CFA /* 箭头@3x.png in Resources */,
 				153ED84C1C08536700171DFA /* 按钮框@3x.png in Resources */,
 				15AE53781C02F0680013FF1B /* Main.storyboard in Resources */,
 				159049911C06CD6100EE51FB /* mx_selected_phone@2x.png in Resources */,
@@ -978,6 +985,7 @@
 				159049971C06CFD900EE51FB /* 绿色单选@2x.png in Resources */,
 				153ED82C1C08022E00171DFA /* 女性@3x.png in Resources */,
 				6AF2023B1C0B45F400933EAF /* 专家头像@3x.png in Resources */,
+				155CEBFC1C0D880C006B5CFA /* 箭头@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

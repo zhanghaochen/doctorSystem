@@ -84,7 +84,7 @@
     [self.view addSubview:headButton];
     
     UIView * nameView = [[UIView alloc] init];
-    nameView.backgroundColor = [UIColor blueColor];
+    nameView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:nameView];
     
     [headButton mas_makeConstraints:^(MX_MASConstraintMaker *make) {
@@ -99,6 +99,19 @@
         make.height.equalTo(headButton.mas_height);
         make.top.equalTo(self.view.mas_top).with.offset(18+TOPHEIGHT);
     }];
+    UIImage*img =[UIImage imageNamed:@"按钮框"];
+    [nameView setBackgroundColor:[UIColor colorWithPatternImage:img]];
+   
+    UILabel * userName=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, appWidth-29-10, 20)];
+    userName.text=@"小明";
+    userName.font=[UIFont boldSystemFontOfSize:16];
+    
+    UILabel * signature=[[UILabel alloc] initWithFrame:CGRectMake(5, 30, appWidth-29-10, 20)];
+    signature.text=@"今天很开心";
+    signature.textColor=[UIColor grayColor];
+    signature.font=[UIFont systemFontOfSize:12];
+    [nameView addSubview:userName];
+    [nameView addSubview:signature];
     
     _tableView = [[UITableView alloc] init];
     _tableView.delegate = self;

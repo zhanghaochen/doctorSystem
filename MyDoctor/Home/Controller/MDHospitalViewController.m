@@ -131,6 +131,7 @@
 -(void)callBtn:(UIButton *)button
 {
     [self logInView];
+    
 }
 -(void)logInView
 {
