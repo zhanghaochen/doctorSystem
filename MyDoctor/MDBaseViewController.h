@@ -10,6 +10,8 @@
 #import "MDConst.h"
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
+#import "UIView+ViewExtension.h"
+
 @interface MDBaseViewController : UIViewController
 
 @property (nonatomic,strong) UIButton * leftBtn;

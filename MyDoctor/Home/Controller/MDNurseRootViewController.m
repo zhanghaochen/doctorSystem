@@ -8,7 +8,7 @@
 
 #import "MDNurseRootViewController.h"
 #import "BRSlogInViewController.h"
-
+#import "MDNoPaymentViewController.h"
 @interface MDNurseRootViewController ()
 
 @end
@@ -21,12 +21,15 @@
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMainView) name:@"showBRSMainView" object:nil];
     [self createView];
 
     // Do any additional setup after loading the view.
 }
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showBRSMainView"  object:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -65,9 +68,10 @@
     [self.rightDownBtn setBackgroundColor:RedColor];
     self.rightDownBtn.layer.cornerRadius = 5.0;
     self.rightDownBtn.layer.masksToBounds = YES;
-    [self.rightDownBtn addTarget:self action:@selector(rightDownBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.rightDownBtn setTitle:@"立即订购" forState:UIControlStateNormal];
     [self.rightDownBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.rightDownBtn addTarget:self action:@selector(orderClcik) forControlEvents:UIControlEventTouchUpInside];
+
     [self.view addSubview:self.rightDownBtn];
     
     [self.leftDownBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
@@ -137,12 +141,8 @@
     self.scrollView = [[UIScrollView alloc] init];
     _scrollView.userInteractionEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
     [_whiteView addSubview:_scrollView];
-    [_scrollView addSubview:imageView];
     
-    UIImageView * imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topImg"]];
-    [_scrollView addSubview:imageView2];
     
     [_scrollView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(_titleLab.mas_bottom).with.offset(15);
@@ -152,19 +152,33 @@
 
     }];
     
-    [imageView2 mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(imageView.mas_bottom).with.offset(10);
-    }];
-    
-    //设置scrollView内容物大小
-    CGFloat scrollViewHeight = 0.0;
-    for (UIView* view in _scrollView.subviews)
-    {
-        scrollViewHeight += view.frame.size.height;
-    }
-    [_scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+1000))];
+//    //设置scrollView内容物大小
+//    CGFloat scrollViewHeight = 0.0;
+//    for (UIView* view in _scrollView.subviews)
+//    {
+//        scrollViewHeight += view.frame.size.height;
+//    }
+//    [_scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+500))];
 }
 
+-(void)orderClcik
+{
+    
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        [self showMainView];
+    }else{
+        [self logInView];
+    }
+}
+-(void)showMainView
+{
+    NSLog(@"11");
+    MDNoPaymentViewController * noPaymentVC = [[MDNoPaymentViewController alloc] init];
+    noPaymentVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:noPaymentVC animated:YES];
+}
 /*
 #pragma mark - Navigation
 
@@ -176,12 +190,10 @@
 */
 -(void)leftDownBtn:(UIButton *)button
 {
+    
     [self logInView];
 }
--(void)rightDownBtn:(UIButton *)button
-{
-    [self logInView];
-}
+
 
 -(void)logInView
 {

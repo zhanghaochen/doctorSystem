@@ -198,8 +198,8 @@
 //        NSLog(@"result==%@",result);
 //        NSLog(@"error==%@",error);
 //        if(result && !error) {
-//        [[NSNotificationCenter defaultCenter]
-//     postNotificationName:@"showBRSMainView" object:self];
+        [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"showBRSMainView" object:self];
             NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
             [stdDefault setObject:logInField.text forKey:@"user_name"];
 //        }else{

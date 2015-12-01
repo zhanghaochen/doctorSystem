@@ -7,7 +7,8 @@
 //
 
 #import "MDBaseViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface MDMyViewController : MDBaseViewController
+@interface MDMyViewController : MDBaseViewController<AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
