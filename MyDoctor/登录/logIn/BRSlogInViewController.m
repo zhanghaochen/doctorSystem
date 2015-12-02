@@ -55,121 +55,45 @@
     [self.view addGestureRecognizer:tapGesture];
     [self logInView];
     
-    //1.检测网络状态
-    [self monitorNetworkType];
-    //5.post请求
-    [self jsonGetRequest];
-
-    
-}
-- (void)monitorNetworkType
-{
-    //AFNetWorking通过发送网络请求的方式判断当前网络状态，需要选择一个请求。推荐使用门户网站网址
-    //请求队列的管理员
-    AFHTTPRequestOperationManager  * manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"www.baidu.com"]];
-    
-    //    void (^block)(AFNetworkReachabilityStatus status);
-    //    block = ^(AFNetworkReachabilityStatus status){
-    //
-    //    };
-    
-    //监控网络状态
-    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status){
-        //这是一个代码块，是rootviewcontroller的代码块，但是由manager.reachabilityManager 调用
-        //status是manager.reachabilityManager传过来的参数，也就是说，发送方通过这个参数，将网络状态发过来了。
-        if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
-            NSLog(@"WiFi");
-        } else if (status == AFNetworkReachabilityStatusReachableViaWWAN) {
-            NSLog(@"GPRS/3G");
-        } else if (status == AFNetworkReachabilityStatusNotReachable){
-            NSLog(@"网络未连接");
-        }
-        
-    }];
-    
-    //启动网络监控
-    [manager.reachabilityManager startMonitoring];
-    //当发生网络状态变化，回调block
-    
 }
 
-#pragma mark - GET请求 JSON数据
-- (void)jsonGetRequest
-{
-    //创建urlString
-    NSString * urlString = @"http://rmabcdef001:8080/CommunityWs/servlet/ShequServlet?b=";
-    
-    NSString * nameAndPassword=@"10002@`zhanghaochen@`111111";
-    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
-    
-    urlString=[NSString stringWithFormat:@"%@%@",urlString,nameAndPassword];
-    
-    //数据请求的队列管理器，单例
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    
-    
-    //解析json时出现问题，需要设置文件的内容
-    //如此设置就会进行JSON解析
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    
-    
-    //发起get请求，第一个参数是请求的url字符串，第二个参数在get中传nil
-    //后两个block，意思是成功调用block，失败调用block
-    [manager GET:urlString parameters:nil success:
-     ^(AFHTTPRequestOperation * operation, id responseObject){
-         
-         //JSON数据已经解析过了
-         NSLog(@"%@", responseObject);
-         //接下来要做的就是将数据从字典中取出放入数据源
-         //在这里写填充数据源，可以调一个函数完成
-     }
-         failure:
-     ^(AFHTTPRequestOperation *operation, NSError *error) {
-         NSLog(@"%@", error);
-     }];
-    
-    
-}
 #pragma mark - POST请求
 - (void)postRequest
 {
-    NSString * url = @"http://rmabcdef001:8080/CommunityWs/servlet/ShequServlet?b=";
-    
-    
-//    NSString* encodeStr = @"MTAwMDFAYDFAYDJAYDNAYDRAYDVAYHpoYW5nc2FuQGAxMzgwMDAwMTExMUBgMTIzNDU2QGA5QGAxMEBgMTE";
-    
-//    NSString* encodeStr = @"MTAwMDJAYDFAYDJAYDNAYDRAYDVAYGxpeWFuZzFAYDEyMzQ1Ng==";
-//    
-//    NSString* decodeResult = nil;
-//    
-//    NSData* encodeData = [encodeStr dataUsingEncoding:NSUTF8StringEncoding];
-//    
-//    NSData* decodeData = [GTMBase64 decodeData:encodeData];
-//    
-//    decodeResult = [[NSString alloc] initWithData:decodeData encoding:NSUTF8StringEncoding];
-//    
-//    NSLog(@"%@",decodeResult);
-    
-    
+    NSString* date;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    date = [formatter stringFromDate:[NSDate date]];
+    NSString * url = @"http://111.160.245.75:8082/CommunityWs//servlet/ShequServlet?";
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    
     //data Get请求如此设置
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
+    NSString * nameAndPassword=[NSString stringWithFormat:@"10102@`3@`3@`%@@`1@`3@`%@@`%@",date,logInField.text,password.text];
+    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
     //post键值对
-    NSDictionary * dict = @{@"username":@"John", @"password":@"89091", @"message":@"hahahahaha"};
+    NSDictionary * dict = @{@"b":nameAndPassword};
     
     [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
         NSString * str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        
         //回馈数据
         NSLog(@"%@", str);
         
+        NSArray *array = [str componentsSeparatedByString:@","];
+        NSArray *success=[array[0] componentsSeparatedByString:@":"];
+        
+        if ([success[1] isEqualToString:@"true"]) {
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"showBRSMainView" object:self];
+            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+            [stdDefault setObject:logInField.text forKey:@"user_name"];
+            [self dismissViewControllerAnimated:YES completion:^{
+                NSLog(@"back");
+            }];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
-    
 }
 
 -(void)logInView
@@ -315,6 +239,10 @@
 -(void)tunch:(UIButton *)tunch
 {
     button.enabled = NO;
+    
+    //5.post请求
+    [self postRequest];
+    
 //    MXKit *MXObj = [MXKit shareMXKit];
 //    [MXObj init:MX_URL withPort:MX_PORT withMqttUrl:MX_IM_URL withMqttPort:MX_IM_PORT];
 //    [MXObj login:logInField.text withPassword:password.text withCallback:^(id result, MXError *error){
@@ -322,10 +250,10 @@
 //        NSLog(@"result==%@",result);
 //        NSLog(@"error==%@",error);
 //        if(result && !error) {
-        [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"showBRSMainView" object:self];
-            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
-            [stdDefault setObject:logInField.text forKey:@"user_name"];
+//        [[NSNotificationCenter defaultCenter]
+//     postNotificationName:@"showBRSMainView" object:self];
+//            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+//            [stdDefault setObject:logInField.text forKey:@"user_name"];
 //        }else{
 //            NSString * str=[NSString stringWithFormat:@"%@",error];
 //            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提醒" message:str delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
@@ -337,10 +265,6 @@
 //    }];
 //
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        NSLog(@"back");
-    }];
 
     
 }
