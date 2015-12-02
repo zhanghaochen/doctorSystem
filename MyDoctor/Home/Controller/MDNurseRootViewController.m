@@ -96,16 +96,23 @@
         make.bottom.equalTo(self.rightDownBtn.mas_top).with.offset(-15);
     }];
 //文字设置
-    _titleLab = [[UILabel alloc] init];
-    _titleLab.text = @"产品介绍";
-    _titleLab.textAlignment = NSTextAlignmentCenter;
-    _titleLab.backgroundColor = [UIColor clearColor];
-    _titleLab.font = [UIFont systemFontOfSize:12];
-    _titleLab.textColor = RedColor;
-    [_titleLab sizeToFit];
-    [_whiteView addSubview:_titleLab];
+    UILabel * titleLab = [[UILabel alloc] init];
+    if (self.titleLab == nil) {
+        titleLab.text = @"产品介绍";
+    }
+    else
+    {
+        titleLab.text = self.titleLab;
+
+    }
+    titleLab.textAlignment = NSTextAlignmentCenter;
+    titleLab.backgroundColor = [UIColor clearColor];
+    titleLab.font = [UIFont systemFontOfSize:17];
+    titleLab.textColor = RedColor;
+    [titleLab sizeToFit];
+    [_whiteView addSubview:titleLab];
     
-    [_titleLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+    [titleLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(topImageView.mas_bottom).with.offset(15);
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
@@ -120,39 +127,32 @@
 
     [wireViewLeft mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.left.equalTo(_whiteView.mas_left).with.offset(40);
-        make.right.equalTo(_titleLab.mas_left).with.offset(-25);
-        make.centerY.mas_equalTo(_titleLab.mas_centerY);
+        make.right.equalTo(titleLab.mas_left).with.offset(-25);
+        make.centerY.mas_equalTo(titleLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
     [wireViewRirght mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.right.equalTo(_whiteView.mas_right).with.offset(-40);
-        make.left.equalTo(_titleLab.mas_right).with.offset(25);
-        make.centerY.mas_equalTo(_titleLab.mas_centerY);
+        make.left.equalTo(titleLab.mas_right).with.offset(25);
+        make.centerY.mas_equalTo(titleLab.mas_centerY);
         make.height.equalTo(@1);
     }];
     
     self.scrollView = [[UIScrollView alloc] init];
-    _scrollView.userInteractionEnabled = YES;
+//    _scrollView.userInteractionEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
     [_whiteView addSubview:_scrollView];
     
     
     [_scrollView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-        make.top.equalTo(_titleLab.mas_bottom).with.offset(15);
+        make.top.equalTo(titleLab.mas_bottom).with.offset(15);
         make.left.equalTo(_whiteView.mas_left).with.offset(30);
         make.right.equalTo(_whiteView.mas_right).with.offset(-30);
         make.bottom.equalTo(_whiteView.mas_bottom).with.offset(0);
 
     }];
     
-//    //设置scrollView内容物大小
-//    CGFloat scrollViewHeight = 0.0;
-//    for (UIView* view in _scrollView.subviews)
-//    {
-//        scrollViewHeight += view.frame.size.height;
-//    }
-//    [_scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+500))];
 }
 
 -(void)orderClcik

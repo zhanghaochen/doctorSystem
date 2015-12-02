@@ -54,28 +54,6 @@
     }
     [self.scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+50))];
 
-//    [introduceLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-//        make.centerX.mas_equalTo(self.view.mas_centerX);
-//        make.top.equalTo(self.scrollView.mas_top).with.offset(0);
-//        make.left.equalTo(self.scrollView.mas_left).with.offset(0);
-//        make.right.equalTo(self.scrollView.mas_right).with.offset(0);
-//        make.size.mas_equalTo(CGSizeMake(30, 50));
-//        
-//    }];
-    
-//    UILabel * priceLab = [[UILabel alloc] init];
-//    priceLab.text = @"每次价格:9.9元";
-//    priceLab.textColor = ColorWithRGB(97, 103, 111, 1);
-//    priceLab.textAlignment = NSTextAlignmentLeft;
-//    priceLab.font = [UIFont systemFontOfSize:14];
-//    [self.scrollView addSubview:priceLab];
-//    
-//    [priceLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
-//        make.centerX.mas_equalTo(self.view.mas_centerX);
-//        make.top.equalTo(introduceLab.mas_bottom).with.offset(75);
-//        make.left.equalTo(self.scrollView.mas_left).with.offset(0);
-//        make.right.equalTo(self.scrollView.mas_right).with.offset(0);
-//    }];
 }
 
 

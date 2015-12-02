@@ -103,6 +103,15 @@
     classifyLab.textColor = ColorWithRGB(97, 103, 111, 1);
     [bgView addSubview:classifyLab];
     
+    UILabel * majorLab = [[UILabel alloc] init];
+    majorLab.text = @"擅长专业:擅长口腔临床修复";
+    majorLab.numberOfLines = 0;
+    majorLab.font = [UIFont systemFontOfSize:14];
+    majorLab.textAlignment = NSTextAlignmentLeft;
+    majorLab.textColor = ColorWithRGB(97, 103, 111, 1);
+    [majorLab sizeToFit];
+    [bgView addSubview:majorLab];
+    
     [nameLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(detailsLab.mas_bottom).with.offset(8);
         make.left.equalTo(headView.mas_left);
@@ -121,6 +130,12 @@
         make.left.equalTo(headView.mas_left);
         make.height.equalTo(rankLab);
 //        make.bottom.equalTo(bgView.mas_bottom).with.offset(-8);
+    }];
+    
+    [majorLab mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.top.equalTo(classifyLab.mas_bottom).with.offset(8);
+        make.left.equalTo(headView.mas_left);
+//        make.height.equalTo(classifyLab);
     }];
     
     //分割线

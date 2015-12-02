@@ -63,8 +63,6 @@
 
 -(void)setText
 {
-    self.titleLab.text = @"医疗讲座进社区";
-    
     UILabel * startTimeLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, appWidth - 48*2, 0)];
     startTimeLab.text = @"讲座开始时间: 2015.04.23 11:00";
     startTimeLab.textAlignment = NSTextAlignmentLeft;

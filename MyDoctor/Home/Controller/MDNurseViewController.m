@@ -134,9 +134,10 @@
         recoveryVC.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:recoveryVC animated:YES];
     }else if (indexPath.section==3){
-        MDNurseRootViewController * nurseVC = [[MDNurseRootViewController alloc] init];
-        nurseVC.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:nurseVC animated:YES];
+        MDRecoveryViewController * recoveryVC = [[MDRecoveryViewController alloc] init];
+        recoveryVC.hidesBottomBarWhenPushed=YES;
+        recoveryVC.title = @"专业照护";
+        [self.navigationController pushViewController:recoveryVC animated:YES];
         
     }
 

@@ -148,6 +148,7 @@
     _tableView.delegate = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.dataSource  =self;
+    _tableView.showsVerticalScrollIndicator = NO;
     _tableView.contentInset = UIEdgeInsetsMake(18, 0, 0, 0);
     [self.view addSubview:_tableView];
     
@@ -221,6 +222,7 @@
     else if (indexPath.section == 1)
     {
         MDLectureViewController * lectureVC = [[MDLectureViewController alloc] init];
+        lectureVC.titleLab = @"医疗讲座进社区";
         lectureVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:lectureVC animated:YES];
     }

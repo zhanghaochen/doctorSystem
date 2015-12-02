@@ -129,6 +129,11 @@
 		6AF202541C0C1F2100933EAF /* MDMyDoctorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202521C0C1F2100933EAF /* MDMyDoctorCell.m */; };
 		6AF202551C0C1F2100933EAF /* MDMyDoctorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF202531C0C1F2100933EAF /* MDMyDoctorCell.xib */; };
 		6AF202641C0C4CDD00933EAF /* UIView+ViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202631C0C4CDD00933EAF /* UIView+ViewExtension.m */; };
+		6AF202681C0D495300933EAF /* MDnoticeCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202671C0D495300933EAF /* MDnoticeCenterCell.m */; };
+		6AF2026B1C0D71AB00933EAF /* MDFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2026A1C0D71AB00933EAF /* MDFeedBackViewController.m */; };
+		6AF202761C0D968800933EAF /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202751C0D968800933EAF /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6AF202791C0D979400933EAF /* 下拉框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF202781C0D979400933EAF /* 下拉框@2x.png */; };
+		6AF2027B1C0D979A00933EAF /* 下拉框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2027A1C0D979A00933EAF /* 下拉框@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +334,14 @@
 		6AF202531C0C1F2100933EAF /* MDMyDoctorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDMyDoctorCell.xib; sourceTree = "<group>"; };
 		6AF202621C0C4CDD00933EAF /* UIView+ViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewExtension.h"; sourceTree = "<group>"; };
 		6AF202631C0C4CDD00933EAF /* UIView+ViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewExtension.m"; sourceTree = "<group>"; };
+		6AF202661C0D495300933EAF /* MDnoticeCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDnoticeCenterCell.h; sourceTree = "<group>"; };
+		6AF202671C0D495300933EAF /* MDnoticeCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDnoticeCenterCell.m; sourceTree = "<group>"; };
+		6AF202691C0D71AB00933EAF /* MDFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFeedBackViewController.h; sourceTree = "<group>"; };
+		6AF2026A1C0D71AB00933EAF /* MDFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFeedBackViewController.m; sourceTree = "<group>"; };
+		6AF202741C0D968800933EAF /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
+		6AF202751C0D968800933EAF /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
+		6AF202781C0D979400933EAF /* 下拉框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下拉框@2x.png"; sourceTree = "<group>"; };
+		6AF2027A1C0D979A00933EAF /* 下拉框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下拉框@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +403,7 @@
 		153C1E661C03FB8C00F87014 /* fundation */ = {
 			isa = PBXGroup;
 			children = (
+				6AF202771C0D968C00933EAF /* NIDropDown */,
 				6AF202651C0C4CF700933EAF /* Category */,
 				153ED83D1C083DB500171DFA /* KTSelectDatePicker */,
 				153C1E881C0405FE00F87014 /* ToolBar */,
@@ -468,6 +482,7 @@
 			children = (
 				155CEBE81C0C2E8E006B5CFA /* 药@2x.png */,
 				153ED85E1C0C17DC00171DFA /* 搜索药品@2x.png */,
+				6AF202781C0D979400933EAF /* 下拉框@2x.png */,
 				6AF202301C0B3BAA00933EAF /* background@2x.png */,
 				6AF202441C0BEC1D00933EAF /* 个人头像默认@2x.png */,
 				6AF2023C1C0B471700933EAF /* topImg1@2x.png */,
@@ -490,6 +505,7 @@
 			children = (
 				155CEBEA1C0C2E9A006B5CFA /* 药@3x.png */,
 				153ED8601C0C17E700171DFA /* 搜索药品@3x.png */,
+				6AF2027A1C0D979A00933EAF /* 下拉框@3x.png */,
 				153ED84B1C08536700171DFA /* 按钮框@3x.png */,
 				6AF2023E1C0B471B00933EAF /* topImg1@3x.png */,
 				6AF202421C0BE5D300933EAF /* background@3x.png */,
@@ -665,6 +681,8 @@
 				6AF2021E1C083F4000933EAF /* activityCell.xib */,
 				153ED8651C0C266C00171DFA /* MDDrugTableViewCell.h */,
 				153ED8661C0C266C00171DFA /* MDDrugTableViewCell.m */,
+				6AF202661C0D495300933EAF /* MDnoticeCenterCell.h */,
+				6AF202671C0D495300933EAF /* MDnoticeCenterCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -686,6 +704,8 @@
 				6A3EF7DC1C058F1200923D03 /* MDMyViewController.m */,
 				6AF2024B1C0C1A5600933EAF /* MDMyDoctorViewController.h */,
 				6AF2024C1C0C1A5600933EAF /* MDMyDoctorViewController.m */,
+				6AF202691C0D71AB00933EAF /* MDFeedBackViewController.h */,
+				6AF2026A1C0D71AB00933EAF /* MDFeedBackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -808,6 +828,15 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		6AF202771C0D968C00933EAF /* NIDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				6AF202741C0D968800933EAF /* NIDropDown.h */,
+				6AF202751C0D968800933EAF /* NIDropDown.m */,
+			);
+			name = NIDropDown;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -892,6 +921,7 @@
 				6AF2023F1C0B471B00933EAF /* topImg1@3x.png in Resources */,
 				6AF202431C0BE5D300933EAF /* background@3x.png in Resources */,
 				153C1E651C03F4ED00F87014 /* service@2x.png in Resources */,
+				6AF202791C0D979400933EAF /* 下拉框@2x.png in Resources */,
 				153ED8251C08022E00171DFA /* 服务名框@2x.png in Resources */,
 				159049951C06CFD900EE51FB /* 红色提醒@2x.png in Resources */,
 				153ED8271C08022E00171DFA /* 登录状态@2x.png in Resources */,
@@ -917,6 +947,7 @@
 				15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */,
 				6A3EF7B61C054E2C00923D03 /* greenlogo@2x.png in Resources */,
 				6AF2023D1C0B471700933EAF /* topImg1@2x.png in Resources */,
+				6AF2027B1C0D979A00933EAF /* 下拉框@3x.png in Resources */,
 				1590498F1C06CD6100EE51FB /* 注册按钮@2x.png in Resources */,
 				159049891C06CD6100EE51FB /* 按钮页@2x.png in Resources */,
 				6A3EF7B21C054E1E00923D03 /* bluelogo@2x.png in Resources */,
@@ -1023,9 +1054,12 @@
 				153ED8671C0C266C00171DFA /* MDDrugTableViewCell.m in Sources */,
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
+				6AF2026B1C0D71AB00933EAF /* MDFeedBackViewController.m in Sources */,
+				6AF202761C0D968800933EAF /* NIDropDown.m in Sources */,
 				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
 				6AF202641C0C4CDD00933EAF /* UIView+ViewExtension.m in Sources */,
 				153ED8521C0BE4D700171DFA /* MDAddressTableViewCell.m in Sources */,
+				6AF202681C0D495300933EAF /* MDnoticeCenterCell.m in Sources */,
 				159049741C069FA600EE51FB /* BRSNewPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

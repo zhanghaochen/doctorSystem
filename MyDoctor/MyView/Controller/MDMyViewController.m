@@ -12,6 +12,7 @@
 #import "View+MASAdditions.h"
 #import "MDServiceViewController.h"
 #import "MDMyDoctorViewController.h"
+#import "MDFeedBackViewController.h"
 
 @interface MDMyViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -162,6 +163,12 @@
         MDMyDoctorViewController * myDoctorVC = [[MDMyDoctorViewController alloc] init];
         myDoctorVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:myDoctorVC animated:YES];
+    }
+    else if (indexPath.section == 2)
+    {
+        MDFeedBackViewController * feedBackVC = [[MDFeedBackViewController alloc] init];
+        feedBackVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:feedBackVC animated:YES];
     }
 }
 

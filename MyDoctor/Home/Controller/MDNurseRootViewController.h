@@ -12,7 +12,7 @@
 
 @property(nonatomic,strong) UIScrollView * scrollView;
 @property(nonatomic,strong) UIView * whiteView;
-@property (nonatomic,strong) UILabel * titleLab;
+@property (nonatomic,strong) NSString * titleLab;
 @property (nonatomic,strong) UIButton * leftDownBtn;
 @property (nonatomic,strong) UIButton * rightDownBtn;
 
