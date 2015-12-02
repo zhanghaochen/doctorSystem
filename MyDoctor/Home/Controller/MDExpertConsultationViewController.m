@@ -7,6 +7,7 @@
 //
 
 #import "MDExpertConsultationViewController.h"
+#import "BRSlogInViewController.h"
 
 @interface MDExpertConsultationViewController ()
 
@@ -44,6 +45,8 @@
     callBtn.layer.cornerRadius = 5.0;
     callBtn.layer.masksToBounds = YES;
     callBtn.backgroundColor = RedColor;
+    [callBtn addTarget:self action:@selector(callBtn:) forControlEvents:UIControlEventTouchUpInside];
+
     [callBtn setTitle:@"视频" forState:0];
     [self.view addSubview:callBtn];
     
@@ -162,15 +165,23 @@
     
 
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)callBtn:(UIButton *)button
+{
+    [self logInView];
 }
-*/
 
+-(void)logInView
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        
+    }else{
+        BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
+        UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
+        
+        nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:nvc animated:YES completion:nil];
+    }
+}
 @end

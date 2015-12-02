@@ -12,6 +12,10 @@
 #import "MX_MASConstraintMaker.h"
 #import "View+MASAdditions.h"
 #import "MDConst.h"
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
+#import "GTMBase64.h"
+
 @interface BRSlogInViewController ()
 
 @end
@@ -22,6 +26,10 @@
     BRSTextField * password;
     UIView * view1;
     UIButton * button;
+    //下载进度
+    NSProgress * _progress;
+    NSURLSessionDownloadTask * _task;
+
 }
 #define autoSizeScaleX  (appWidth>320?appWidth/320:1)
 #define autoSizeScaleY  (appHeight>568?appHeight/568:1)
@@ -47,7 +55,123 @@
     [self.view addGestureRecognizer:tapGesture];
     [self logInView];
     
+    //1.检测网络状态
+    [self monitorNetworkType];
+    //5.post请求
+    [self jsonGetRequest];
+
+    
 }
+- (void)monitorNetworkType
+{
+    //AFNetWorking通过发送网络请求的方式判断当前网络状态，需要选择一个请求。推荐使用门户网站网址
+    //请求队列的管理员
+    AFHTTPRequestOperationManager  * manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"www.baidu.com"]];
+    
+    //    void (^block)(AFNetworkReachabilityStatus status);
+    //    block = ^(AFNetworkReachabilityStatus status){
+    //
+    //    };
+    
+    //监控网络状态
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status){
+        //这是一个代码块，是rootviewcontroller的代码块，但是由manager.reachabilityManager 调用
+        //status是manager.reachabilityManager传过来的参数，也就是说，发送方通过这个参数，将网络状态发过来了。
+        if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
+            NSLog(@"WiFi");
+        } else if (status == AFNetworkReachabilityStatusReachableViaWWAN) {
+            NSLog(@"GPRS/3G");
+        } else if (status == AFNetworkReachabilityStatusNotReachable){
+            NSLog(@"网络未连接");
+        }
+        
+    }];
+    
+    //启动网络监控
+    [manager.reachabilityManager startMonitoring];
+    //当发生网络状态变化，回调block
+    
+}
+
+#pragma mark - GET请求 JSON数据
+- (void)jsonGetRequest
+{
+    //创建urlString
+    NSString * urlString = @"http://rmabcdef001:8080/CommunityWs/servlet/ShequServlet?b=";
+    
+    NSString * nameAndPassword=@"10002@`zhanghaochen@`111111";
+    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
+    
+    urlString=[NSString stringWithFormat:@"%@%@",urlString,nameAndPassword];
+    
+    //数据请求的队列管理器，单例
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    
+    
+    //解析json时出现问题，需要设置文件的内容
+    //如此设置就会进行JSON解析
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    
+    
+    //发起get请求，第一个参数是请求的url字符串，第二个参数在get中传nil
+    //后两个block，意思是成功调用block，失败调用block
+    [manager GET:urlString parameters:nil success:
+     ^(AFHTTPRequestOperation * operation, id responseObject){
+         
+         //JSON数据已经解析过了
+         NSLog(@"%@", responseObject);
+         //接下来要做的就是将数据从字典中取出放入数据源
+         //在这里写填充数据源，可以调一个函数完成
+     }
+         failure:
+     ^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"%@", error);
+     }];
+    
+    
+}
+#pragma mark - POST请求
+- (void)postRequest
+{
+    NSString * url = @"http://rmabcdef001:8080/CommunityWs/servlet/ShequServlet?b=";
+    
+    
+//    NSString* encodeStr = @"MTAwMDFAYDFAYDJAYDNAYDRAYDVAYHpoYW5nc2FuQGAxMzgwMDAwMTExMUBgMTIzNDU2QGA5QGAxMEBgMTE";
+    
+//    NSString* encodeStr = @"MTAwMDJAYDFAYDJAYDNAYDRAYDVAYGxpeWFuZzFAYDEyMzQ1Ng==";
+//    
+//    NSString* decodeResult = nil;
+//    
+//    NSData* encodeData = [encodeStr dataUsingEncoding:NSUTF8StringEncoding];
+//    
+//    NSData* decodeData = [GTMBase64 decodeData:encodeData];
+//    
+//    decodeResult = [[NSString alloc] initWithData:decodeData encoding:NSUTF8StringEncoding];
+//    
+//    NSLog(@"%@",decodeResult);
+    
+    
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    
+    //data Get请求如此设置
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    //post键值对
+    NSDictionary * dict = @{@"username":@"John", @"password":@"89091", @"message":@"hahahahaha"};
+    
+    [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString * str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        //回馈数据
+        NSLog(@"%@", str);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
+}
+
 -(void)logInView
 {
     view1=[[UIView alloc] init];
@@ -160,8 +284,34 @@
     NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
     NSString * str=[stdDefault objectForKey:@"user_name"];
     logInField.text=str;
+    
+    
+    UIButton * back=[[UIButton alloc] init];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    back.layer.borderColor = [[UIColor colorWithRed:228/255.0 green:71/255.0 blue:78/255.0 alpha:1] CGColor];
+    back.layer.borderWidth = 1;
+    back.layer.cornerRadius = 5;
+    [back setBackgroundColor:[UIColor clearColor]];
+    back.titleLabel.font=[UIFont systemFontOfSize:15];
+    [back setTitle:@"返回" forState:UIControlStateNormal];
+    [back setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.view addSubview:back];
+    [back mas_makeConstraints:^(MX_MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).with.offset(30*autoSizeScaleY);
+        make.left.equalTo(self.view.mas_left).with.offset(20);
+        make.size.mas_equalTo(CGSizeMake(50,25));
+    }];
 }
+-(void)back:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"back");
+    }];
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backselected1" object:self];
+    
+}
 -(void)tunch:(UIButton *)tunch
 {
     button.enabled = NO;
@@ -186,6 +336,11 @@
 //        }
 //    }];
 //
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"back");
+    }];
 
     
 }
@@ -270,6 +425,47 @@
 }
 */
 
+//转吗
+-(NSString *)GTMEncodeTest:(NSString *)text
+
+{
+    
+    NSString* originStr = text;
+    
+    NSString* encodeResult = nil;
+    
+    NSData* originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData* encodeData = [GTMBase64 encodeData:originData];
+    
+    encodeResult = [[NSString alloc] initWithData:encodeData encoding:NSUTF8StringEncoding];
+    
+    return encodeResult;
+}
+
+
+/**
+ 
+ * GTM 解码
+ 
+ */
+
+-(NSString *)GMTDecodeTest:(NSString *)text
+
+{
+    
+    NSString* encodeStr = text;
+    
+    NSString* decodeResult = nil;
+    
+    NSData* encodeData = [encodeStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData* decodeData = [GTMBase64 decodeData:encodeData];
+    
+    decodeResult = [[NSString alloc] initWithData:decodeData encoding:NSUTF8StringEncoding];
+    
+    return decodeResult;
+}
 
 
 @end

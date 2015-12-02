@@ -24,6 +24,8 @@
     [super viewDidLoad];
     self.navigationItem.title=@"选择地址";
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNewAddress:) name:@"addNewAddress" object:nil];
+    
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -32,7 +34,10 @@
     [self TableView];
     [self addAddressButton];
 }
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"addNewAddress" object:nil];
+}
 -(void)dataArray
 {
     dataArray=[[NSMutableArray alloc] init];
@@ -46,7 +51,7 @@
 -(void)TableView
 {
     
-    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,0, appWidth, appHeight) style:UITableViewStylePlain];
+    _tableView=[[UITableView alloc] initWithFrame:CGRectMake(0,64, appWidth, appHeight-64-80) style:UITableViewStylePlain];
     _tableView.separatorColor = [UIColor colorWithRed:223.0f/255.0f green:223.0f/255.0f blue:223.0f/255.0f alpha:1];
     _tableView.backgroundColor=[UIColor clearColor];
     _tableView.dataSource=self;
@@ -83,7 +88,14 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
-//    [self.navigationController popViewControllerAnimated:YES];
+    
+    MDUserInformationVO * userVO=dataArray[indexPath.row];
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    [userInfo setObject:[NSString stringWithFormat:@"%@  %@ %@",userVO.userName,userVO.phone,userVO.address] forKey:@"address"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"chooseAddress" object:nil userInfo:userInfo];
+
+    [self.navigationController popViewControllerAnimated:YES];
 
 }
 
@@ -133,7 +145,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+-(void)addNewAddress:(id)sender
+{
+    MDUserInformationVO * userVO=[[MDUserInformationVO alloc] init];
+    userVO.userName=[[sender userInfo] objectForKey:@"name"];
+    userVO.phone=[[sender userInfo] objectForKey:@"phone"];
+    userVO.address=[NSString stringWithFormat:@"%@ %@",[[sender userInfo] objectForKey:@"address"],[[sender userInfo] objectForKey:@"buildingNumber"]];
+    [dataArray addObject:userVO];
+    [_tableView removeFromSuperview];
+    [self TableView];
+    [_tableView reloadData];
+}
 
 
 

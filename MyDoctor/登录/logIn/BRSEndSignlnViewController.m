@@ -116,11 +116,11 @@
 }
 -(void)finish:(UIButton *)finish
 {
-    if (!image222) {
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"showBRSMainView" object:self];
-        return;
-    }
+//    if (!image222) {
+//        [[NSNotificationCenter defaultCenter]
+//         postNotificationName:@"showBRSMainView" object:self];
+//        return;
+//    }
     
 //    FileUtils *fileUtil = [FileUtils sharedFileUtils];
 //    //创建文件下载目录
@@ -144,15 +144,19 @@
 //                [WBUserVO userVO].userExtVO.avatar_url = headerUrl;
 //            }
 ////            [picker dismissViewControllerAnimated:YES completion:^{}];
-            [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"showBRSMainView" object:self];
+//            [[NSNotificationCenter defaultCenter]
+//     postNotificationName:@"showBRSMainView" object:self];
 //        }
 //        //        [self hadeView];
 //        
 //        NSLog(@"error == %@",error);
 //        
 //    }];
-//    
+//
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"back");
+    }];
     
 }
 -(void)back

@@ -7,6 +7,7 @@
 //
 
 #import "MDNurseRootViewController.h"
+#import "BRSlogInViewController.h"
 #import "MDNoPaymentViewController.h"
 @interface MDNurseRootViewController ()
 
@@ -20,12 +21,15 @@
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMainView) name:@"showBRSMainView" object:nil];
     [self createView];
 
     // Do any additional setup after loading the view.
 }
-
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showBRSMainView"  object:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -53,6 +57,8 @@
     self.leftDownBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftDownBtn.layer.cornerRadius = 5.0;
     self.leftDownBtn.layer.masksToBounds = YES;
+    [self.leftDownBtn addTarget:self action:@selector(leftDownBtn:) forControlEvents:UIControlEventTouchUpInside];
+
     [self.leftDownBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
     [self.leftDownBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.leftDownBtn setBackgroundColor:RedColor];
@@ -157,11 +163,22 @@
 
 -(void)orderClcik
 {
+    
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        [self showMainView];
+    }else{
+        [self logInView];
+    }
+}
+-(void)showMainView
+{
+    NSLog(@"11");
     MDNoPaymentViewController * noPaymentVC = [[MDNoPaymentViewController alloc] init];
     noPaymentVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noPaymentVC animated:YES];
 }
-
 /*
 #pragma mark - Navigation
 
@@ -171,5 +188,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)leftDownBtn:(UIButton *)button
+{
+    
+    [self logInView];
+}
 
+
+-(void)logInView
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        
+    }else{
+        BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
+        UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
+        
+        nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:nvc animated:YES completion:nil];
+    }
+}
 @end

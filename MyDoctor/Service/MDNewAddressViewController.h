@@ -8,6 +8,6 @@
 
 #import "MDBaseViewController.h"
 
-@interface MDNewAddressViewController : MDBaseViewController
+@interface MDNewAddressViewController : MDBaseViewController<UITextFieldDelegate>
 
 @end

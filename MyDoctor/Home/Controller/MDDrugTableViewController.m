@@ -149,14 +149,13 @@
     [theDefault addTarget:self action:@selector(theDefault:) forControlEvents:UIControlEventTouchUpInside];
     theDefault.titleLabel.font=[UIFont systemFontOfSize:15];
     [theDefault setTitle:@"综合排序" forState:UIControlStateNormal];
-//    [theDefault layoutIfNeeded];
+    [theDefault layoutIfNeeded];
     [theDefault setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [theDefault setBackgroundImage:[UIImage imageNamed:@"按钮框"] forState:UIControlStateNormal];
-//    [theDefault setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
     [self.view addSubview:theDefault];
-    
-//    [btnRight setTitleEdgeInsets:UIEdgeInsetsMake(0, -imgArrow.size.width, 0, imgArrow.size.width)];
-//    [btnRight setImageEdgeInsets:UIEdgeInsetsMake(0, btnRight.titleLabel.bounds.size.width, 0, -btnRight.titleLabel.bounds.size.width)];
+    [theDefault setImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];
+    [theDefault setTitleEdgeInsets:UIEdgeInsetsMake(0, -2, 0, 15)];
+    [theDefault setImageEdgeInsets:UIEdgeInsetsMake(0, 85, 0, 0)];
     
     
     sales=[[UIButton alloc] initWithFrame:CGRectMake(appWidth/3, 64, appWidth/3, 35)];
@@ -166,14 +165,20 @@
     [sales setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [sales setBackgroundImage:[UIImage imageNamed:@"按钮框"] forState:UIControlStateNormal];
     [self.view addSubview:sales];
+    [sales setImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];
+    [sales setTitleEdgeInsets:UIEdgeInsetsMake(0, -2, 0, 15)];
+    [sales setImageEdgeInsets:UIEdgeInsetsMake(0, 85, 0, 0)];
     
     screen=[[UIButton alloc] initWithFrame:CGRectMake(appWidth/3*2, 64, appWidth/3, 35)];
     [screen addTarget:self action:@selector(screen:) forControlEvents:UIControlEventTouchUpInside];
     screen.titleLabel.font=[UIFont systemFontOfSize:15];
-    [screen setTitle:@"筛选" forState:UIControlStateNormal];
+    [screen setTitle:@"筛    选" forState:UIControlStateNormal];
     [screen setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [screen setBackgroundImage:[UIImage imageNamed:@"按钮框"] forState:UIControlStateNormal];
     [self.view addSubview:screen];
+    [screen setImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];
+    [screen setTitleEdgeInsets:UIEdgeInsetsMake(0, -2, 0, 15)];
+    [screen setImageEdgeInsets:UIEdgeInsetsMake(0, 85, 0, 0)];
     
     UIView * redLine=[[UIView alloc] initWithFrame:CGRectMake(0, 64, appWidth, 1)];
     redLine.backgroundColor=RedColor;

@@ -19,6 +19,7 @@
     KTSelectDatePicker *selectPicker;
     UIView * backView;
     UIButton * dayButton;
+    UILabel * peopleAddress;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,10 +27,16 @@
     
     [self draw];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(chooseAddress:) name:@"chooseAddress" object:nil];
+
     [self setNavigationBarWithrightBtn:nil leftBtn:@"navigationbar_back"];
     //返回按钮点击
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
+}
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"chooseAddress" object:nil];
 }
 -(void)backBtnClick
 {
@@ -39,13 +46,17 @@
 -(void)draw
 {
     backView=[[UIView alloc] init];
-    backView.backgroundColor=[UIColor whiteColor];
+    backView.backgroundColor=[UIColor clearColor];
     [self.view addSubview:backView];
     [backView mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).with.offset(64+25);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(appWidth-20,appWidth+20));
     }];
+    UIView * write=[[UIView alloc] initWithFrame:CGRectMake(0, 0, appWidth-20, appWidth+20)];
+    write.backgroundColor=[UIColor whiteColor];
+    write.alpha=0.6;
+    [backView addSubview:write];
     
     UILabel * service=[[UILabel alloc] init];
     service.text=@"此订单详情";
@@ -138,7 +149,7 @@
     }];
     
     
-    UILabel * peopleAddress=[[UILabel alloc] init];
+    peopleAddress=[[UILabel alloc] init];
     peopleAddress.text=@"小明   1399928102940 天津市北辰区XXXXXXXXXXX";
     peopleAddress.textColor=[UIColor grayColor];
     peopleAddress.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -206,7 +217,12 @@
 }
 
 
-
+-(void)chooseAddress:(id)sender
+{
+    peopleAddress.text=[[sender userInfo] objectForKey:@"address"];
+    
+    
+}
 
 
 
