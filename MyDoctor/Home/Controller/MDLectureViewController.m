@@ -96,6 +96,13 @@
     detailsLab.font = [UIFont systemFontOfSize:14];
     detailsLab.textColor = ColorWithRGB(97, 103, 111, 1);
     detailsLab.numberOfLines = 0;
+    
+    //调整文字行间距
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:detailsLab.text];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:6];//间距大小
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [detailsLab.text length])];
+    detailsLab.attributedText = attributedString;
     [detailsLab sizeToFit];
     [self.scrollView addSubview:detailsLab];
     

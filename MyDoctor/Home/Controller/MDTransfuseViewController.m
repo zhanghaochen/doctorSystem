@@ -34,6 +34,12 @@
     introduceLab.font = [UIFont systemFontOfSize:14];
     introduceLab.textColor = ColorWithRGB(97, 103, 111, 1);
     introduceLab.numberOfLines = 0;
+    //调整文字行间距
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:introduceLab.text];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:6];//间距大小
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [introduceLab.text length])];
+    introduceLab.attributedText = attributedString;
     [introduceLab sizeToFit];
     [self.scrollView addSubview:introduceLab];
     
