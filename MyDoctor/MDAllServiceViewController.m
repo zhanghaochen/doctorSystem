@@ -116,7 +116,11 @@
 {
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    // 带字典的通知
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"12" forKey:@"text"];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushViewInParent" object:nil userInfo:userInfo];
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
