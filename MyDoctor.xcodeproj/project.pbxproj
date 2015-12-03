@@ -113,6 +113,7 @@
 		15AE537A1C02F0680013FF1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15AE53791C02F0680013FF1B /* Images.xcassets */; };
 		15AE537D1C02F0680013FF1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AE537B1C02F0680013FF1B /* LaunchScreen.xib */; };
 		15AE53891C02F0680013FF1B /* MyDoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE53881C02F0680013FF1B /* MyDoctorTests.m */; };
+		6A2582B81C0FE21D005E3404 /* topImg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A2582B71C0FE21D005E3404 /* topImg2.jpg */; };
 		6A3EF7AE1C054DA700923D03 /* purplelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EF7AD1C054DA700923D03 /* purplelogo@2x.png */; };
 		6A3EF7B11C054E1E00923D03 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EF7AF1C054E1E00923D03 /* arrow@2x.png */; };
 		6A3EF7B21C054E1E00923D03 /* bluelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3EF7B01C054E1E00923D03 /* bluelogo@2x.png */; };
@@ -347,6 +348,7 @@
 		15AE53821C02F0680013FF1B /* MyDoctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDoctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AE53871C02F0680013FF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AE53881C02F0680013FF1B /* MyDoctorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDoctorTests.m; sourceTree = "<group>"; };
+		6A2582B71C0FE21D005E3404 /* topImg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = topImg2.jpg; sourceTree = "<group>"; };
 		6A3EF7AD1C054DA700923D03 /* purplelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purplelogo@2x.png"; sourceTree = "<group>"; };
 		6A3EF7AF1C054E1E00923D03 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		6A3EF7B01C054E1E00923D03 /* bluelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bluelogo@2x.png"; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				159049931C06CFD900EE51FB /* 灰色单选@2x.png */,
 				159049941C06CFD900EE51FB /* 绿色单选@2x.png */,
 				1590497E1C06CD6100EE51FB /* 按钮@2x.png */,
+				6A2582B71C0FE21D005E3404 /* topImg2.jpg */,
 				1590497F1C06CD6100EE51FB /* 按钮页@2x.png */,
 				159049801C06CD6100EE51FB /* 登录-框-图标1@2x.png */,
 				159049811C06CD6100EE51FB /* 登录-框-图标2@2x.png */,
@@ -1159,6 +1162,7 @@
 				153ED8611C0C17E700171DFA /* 搜索药品@3x.png in Resources */,
 				153ED85F1C0C17DC00171DFA /* 搜索药品@2x.png in Resources */,
 				153C1E641C03F4ED00F87014 /* my@2x.png in Resources */,
+				6A2582B81C0FE21D005E3404 /* topImg2.jpg in Resources */,
 				155CEBF01C0D47F0006B5CFA /* 用户电话@2x.png in Resources */,
 				6A3EF7B51C054E2C00923D03 /* feedback@2x.png in Resources */,
 				153ED8261C08022E00171DFA /* 男性@2x.png in Resources */,

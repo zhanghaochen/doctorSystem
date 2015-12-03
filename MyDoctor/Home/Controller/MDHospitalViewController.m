@@ -9,7 +9,7 @@
 #import "MDHospitalViewController.h"
 #import "BRSlogInViewController.h"
 
-@interface MDHospitalViewController ()
+@interface MDHospitalViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -110,7 +110,7 @@
 
     [consultBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.left.equalTo(whiteView.mas_left).with.offset(22);
-        make.bottom.equalTo(whiteView.mas_bottom).with.offset(-40);
+        make.bottom.equalTo(whiteView.mas_bottom).with.offset(-80.0/1333.0*appHeight);
         make.right.equalTo(callBtn.mas_left).with.offset(-33);
         make.width.equalTo(callBtn.mas_width);
         make.height.equalTo(callBtn.mas_height);
@@ -118,34 +118,68 @@
     
     [callBtn mas_makeConstraints:^(MX_MASConstraintMaker *make) {
         make.right.equalTo(whiteView.mas_right).with.offset(-22);
-        make.bottom.equalTo(whiteView.mas_bottom).with.offset(-40);
+        make.bottom.equalTo(whiteView.mas_bottom).with.offset(-80.0/1333.0*appHeight);
         make.left.equalTo(callBtn.mas_right).with.offset(33);
         make.width.equalTo(callBtn.mas_width);
         make.height.equalTo(callBtn.mas_height);
     }];
 }
+
 -(void)consult:(UIButton *)button
-{
-    [self logInView];
-}
--(void)callBtn:(UIButton *)button
-{
-    [self logInView];
-    
-}
--(void)logInView
+
 {
     NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
     NSString * str=[stdDefault objectForKey:@"user_name"];
     if ([str length]>0) {
+        UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"正在咨询"
+                             
+                                                      message:nil
+                             
+                                                     delegate:self
+                             
+                                            cancelButtonTitle:@"好的"
+                             
+                                            otherButtonTitles:nil];
+        
+        [alert show];
+
         
     }else{
+        [self logInView];
+    }
+
+}
+-(void)callBtn:(UIButton *)button
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"正在呼叫"
+                             
+                                                      message:nil
+                             
+                                                     delegate:self
+                             
+                                            cancelButtonTitle:@"好的"
+                             
+                                            otherButtonTitles:nil];
+        
+        [alert show];
+
+        
+    }else{
+       [self logInView];
+    }
+
+}
+-(void)logInView
+{
         BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
         UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
         
         nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:nvc animated:YES completion:nil];
-    }
+    
 }
 
 @end
