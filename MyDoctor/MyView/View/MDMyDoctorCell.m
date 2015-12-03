@@ -29,11 +29,14 @@
     if (_zanBtn.selected == NO) {
         _zanBtn.selected = YES;
         [_zanBtn setTitle:[NSString stringWithFormat:@"%d",[_zanBtn.titleLabel.text intValue]+1] forState:0];
+        [_zanBtn setImage:[UIImage imageNamed:@"赞"] forState:0];
     }
    
     
     else {
         [_zanBtn setTitle:[NSString stringWithFormat:@"%d",[_zanBtn.titleLabel.text intValue]-1] forState:0];
+        [_zanBtn setImage:[UIImage imageNamed:@"未赞"] forState:0];
+
         _zanBtn.selected = NO;
     }
     

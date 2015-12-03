@@ -200,7 +200,16 @@
     }
     cell.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.7];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    cell.textLabel.text = @"11";
+    if (indexPath.section == 0) {
+        cell.cellTitleLab.text = @"专家咨询";
+        cell.detailsLab.text = @"神经内科专家进行免费咨询和义诊";
+    }
+    else if (indexPath.section == 1)
+    {
+        cell.cellTitleLab.text = @"专题讲座";
+        cell.detailsLab.text = @"医疗保健知识讲座进社区";
+    }
+
     return cell;
 }
 
