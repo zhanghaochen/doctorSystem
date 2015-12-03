@@ -9,6 +9,7 @@
 #import "MDMyDoctorViewController.h"
 #import "MDMyDoctorModel.h"
 #import "MDMyDoctorCell.h"
+#import "MDExpertConsultationViewController.h"
 
 @interface MDMyDoctorViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -115,7 +116,15 @@
     cell.nameLab.text = [NSString stringWithFormat:@"%@医生",model.name];
     cell.hospitolName.text = [NSString stringWithFormat:@"所属医院: %@",model.hospitol];
     cell.majorLal.text=  [NSString stringWithFormat:@"主治: %@",model.major];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MDExpertConsultationViewController * expertConsultaVC = [[MDExpertConsultationViewController alloc] init];
+    expertConsultaVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:expertConsultaVC animated:YES];
 }
 
 

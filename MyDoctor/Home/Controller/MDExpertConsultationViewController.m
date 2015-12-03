@@ -9,7 +9,7 @@
 #import "MDExpertConsultationViewController.h"
 #import "BRSlogInViewController.h"
 
-@interface MDExpertConsultationViewController ()
+@interface MDExpertConsultationViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -167,21 +167,36 @@
 }
 -(void)callBtn:(UIButton *)button
 {
-    [self logInView];
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"开启视频"
+                             
+                                                      message:nil
+                             
+                                                     delegate:self
+                             
+                                            cancelButtonTitle:@"好的"
+                             
+                                            otherButtonTitles:nil];
+        
+        [alert show];
+
+        
+        
+    }else{
+        [self logInView];
+    }
+
 }
 
 -(void)logInView
 {
-    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
-    NSString * str=[stdDefault objectForKey:@"user_name"];
-    if ([str length]>0) {
-        
-    }else{
         BRSlogInViewController * logIn=[[BRSlogInViewController alloc] init];
         UINavigationController * nvc=[[UINavigationController alloc] initWithRootViewController:logIn];
         
         nvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:nvc animated:YES completion:nil];
-    }
+    
 }
 @end

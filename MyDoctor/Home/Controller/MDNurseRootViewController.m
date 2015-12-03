@@ -9,7 +9,7 @@
 #import "MDNurseRootViewController.h"
 #import "BRSlogInViewController.h"
 #import "MDNoPaymentViewController.h"
-@interface MDNurseRootViewController ()
+@interface MDNurseRootViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -61,6 +61,7 @@
 
     [self.leftDownBtn setTitle:@"电话咨询" forState:UIControlStateNormal];
     [self.leftDownBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.leftDownBtn addTarget:self action:@selector(callBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.leftDownBtn setBackgroundColor:RedColor];
     [self.view addSubview:self.leftDownBtn];
     
@@ -172,6 +173,31 @@
         [self logInView];
     }
 }
+
+-(void)callBtnClick
+{
+    NSUserDefaults * stdDefault = [NSUserDefaults standardUserDefaults];
+    NSString * str=[stdDefault objectForKey:@"user_name"];
+    if ([str length]>0) {
+        UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"正在咨询"
+                             
+                                                      message:nil
+                             
+                                                     delegate:self
+                             
+                                            cancelButtonTitle:@"好的"
+                             
+                                            otherButtonTitles:nil];
+        
+        [alert show];
+        
+        
+    }else{
+        [self logInView];
+    }
+
+}
+
 -(void)showMainView
 {
     NSLog(@"11");

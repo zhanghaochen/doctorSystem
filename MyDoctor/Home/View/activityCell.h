@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface activityCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *cellTitleLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UILabel *detailsLab;
 
 @end

@@ -27,13 +27,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-ek-W08">
-                        <rect key="frame" x="30" y="66" width="200" height="21"/>
+                        <rect key="frame" x="30" y="66" width="273" height="21"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="nQG-ek-W08" secondAttribute="height" multiplier="200:21" id="uwh-n4-j0O"/>
+                            <constraint firstAttribute="width" secondItem="nQG-ek-W08" secondAttribute="height" multiplier="13:1" id="FM3-84-FC6"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.3803921569" green="0.4039215686" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-11-26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMl-DK-z3E">
@@ -43,7 +43,7 @@
                             <constraint firstAttribute="width" secondItem="mMl-DK-z3E" secondAttribute="height" multiplier="200:21" id="Ok4-uL-Df6"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.3803921569" green="0.4039215686" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -55,12 +55,17 @@
                     <constraint firstAttribute="trailingMargin" secondItem="DnY-jW-zzE" secondAttribute="trailing" constant="82" id="SMt-NS-1MT"/>
                     <constraint firstItem="mMl-DK-z3E" firstAttribute="top" secondItem="DnY-jW-zzE" secondAttribute="bottom" constant="8" id="czo-E0-r49"/>
                     <constraint firstItem="DnY-jW-zzE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="dfd-cj-dfs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nQG-ek-W08" secondAttribute="trailing" constant="9" id="lTk-LD-gcK"/>
                     <constraint firstAttribute="trailingMargin" secondItem="mMl-DK-z3E" secondAttribute="trailing" constant="82" id="r8g-Wn-Icl"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nQG-ek-W08" secondAttribute="trailing" constant="82" id="wwv-Zj-4DJ"/>
                     <constraint firstItem="nQG-ek-W08" firstAttribute="top" secondItem="mMl-DK-z3E" secondAttribute="bottom" constant="8" id="xI7-4s-vBW"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="cellTitleLab" destination="DnY-jW-zzE" id="q5F-Be-kas"/>
+                <outlet property="detailsLab" destination="nQG-ek-W08" id="yes-wT-1wG"/>
+                <outlet property="timeLab" destination="mMl-DK-z3E" id="y9D-Ii-lIp"/>
+            </connections>
             <point key="canvasLocation" x="301" y="217.5"/>
         </tableViewCell>
     </objects>

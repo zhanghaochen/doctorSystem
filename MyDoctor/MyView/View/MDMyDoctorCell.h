@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *hospitolName;
+@property (weak, nonatomic) IBOutlet UIButton *zanBtn;
 @property (weak, nonatomic) IBOutlet UILabel *majorLal;
+- (IBAction)zanClick:(id)sender;
+
 
 @end

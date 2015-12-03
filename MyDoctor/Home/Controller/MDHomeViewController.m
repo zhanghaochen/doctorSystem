@@ -77,26 +77,23 @@
     _tableView.bounces = YES;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.contentOffset = CGPointMake(100, 100);
+    _tableView.contentInset = UIEdgeInsetsMake(18, 0, 0, 0);
+    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(18, 0, 0, 0);
 
     [self.view addSubview:_tableView];
 }
 
 -(void)setHeaderView
 {
+    NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"topImg",@"topImg1",@"topImg2.jpg",@"topImg",@"topImg1", nil];
     _headerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH - 42, (SCREENWIDTH - 42)*0.42)];
     CGFloat width = SCREENWIDTH - 42;
-    _headerView.contentSize = CGSizeMake(width*3, width*0.42);
+    _headerView.contentSize = CGSizeMake(width*imageArr.count, width*0.42);
     _headerView.bounces = NO;
     _headerView.pagingEnabled = YES;
     _headerView.showsHorizontalScrollIndicator = NO;
     _headerView.delegate = self;
-//    _tableView.tableHeaderView = _headerView;
-    _tableView.contentInset = UIEdgeInsetsMake(18, 0, 0, 0);
-    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(18, 0, 0, 0);
-//    [self.view addSubview:_headerView];
-    
-    NSMutableArray * imageArr = [[NSMutableArray alloc] initWithObjects:@"topImg1",@"background",@"topImg", nil];
+//    _headerView.contentOffset = CGPointMake(width, 0);
     
     for (int i = 0; i < imageArr.count; i ++) {
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(width * i, 0, width, width*0.42)];
@@ -107,7 +104,7 @@
     //UIpageController设置
     UIPageControl * pageController = [[UIPageControl alloc] initWithFrame:CGRectMake(_headerView.frame.size.width - 60, _headerView.frame.size.height - 15, 40, 10)];
     pageController.backgroundColor = [UIColor clearColor];
-    pageController.numberOfPages = imageArr.count;
+    pageController.numberOfPages = imageArr.count - 2;
     pageController.currentPage = 0;
     pageController.pageIndicatorTintColor = [UIColor whiteColor];
     pageController.currentPageIndicatorTintColor = [UIColor colorWithRed:65.0/255.0 green:65.0/255.0 blue:65.0/255.0 alpha:1.0];
@@ -123,6 +120,8 @@
 -(void)timeChange:(NSTimer *)timer
 {
     UIPageControl *pageControl = (UIPageControl *)[self.view viewWithTag:100];
+    pageControl.currentPage = currentPage;
+    currentPage ++;
 
     [UIView animateWithDuration:0.5 animations:^{
         _headerView.contentOffset = CGPointMake((SCREENWIDTH - 42)*currentPage, 0);
@@ -132,8 +131,7 @@
             _headerView.contentOffset = CGPointMake(0, 0);
             currentPage = 0;
     }
-    pageControl.currentPage = currentPage;
-    currentPage ++;
+   
 }
 
 #pragma mark - pageControl的方法
@@ -149,14 +147,25 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    
     //由tag值找到pageControl
     UIPageControl *pageControl = (UIPageControl *)[self.view viewWithTag:100];
     //找到当前scrollView的偏移量
     CGPoint point = scrollView.contentOffset;
     //找到目前是第几页
     currentPage = point.x / (SCREENWIDTH - 42);
+    if (currentPage == 0||currentPage == 4) {
+        if (currentPage == 0) {
+            currentPage = 3;
+        }else
+        {
+            currentPage = 1;
+        }
+        _headerView.contentOffset = CGPointMake(currentPage *  (SCREENWIDTH - 42), 0);
+
+    }
     //将页数赋给UIPageControl
-    pageControl.currentPage = currentPage;
+    pageControl.currentPage = currentPage-1;
 }
 
 #pragma mark 协议方法
