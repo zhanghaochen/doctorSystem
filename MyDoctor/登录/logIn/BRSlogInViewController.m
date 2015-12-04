@@ -15,8 +15,9 @@
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 #import "GTMBase64.h"
+#import "MDRequestModel.h"
 
-@interface BRSlogInViewController ()
+@interface BRSlogInViewController ()<sendInfoToCtr>
 
 @end
 
@@ -65,35 +66,39 @@
     [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
     date = [formatter stringFromDate:[NSDate date]];
     NSString * url = @"http://111.160.245.75:8082/CommunityWs//servlet/ShequServlet?";
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    //data Get请求如此设置
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
+    MDRequestModel * model = [[MDRequestModel alloc] init];
+    model.path = url;
     NSString * nameAndPassword=[NSString stringWithFormat:@"10102@`3@`3@`%@@`1@`3@`%@@`%@",date,logInField.text,password.text];
     nameAndPassword=[self GTMEncodeTest:nameAndPassword];
-    //post键值对
-    NSDictionary * dict = @{@"b":nameAndPassword};
+//    //post键值对
+    model.parameters = @{@"b":nameAndPassword};
+    model.delegate = self;
+    [model starRequest];
     
-    [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString * str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        //回馈数据
-        NSLog(@"%@", str);
-        
-        NSArray *array = [str componentsSeparatedByString:@","];
-        NSArray *success=[array[0] componentsSeparatedByString:@":"];
-        
-        if ([success[1] isEqualToString:@"true"]) {
-            [[NSNotificationCenter defaultCenter]
-             postNotificationName:@"showBRSMainView" object:self];
-            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
-            [stdDefault setObject:logInField.text forKey:@"user_name"];
-            [self dismissViewControllerAnimated:YES completion:^{
-                NSLog(@"back");
-            }];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
-    }];
+    
+}
+
+-(void)sendInfoFromRequest:(id)response andPath:(NSString *)path
+{
+    NSString * str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            //回馈数据
+            NSLog(@"%@", str);
+    
+            NSArray *array = [str componentsSeparatedByString:@","];
+            NSArray *success=[array[0] componentsSeparatedByString:@":"];
+    
+            if ([success[1] isEqualToString:@"true"]) {
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"showBRSMainView" object:self];
+                NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+                [stdDefault setObject:logInField.text forKey:@"user_name"];
+                [self dismissViewControllerAnimated:YES completion:^{
+                    NSLog(@"back");
+                }];
+            }
+
+    
 }
 
 -(void)logInView
