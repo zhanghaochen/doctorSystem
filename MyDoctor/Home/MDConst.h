@@ -168,4 +168,11 @@ static NSString *const kTrackingId = @"UA-39607394-5";
 //红色
 #define RedColor ColorWithRGB(228, 71, 78, 1)
 
+//测试的时候打印，发布时不打印
+#ifdef DEBUG
+#define MDLog(...) NSLog(__VA_ARGS__)
+#else
+#define MDLog(...)
+#endif
+
 #endif

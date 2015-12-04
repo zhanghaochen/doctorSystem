@@ -20,11 +20,13 @@
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 #import "GTMBase64.h"
+#import "MDRequestModel.h"
+
 
 #define autoSizeScaleX  (appWidth>320?appWidth/320:1)
 #define autoSizeScaleY  (appHeight>568?appHeight/568:1)
 #define T4FontSize (15*autoSizeScaleX)
-@interface BRSSignIn2ViewController ()
+@interface BRSSignIn2ViewController ()<sendInfoToCtr>
 
 @end
 
@@ -410,39 +412,61 @@
 #pragma mark - POST请求
 - (void)postRequest
 {
+    
     NSString* date;
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
     date = [formatter stringFromDate:[NSDate date]];
     NSString * url = @"http://111.160.245.75:8082/CommunityWs//servlet/ShequServlet?";
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    //data Get请求如此设置
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    MDRequestModel * model = [[MDRequestModel alloc] init];
+    model.path = url;
     NSArray *array = [housenumber.text componentsSeparatedByString:@"-"];
-
-     NSString * nameAndPassword=[NSString stringWithFormat:@"10101@`3@`3@`%@@`1@`3@`%@@`%@@`%@@`%@@`%@@`%@",date,number.text,self.login_name,password.text,village.text,array[0],array[1]];
-    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
-    //post键值对
-    NSDictionary * dict = @{@"b":nameAndPassword};
     
-    [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString * str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        //回馈数据
-        NSLog(@"%@", str);
-        
-        NSArray *array = [str componentsSeparatedByString:@","];
-        NSArray *success=[array[0] componentsSeparatedByString:@":"];
-        
-        if ([success[1] isEqualToString:@"true"]) {
-            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
-            [stdDefault setObject:self.login_name forKey:@"user_name"];
-            [stdDefault setObject:number.text forKey:@"Name"];
-            BRSEndSignlnViewController * esv=[[BRSEndSignlnViewController alloc] init];
-            [self.navigationController pushViewController:esv animated:YES];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
-    }];
+    NSString * nameAndPassword=[NSString stringWithFormat:@"10101@`3@`3@`%@@`1@`3@`%@@`%@@`%@@`%@@`%@@`%@",date,number.text,self.login_name,password.text,village.text,array[0],array[1]];
+    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
+
+    //    //post键值对
+    model.parameters = @{@"b":nameAndPassword};
+    model.delegate = self;
+    [model starRequest];
+
+//       [manager POST:url parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSString * str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        //回馈数据
+//        NSLog(@"%@", str);
+//        
+//        NSArray *array = [str componentsSeparatedByString:@","];
+//        NSArray *success=[array[0] componentsSeparatedByString:@":"];
+//        
+//        if ([success[1] isEqualToString:@"true"]) {
+//            NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+//            [stdDefault setObject:self.login_name forKey:@"user_name"];
+//            [stdDefault setObject:number.text forKey:@"Name"];
+//            BRSEndSignlnViewController * esv=[[BRSEndSignlnViewController alloc] init];
+//            [self.navigationController pushViewController:esv animated:YES];
+//        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"%@", error);
+//    }];
+}
+
+-(void)sendInfoFromRequest:(id)response andPath:(NSString *)path
+{
+    NSString * str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            //回馈数据
+            NSLog(@"%@", str);
+    
+            NSArray *array = [str componentsSeparatedByString:@","];
+            NSArray *success=[array[0] componentsSeparatedByString:@":"];
+    
+            if ([success[1] isEqualToString:@"true"]) {
+                NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+                [stdDefault setObject:self.login_name forKey:@"user_name"];
+                [stdDefault setObject:number.text forKey:@"Name"];
+                BRSEndSignlnViewController * esv=[[BRSEndSignlnViewController alloc] init];
+                [self.navigationController pushViewController:esv animated:YES];
+
+}
 }
 
 //转吗
