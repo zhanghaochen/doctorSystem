@@ -7,8 +7,15 @@
 //
 
 #import "MDLectureViewController.h"
+#import "MDRequestModel.h"
+#import "GTMBase64.h"
+#import "MDLectureModel.h"
 
-@interface MDLectureViewController ()<UIAlertViewDelegate>
+
+@interface MDLectureViewController ()<UIAlertViewDelegate,sendInfoToCtr>
+
+@property(nonatomic,strong)NSMutableArray *dataSource;
+
 
 @end
 
@@ -30,13 +37,74 @@
     //添加点击事件
     [self.rightDownBtn addTarget:self action:@selector(orderBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
-    [self setText];
+    [self postRequest];
+
+    
+//    [self setText];
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//开始请求数据
+- (void)postRequest
+{
+    NSString* date;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    date = [formatter stringFromDate:[NSDate date]];
+    
+    MDRequestModel * model = [[MDRequestModel alloc] init];
+    model.path = MDPath;
+    NSString * nameAndPassword=[NSString stringWithFormat:@"10201@`3@`3@`%@@`1@`3",date];
+    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
+    //    //post键值对
+    model.parameters = @{@"b":nameAndPassword};
+    model.delegate = self;
+    [model starRequest];
+}
+
+-(void)sendInfoFromRequest:(id)response andPath:(NSString *)path
+{
+    _dataSource = [[NSMutableArray alloc] init];
+//    NSString * str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSDictionary * dictionary = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+    for (NSDictionary * dic in [dictionary objectForKey:@"obj"]) {
+        MDLectureModel * model = [[MDLectureModel alloc] init];
+        [model setValuesForKeysWithDictionary:dic];
+        [_dataSource addObject:model];
+    }
+    
+    [self setText];
+//    healthEducateName": "健康讲座",
+//    "participateInPeople": "接受教育的人群",
+//    "starttime": "2015-11-30 21:10:53",
+//    "endtime": "2015-12-03 21:11:00",
+//    "content": "内容",
+//    "addree": "地点",
+//    "purpose": "目的",
+//    "company": "主办单位",
+//    NSLog(@"%@  %@  %@",[_dataSource[0] objectForKey:@"healthEducateName"],[_dataSource[0] objectForKey:@"participateInPeople"],[_dataSource[0] objectForKey:@"company"]);
+    
+    
+//    NSArray *array = [str componentsSeparatedByString:@","];
+//    NSArray *success=[array[0] componentsSeparatedByString:@":"];
+//    
+//    if ([success[1] isEqualToString:@"true"]) {
+//        [[NSNotificationCenter defaultCenter]
+//         postNotificationName:@"showBRSMainView" object:self];
+//        NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+//        [stdDefault setObject:logInField.text forKey:@"user_name"];
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            NSLog(@"back");
+//        }];
+//    }
+    
+
 }
 
 -(void)backBtnClick
@@ -63,8 +131,11 @@
 
 -(void)setText
 {
+    //取出数据模型
+    MDLectureModel * model = _dataSource[0];
+    
     UILabel * startTimeLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, appWidth - 48*2, 0)];
-    startTimeLab.text = @"讲座开始时间: 2015.04.23 11:00";
+    startTimeLab.text = [NSString stringWithFormat:@"开始时间:%@",model.starttime];
     startTimeLab.textAlignment = NSTextAlignmentLeft;
     startTimeLab.font = [UIFont systemFontOfSize:14];
     startTimeLab.textColor = ColorWithRGB(97, 103, 111, 1);
@@ -73,7 +144,7 @@
     [self.scrollView addSubview:startTimeLab];
     
     UILabel * endTimeLab = [[UILabel alloc] initWithFrame:CGRectMake(0, startTimeLab.y+startTimeLab.height+21, appWidth - 48*2, 0)];
-    endTimeLab.text = @"讲座结束时间: 2015.04.23 12:00";
+    endTimeLab.text = [NSString stringWithFormat:@"结束时间:%@",model.endtime];
     endTimeLab.textAlignment = NSTextAlignmentLeft;
     endTimeLab.font = [UIFont systemFontOfSize:14];
     endTimeLab.textColor = ColorWithRGB(97, 103, 111, 1);
@@ -121,8 +192,26 @@
     {
         scrollViewHeight += view.frame.size.height;
     }
-    [self.scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+21*4+10))];
+    [self.scrollView setContentSize:(CGSizeMake(0, scrollViewHeight+21*3))];
 
+}
+
+//转吗
+-(NSString *)GTMEncodeTest:(NSString *)text
+
+{
+    
+    NSString* originStr = text;
+    
+    NSString* encodeResult = nil;
+    
+    NSData* originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData* encodeData = [GTMBase64 encodeData:originData];
+    
+    encodeResult = [[NSString alloc] initWithData:encodeData encoding:NSUTF8StringEncoding];
+    
+    return encodeResult;
 }
 
 /*
