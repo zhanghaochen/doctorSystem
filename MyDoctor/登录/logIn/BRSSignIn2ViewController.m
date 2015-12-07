@@ -421,7 +421,9 @@
     MDRequestModel * model = [[MDRequestModel alloc] init];
     model.path = url;
     NSArray *array = [housenumber.text componentsSeparatedByString:@"-"];
-    
+    if ([array count]==1) {
+        array=[housenumber.text componentsSeparatedByString:@"－"];
+    }
     NSString * nameAndPassword=[NSString stringWithFormat:@"10101@`3@`3@`%@@`1@`3@`%@@`%@@`%@@`%@@`%@@`%@",date,number.text,self.login_name,password.text,village.text,array[0],array[1]];
     nameAndPassword=[self GTMEncodeTest:nameAndPassword];
 
