@@ -452,6 +452,7 @@
 //    }];
 }
 
+//请求数据回调
 -(void)sendInfoFromRequest:(id)response andPath:(NSString *)path
 {
     NSString * str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];

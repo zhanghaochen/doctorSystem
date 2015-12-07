@@ -11,8 +11,10 @@
 #import "MDTransfuseViewController.h"
 #import "MDExaminationViewController.h"
 #import "MDRecoveryViewController.h"
+#import "MDRequestModel.h"
+#import "GTMBase64.h"
 
-@interface MDNurseViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MDNurseViewController ()<UITableViewDataSource,UITableViewDelegate,sendInfoToCtr>
 {
     UITableView * _tableView;
     NSMutableArray * _listArray;
@@ -31,6 +33,8 @@
     [self.leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [self createTableView];
+    
+    [self postRequest];
 
     // Do any additional setup after loading the view.
 }
@@ -46,6 +50,31 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)postRequest
+{
+    NSString* date;
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    date = [formatter stringFromDate:[NSDate date]];
+    
+    MDRequestModel * model = [[MDRequestModel alloc] init];
+    model.path = MDPath;
+    NSString * nameAndPassword=[NSString stringWithFormat:@"10302@`3@`3@`%@@`1@`3@`%d@`%d@`%d",date,3,10,1];
+    nameAndPassword=[self GTMEncodeTest:nameAndPassword];
+    //    //post键值对
+    model.parameters = @{@"b":nameAndPassword};
+    model.delegate = self;
+    [model starRequest];
+}
+
+-(void)sendInfoFromRequest:(id)response andPath:(NSString *)path
+{
+    NSLog(@"======%@",[NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil]);
+    NSString * str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",str);
+}
+
 
 -(void)createTableView
 {
@@ -142,6 +171,25 @@
     }
 
 }
+
+//转吗
+-(NSString *)GTMEncodeTest:(NSString *)text
+
+{
+    
+    NSString* originStr = text;
+    
+    NSString* encodeResult = nil;
+    
+    NSData* originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData* encodeData = [GTMBase64 encodeData:originData];
+    
+    encodeResult = [[NSString alloc] initWithData:encodeData encoding:NSUTF8StringEncoding];
+    
+    return encodeResult;
+}
+
 
 
 

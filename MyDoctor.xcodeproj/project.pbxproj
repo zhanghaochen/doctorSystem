@@ -148,6 +148,7 @@
 		6A3EF85F1C06FD7400923D03 /* MDExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF85E1C06FD7400923D03 /* MDExaminationViewController.m */; };
 		6A3EF8621C06FDB300923D03 /* MDTransfuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */; };
 		6A45AAAB1C1124AD00555CF9 /* MDRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A45AAAA1C1124AD00555CF9 /* MDRequestModel.m */; };
+		6A45AAAE1C11728800555CF9 /* MDLectureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A45AAAD1C11728800555CF9 /* MDLectureModel.m */; };
 		6AF2021F1C083F4000933EAF /* activityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2021D1C083F4000933EAF /* activityCell.m */; };
 		6AF202201C083F4000933EAF /* activityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2021E1C083F4000933EAF /* activityCell.xib */; };
 		6AF202271C08498100933EAF /* MDExpertConsultationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF202261C08498100933EAF /* MDExpertConsultationViewController.m */; };
@@ -407,6 +408,8 @@
 		6A3EF8611C06FDB300923D03 /* MDTransfuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTransfuseViewController.m; sourceTree = "<group>"; };
 		6A45AAA91C1124AD00555CF9 /* MDRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRequestModel.h; sourceTree = "<group>"; };
 		6A45AAAA1C1124AD00555CF9 /* MDRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRequestModel.m; sourceTree = "<group>"; };
+		6A45AAAC1C11728800555CF9 /* MDLectureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLectureModel.h; sourceTree = "<group>"; };
+		6A45AAAD1C11728800555CF9 /* MDLectureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLectureModel.m; sourceTree = "<group>"; };
 		6AF2021C1C083F4000933EAF /* activityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = activityCell.h; path = Home/View/activityCell.h; sourceTree = "<group>"; };
 		6AF2021D1C083F4000933EAF /* activityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = activityCell.m; path = Home/View/activityCell.m; sourceTree = "<group>"; };
 		6AF2021E1C083F4000933EAF /* activityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = activityCell.xib; path = Home/View/activityCell.xib; sourceTree = "<group>"; };
@@ -873,6 +876,8 @@
 			children = (
 				153ED8621C0C228500171DFA /* MDDrugVO.h */,
 				153ED8631C0C228500171DFA /* MDDrugVO.m */,
+				6A45AAAC1C11728800555CF9 /* MDLectureModel.h */,
+				6A45AAAD1C11728800555CF9 /* MDLectureModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1294,6 +1299,7 @@
 				153C1E841C03FB8C00F87014 /* MX_MASViewConstraint.m in Sources */,
 				153C1E811C03FB8C00F87014 /* MX_MASConstraintMaker.m in Sources */,
 				6AF2026B1C0D71AB00933EAF /* MDFeedBackViewController.m in Sources */,
+				6A45AAAE1C11728800555CF9 /* MDLectureModel.m in Sources */,
 				6AF202761C0D968800933EAF /* NIDropDown.m in Sources */,
 				6A3EF8501C06038B00923D03 /* MDHospitalViewController.m in Sources */,
 				6AF202641C0C4CDD00933EAF /* UIView+ViewExtension.m in Sources */,
